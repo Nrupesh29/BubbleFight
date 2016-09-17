@@ -1,4 +1,4 @@
-# CMPE-202-Team-Project
+# CMPE-202-Team-Project - SJSU - Fall 2016
 ---
 
 ## Team Member

@@ -5,6 +5,6 @@
 ### Team Member
 * Nam Phan
 * Aditi Shetty
-*
+* Cuongthinh Nguyen
 *
 *

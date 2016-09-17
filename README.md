@@ -4,6 +4,7 @@
 
 ### Team Member
 * Nam Phan
+* Aditi Shetty
 *
 *
 *

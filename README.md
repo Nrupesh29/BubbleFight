@@ -8,6 +8,5 @@
 * Ravi Gupta
 * Cuongthinh Nguyen
 * Nrupesh Patel
-* 
 
 ### Project Activity's Name: Binary Numbers

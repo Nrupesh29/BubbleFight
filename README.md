@@ -1,6 +1,6 @@
 # CMPE-202-Team-Project - SJSU - Fall 2016
 
-### Team Name: **Knight Riders**
+### Team Name: **KnightRiders**
 
 ### Team Member
 * Nam Phan
@@ -8,3 +8,6 @@
 * Ravi Gupta
 * Cuongthinh Nguyen
 * Nrupesh Patel
+* 
+
+### Project Activity's Name: Binary Numbers

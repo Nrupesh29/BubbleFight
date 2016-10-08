@@ -6,7 +6,6 @@
 * Nam Phan (CMPE 202 - 03)
 * Aditi Shetty (CMPE 202 - 04)
 * Ravi Gupta (CMPE 202 - 03)
-* Cuongthinh Nguyen (CMPE 202 - 04)
 * Nrupesh Patel (CMPE 202 - 03)
 
 ### CS Unplugged Activity's Name: Binary Numbers

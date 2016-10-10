@@ -11,3 +11,4 @@
 ### CS Unplugged Activity's Name: Binary Numbers
 
 [![Stories in Ready](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=ready&title=Ready)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project)
+[![Throughput Graph](https://graphs.waffle.io/Nrupesh29/CMPE-202-Team-Project/throughput.svg)](https://waffle.io/Nrupesh29/CMPE-202-Team-Project/metrics/throughput) 

@@ -1,3 +1,5 @@
+import java.lang.System.*;
+import java.util.*;
 /**
  * Write a description of class System here.
  * 
@@ -8,12 +10,17 @@ public class System
 {
     // instance variables - replace the example below with your own
     private int x;
-
+    private MyWorld world;
     /**
      * Constructor for objects of class System
      */
-    public System()
+    public System(MyWorld world)
     {
+        this.world = world;
+        List array = world.getObjects(Pipe.class);
+        for (int i = 0; i < array.size(); i++) {
+            System.out.println(array.get(i));
+        }
     }
 
     /**

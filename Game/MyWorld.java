@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
+    private System system;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -18,6 +19,7 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
+        system = new System(this);
     }
 
     /**
@@ -28,7 +30,7 @@ public class MyWorld extends World
     {
         Player player1 = new Player(false,true);
         addObject(player1,48,309);
-        
+
         Player player2 = new Player(true,false);
         addObject(player2,487,191);
 
@@ -38,6 +40,10 @@ public class MyWorld extends World
         Ground ground2 = new Ground();
         addObject(ground2,556,392);
 
-        
+        Balloon balloon = new Balloon();
+        addObject(balloon,302,345);
+        Pipe pipe = new Pipe();
+        addObject(pipe,245,384);
+        balloon.setLocation(381,350);
     }
 }

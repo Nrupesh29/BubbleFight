@@ -14,6 +14,23 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 
 <img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/GameBanner.png">
 
+## Contributing
+
+1. Search previous suggestions before making a new one, as your's may be a duplicate.
+1. Create an issue and describe your idea.
+2. [Fork it] (https://github.com/Nrupesh29/CMPE-202-Team-Project/fork)
+3. Create a new branch for your feature (`git checkout -b my-new-feature`)
+4. Commit the changes (`git commit -am 'Add some feature'`)
+5. Publish the branch (`git push origin my-new-feature`)
+6. Create a new Pull Request
+7. Done!
+
+Thank you for your suggestions!
+
+## License
+
+BubbleFight is released under the [MIT License](https://github.com/Nrupesh29/CMPE-202-Team-Project/blob/master/LICENSE.md).
+
 ## KnightRiders Team
 
 | [![Nrupesh Patel](https://avatars.githubusercontent.com/nrupesh29?s=100)<br /><sub>Nrupesh Patel<br />CMPE 202 - 03</sub>](https://github.com/Nrupesh29)<br /> | [![Aditi Shetty](https://avatars.githubusercontent.com/shettyaditi?s=100)<br /><sub>Aditi Shetty<br />CMPE 202 - 04</sub>](https://github.com/shettyAditi)<br /> | [![Ravi Gupta](https://avatars.githubusercontent.com/ravibgupta?s=100)<br /><sub>Ravi Gupta<br />CMPE 202 - 03</sub>](https://github.com/ravibgupta)<br />| [![Nam Phan](https://avatars.githubusercontent.com/mostman47?s=100)<br /><sub>Nam Phan<br />CMPE 202 - 03</sub>](https://github.com/mostman47)<br />|

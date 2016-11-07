@@ -16,6 +16,7 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 
 ## Project Deliverables
 [UI Wireframes] (Diagrams/UI Wireframes)
+[Sequence Diagram] (Diagrams/Sequence Diagram)
 
 ## Contributing
 

@@ -15,7 +15,7 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 <img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/GameBanner.png">
 
 ## Project Deliverables
-[UI Wireframes] (Diagrams/UI Wireframes)
+[UI Wireframes] (Diagrams/UI Wireframes) <br/>
 [Sequence Diagram] (Diagrams/Sequence Diagram)
 
 ## Contributing

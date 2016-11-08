@@ -1,4 +1,4 @@
-import java.lang.System.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
  * Write a description of class System here.
@@ -6,32 +6,29 @@ import java.util.*;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class System  
+public class System extends Actor
 {
-    // instance variables - replace the example below with your own
-    private int x;
-    private MyWorld world;
+    public int pause = 20;
     /**
-     * Constructor for objects of class System
+     * Act - do whatever the System wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public System(MyWorld world)
+    public void act() 
     {
-        this.world = world;
-        List array = world.getObjects(Pipe.class);
-        for (int i = 0; i < array.size(); i++) {
-            System.out.println(array.get(i));
-        }
-    }
+        if(pause>0)
+            pause--;
+        if(pause == 0)
+        {
+            // Add your action code here.
+            List<Pipe> array = getWorld().getObjects(Pipe.class);
+            for (int i = 0; i < array.size(); i++) {
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+                
+                Balloon balloon = new Balloon();
+                getWorld().addObject(balloon,array.get(i).getX(),array.get(i).getY());
+                pause = 20;
+            }
+        }
+
+    }    
 }

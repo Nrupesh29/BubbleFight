@@ -21,6 +21,7 @@ public class Player extends Actor
     public Player(boolean isLeft, boolean controllable){
         this.isLeft = isLeft ;
         this.controllable = controllable ;
+         
         if(!isLeft){
             flipImage();
         }

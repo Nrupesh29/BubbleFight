@@ -19,7 +19,8 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
-        system = new System(this);
+        
+        
     }
 
     /**
@@ -28,6 +29,8 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        
+        
         Player player1 = new Player(false,true);
         addObject(player1,48,309);
 
@@ -45,5 +48,8 @@ public class MyWorld extends World
         Pipe pipe = new Pipe();
         addObject(pipe,245,384);
         balloon.setLocation(381,350);
+        
+        system = new System();
+         addObject(system,0,0);
     }
 }

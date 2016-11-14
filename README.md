@@ -10,6 +10,8 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 [UI Wireframes] (Diagrams/UI Wireframes) <br/>
 [Sequence Diagram] (Diagrams/Sequence Diagram)
 
+## Installation
+
 ## Contributing
 
 1. Search previous suggestions before making a new one, as your's may be a duplicate.
@@ -22,6 +24,10 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 7. Done!
 
 Thank you for your suggestions!
+
+## Credits
+
+Graphics - [Freepik] (http://www.freepik.com/)
 
 ## License
 

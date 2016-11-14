@@ -19,5 +19,9 @@ public class Question
         answer = a;
     }
     
+    public boolean isAnswered(Answer a){
+        //TODO convert and compare answer
+        return false;
+    }
 
 }

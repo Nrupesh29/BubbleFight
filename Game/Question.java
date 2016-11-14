@@ -19,7 +19,7 @@ public class Question
         answer = a;
     }
     
-    public boolean isAnswered(Answer a){
+    public boolean checkAnswer(Answer a){
         //TODO convert and compare answer
         return false;
     }

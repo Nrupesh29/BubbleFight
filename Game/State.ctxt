@@ -1,4 +1,14 @@
 #BlueJ class context
 comment0.target=State
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ State\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-numComments=1
+comment1.params=
+comment1.target=void\ answerIncorrect()
+comment2.params=
+comment2.target=void\ answerCorrect()
+comment3.params=
+comment3.target=void\ fallToTheSea()
+comment4.params=
+comment4.target=void\ attack()
+comment5.params=
+comment5.target=void\ getAttack()
+numComments=6

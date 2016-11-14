@@ -23,7 +23,6 @@ public class System extends Actor
             List<Pipe> array = getWorld().getObjects(Pipe.class);
             for (int i = 0; i < array.size(); i++) {
 
-                
                 Balloon balloon = new Balloon();
                 getWorld().addObject(balloon,array.get(i).getX(),array.get(i).getY());
                 pause = 20;
@@ -31,4 +30,13 @@ public class System extends Actor
         }
 
     }    
+
+    public void initialize(){
+    }
+
+    public void createQuestion(){
+    }
+
+    public void createBaloon(){
+    }
 }

@@ -27,7 +27,8 @@ Thank you for your suggestions!
 
 ## Credits
 
-Graphics - [Freepik] (http://www.freepik.com/)
+Graphics - [Freepik] (http://www.freepik.com/) <br/>
+Learning Activity Concept - [CS Unplugged] (http://csunplugged.org/)
 
 ## License
 

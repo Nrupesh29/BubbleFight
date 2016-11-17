@@ -9,6 +9,7 @@ import java.util.*;
 public class System extends Actor
 {
     public int pause = 20;
+    private int speed = 5;
     /**
      * Act - do whatever the System wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -23,9 +24,11 @@ public class System extends Actor
             List<Pipe> array = getWorld().getObjects(Pipe.class);
             for (int i = 0; i < array.size(); i++) {
 
-                Balloon balloon = new Balloon();
+                Label label = new Label();
+                Balloon balloon = new Balloon(label, speed);
                 getWorld().addObject(balloon,array.get(i).getX(),array.get(i).getY());
-                pause = 20;
+                getWorld().addObject(label,array.get(i).getX(),array.get(i).getY());
+                pause = 50;
             }
         }
 

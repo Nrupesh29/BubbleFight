@@ -8,21 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Balloon extends Actor
 {
-    private int speed = 5;
-    /**
-     * Act - do whatever the Balloon wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int speed;
+    private Label label;
+    public Balloon(Label l, int sp){
+        label = l;       
+        speed = sp;
+    }
+
     public void act() 
     {
         // Add your action code here.
         setLocation(getX(), getY() - speed);
-
+        label.updateLocation(getX(), getY() - speed);
         if (getY() <= 0)
-        {
-           getWorld().removeObject(this);
+        {           
+            getWorld().removeObject(this);
+            label.destroy();
         }
-        
+
     }    
 
 }

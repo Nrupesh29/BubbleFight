@@ -29,12 +29,11 @@ public class MyWorld extends World
      */
     private void prepare()
     {
-        
-        
+
         Player player1 = new Player(false,true);
         addObject(player1,48,309);
 
-        Player player2 = new Player(true,false);
+        Player player2 = new Player(true,true);
         addObject(player2,487,191);
 
         Ground ground = new Ground();
@@ -43,13 +42,17 @@ public class MyWorld extends World
         Ground ground2 = new Ground();
         addObject(ground2,556,392);
 
-        Balloon balloon = new Balloon();
-        addObject(balloon,302,345);
+        // Balloon balloon = new Balloon();
+        // addObject(balloon,302,345);
         Pipe pipe = new Pipe();
         addObject(pipe,245,384);
-        balloon.setLocation(381,350);
-        
+        // balloon.setLocation(381,350);
+
         system = new System();
-         addObject(system,0,0);
+        addObject(system,0,0);
+        // Label label = new Label("dsaf");
+        // addObject(label,245,139);
+        Label label = new Label();
+       addObject(label,296,110);
     }
 }

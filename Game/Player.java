@@ -16,23 +16,31 @@ public class Player extends Actor
     private double fallSpeed = 0;
     private double acceleration = 0.2;
     private boolean isLeft = true;
+    
     private boolean controllable = false;
+    private final String[] controller1 = {"up","down","left","right"};
+    private final String[] controller2 = {"w","s","a","d"};
+    private String[] controller = null;
 
     public Player(boolean isLeft, boolean controllable){
         this.isLeft = isLeft ;
         this.controllable = controllable ;
-         
+
         if(!isLeft){
             flipImage();
+            this.controller = controller1;
+        }else{
+            this.controller = controller2;            
         }
     }
 
     public void act() 
     {
         // Add your action code here.
-        if(controllable){
+
+        if(controllable){            
             int speed = 3;
-            if(Greenfoot.isKeyDown("up")){
+            if(Greenfoot.isKeyDown(controller[0])){
                 setLocation(getX(), getY() - speed);
                 fallSpeed = 0;  
             }else{
@@ -41,7 +49,7 @@ public class Player extends Actor
             // if(Greenfoot.isKeyDown("down"))
             // setLocation(getX(), getY() + speed);
 
-            if(Greenfoot.isKeyDown("left")){
+            if(Greenfoot.isKeyDown(controller[2])){
                 setLocation(getX() - speed, getY());
 
                 if(!isLeft){
@@ -51,8 +59,7 @@ public class Player extends Actor
                 isLeft = true;
             }
 
-
-            if(Greenfoot.isKeyDown("right")){
+            if(Greenfoot.isKeyDown(controller[3])){
                 setLocation(getX() + speed, getY());
 
                 if(isLeft){

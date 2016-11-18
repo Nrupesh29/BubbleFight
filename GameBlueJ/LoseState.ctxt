@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=player
+comment0.target=LoseState(Player)
+comment1.params=
+comment1.target=void\ answerIncorrect()
+comment2.params=
+comment2.target=void\ fallToTheSea()
+comment3.params=
+comment3.target=void\ attack()
+comment4.params=
+comment4.target=void\ getAttack()
+comment5.params=
+comment5.target=void\ answerCorrect()
+numComments=6

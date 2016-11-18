@@ -5,29 +5,20 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class WinState
+public class WinState implements State
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    public Player player;
+    public WinState(Player player){
+        this.player = player;
+    };
 
-    /**
-     * Constructor for objects of class WinState
-     */
-    public WinState()
-    {
-        // initialise instance variables
-        x = 0;
-    }
+    public void answerIncorrect(){};
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    public void fallToTheSea(){};
+
+    public void attack(){};
+
+    public void getAttack(){};
+
+    public void answerCorrect(){};
 }

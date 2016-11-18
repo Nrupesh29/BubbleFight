@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Player()
+comment1.params=s
+comment1.target=void\ setState(State)
+comment2.params=
+comment2.target=State\ getState()
+comment3.params=
+comment3.target=State\ getProtectedState()
+comment4.params=
+comment4.target=State\ getUnProtectedState()
+comment5.params=
+comment5.target=State\ getUnBeatableState()
+comment6.params=
+comment6.target=State\ getRebirthState()
+comment7.params=
+comment7.target=State\ getLoseState()
+comment8.params=
+comment8.target=State\ getWinState()
+numComments=9

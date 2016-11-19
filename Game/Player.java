@@ -1,43 +1,75 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player here.
+ * Write a description of class Bird here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Player extends Actor
 {
-    /**
-     * Act - do whatever the Player wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    State protectedState;
+    State unProtectedState;
+    State unBeatableState;
+    State rebirthState;
+    State loseState;
+    State winState;
+
+    State state = protectedState;
+    int lifeCount;
+    int protectionCount;
+    int answerCorrectCount;
+    int answerIncorrectCount;
+
+    Player enemy;
+
+    public String name;
 
     private double fallSpeed = 0;
     private double acceleration = 0.2;
     private boolean isLeft = true;
-    
     private boolean controllable = false;
+
     private final String[] controller1 = {"up","down","left","right"};
     private final String[] controller2 = {"w","s","a","d"};
     private String[] controller = null;
+    private int originX = 0;
+    private int originY = 0;
 
-    public Player(boolean isLeft, boolean controllable){
+    public Player(boolean isLeft, boolean controllable, int c){
+        protectedState = new ProtectedState(this);
+        unProtectedState = new UnProtectedState(this);
+        unBeatableState = new UnBeatableState(this);
+        rebirthState = new RebirthState(this);
+        loseState = new LoseState(this);
+        winState = new WinState(this);
+
+        lifeCount = 2;
+        protectionCount = 2;
+        answerCorrectCount = 0;
+        answerIncorrectCount = 0;
+
         this.isLeft = isLeft ;
-        this.controllable = controllable ;
+        this.controllable = controllable ;       
 
-        if(!isLeft){
-            flipImage();
+        if(c == 1){            
             this.controller = controller1;
         }else{
             this.controller = controller2;            
         }
+
     }
 
     public void act() 
     {
-        // Add your action code here.
+        //set origin
+        if(originX == 0 && originY == 0){
+            //System.out.println(this.getX());
+        originX = this.getX();
+        originY = this.getY();
+        }
 
+        // controller by key
         if(controllable){            
             int speed = 3;
             if(Greenfoot.isKeyDown(controller[0])){
@@ -69,6 +101,15 @@ public class Player extends Actor
                 isLeft = false;
             }
         }
+
+        //fall to the sea
+        Actor sea = getOneIntersectingObject(Sea.class);
+        if(sea != null){
+            System.out.println(sea);
+            System.out.println("fall to the sea");
+            fallToTheSea();
+        }
+
     }    
 
     public void flipImage(){
@@ -79,7 +120,7 @@ public class Player extends Actor
 
     public boolean onGround()
     {
-        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 2, Ground.class);
+        Object under = getOneObjectAtOffset(0, getImage().getHeight()/2 + 2, Stone.class);
         return under != null;
     }
 
@@ -97,5 +138,93 @@ public class Player extends Actor
     {
         setLocation (getX(), getY() + (int) Math.floor(fallSpeed));
         fallSpeed += acceleration;
+    }
+
+    public void setEnemy(Player p){
+        enemy = p;
+    }
+
+    public void setState(State s){
+        state = s;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public State getProtectedState() {
+        return protectedState;
+    }
+
+    public State getUnProtectedState() {
+        return unProtectedState;
+    }
+
+    public State getUnBeatableState() {
+        return unBeatableState;
+    }
+
+    public State getRebirthState() {
+        return rebirthState;
+    }
+
+    public State getLoseState() {
+        return loseState;
+    }
+
+    public State getWinState() {
+        return winState;
+    }
+
+    public int countLife(){
+        return lifeCount;    
+    }
+
+    public void loseLife(){
+        lifeCount--;
+    }
+
+    public boolean isAlive(){
+        return lifeCount > 0;
+    }
+
+    public boolean isProtected(){
+        return protectionCount > 0;
+    }
+
+    public void loseOneProtection(){
+        protectionCount--;
+    }
+
+    public void beAttack(){
+        state.beAttack();
+    }
+
+    public void addCorrectAnswer(){
+        answerCorrectCount++;
+        enemy.loseOneProtection();
+    }
+
+    public void addIncorrectAnswer(){
+        answerIncorrectCount++;
+    }
+
+    public void answerQuestion(){
+        //TODO check answer
+        if(true){
+            state.answerCorrect();
+        }else{
+            state.answerIncorrect();
+        }
+    }
+
+    public void fallToTheSea(){
+        setToOriginLocation();
+        if(state != null)
+            state.fallToTheSea();
+    }
+
+    public void setToOriginLocation(){
+         setLocation(originX,originY);
     }
 }

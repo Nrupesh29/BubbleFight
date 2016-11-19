@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bird here.
+ * Write a description of class Energy here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Bird extends Actor
+public class Energy extends Actor
 {
     /**
-     * Act - do whatever the Bird wants to do. This method is called whenever
+     * Act - do whatever the Energy wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 

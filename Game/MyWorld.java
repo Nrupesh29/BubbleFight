@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    private System system;
 
     /**
      * Constructor for objects of class MyWorld.
@@ -17,42 +16,11 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
-        prepare();
-        
-        
-    }
-
-    /**
-     * Prepare the world for the start of the program.
-     * That is: create the initial objects and add them to the world.
-     */
-    private void prepare()
-    {
-
-        Player player1 = new Player(false,true);
-        addObject(player1,48,309);
-
-        Player player2 = new Player(true,true);
-        addObject(player2,487,191);
-
-        Ground ground = new Ground();
-        addObject(ground,33,392);
-
-        Ground ground2 = new Ground();
-        addObject(ground2,556,392);
-
-        // Balloon balloon = new Balloon();
-        // addObject(balloon,302,345);
-        Pipe pipe = new Pipe();
-        addObject(pipe,245,384);
-        // balloon.setLocation(381,350);
-
-        system = new System();
-        addObject(system,0,0);
-        // Label label = new Label("dsaf");
-        // addObject(label,245,139);
-        Label label = new Label();
-       addObject(label,296,110);
+        super(1150, 600, 1);
+        //GreenfootImage background = new GreenfootImage("background.png");
+        //setBackground(background);
+        addObject( new PlayButton(), 420, 400 ) ;
+        addObject( new HelpButton(), 580, 400 ) ;
+        addObject( new ExitButton(), 740, 400 ) ;
     }
 }

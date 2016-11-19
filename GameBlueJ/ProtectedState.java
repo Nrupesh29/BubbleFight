@@ -7,11 +7,32 @@
  */
 public class ProtectedState implements State
 {
+    private Player player;
     public ProtectedState(Player player){
+        this.player = player;
     };
-    public void answerIncorrect(){};
-    public void fallToTheSea(){};
-    public void attack(){};
-    public void getAttack(){};
-    public void answerCorrect(){};
+
+    public void answerIncorrect(){
+        player.addIncorrectAnswer();
+        player.setState(player.getRebirthState());
+    };
+
+    public void fallToTheSea(){
+        //remove 1 life
+        player.loseLife();
+        player.setState(player.getRebirthState());
+
+    };
+
+    public void doAttack(Player p){
+        p.beAttack();
+    };
+
+    public void beAttack(){
+        //System.out.println("User is protected");
+    };
+
+    public void answerCorrect(){
+        player.addCorrectAnswer();
+    };
 }

@@ -16,9 +16,11 @@ public class WinState implements State
 
     public void fallToTheSea(){};
 
-    public void attack(){};
+    public void doAttack(Player p){
+    };
 
-    public void getAttack(){};
+    public void beAttack(){
+    };
 
     public void answerCorrect(){};
 }

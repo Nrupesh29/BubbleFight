@@ -7,11 +7,24 @@
  */
 public class UnBeatableState implements State
 {
-      public UnBeatableState(Player player){
+    private Player player;
+    public UnBeatableState(Player player){
+        this.player = player;
+        //TODO after 2 second
+        if(player.isProtected()){
+            player.setState(player.getProtectedState());
+        }else{
+            player.setState(player.getUnProtectedState());
+        }
     };
+
     public void answerIncorrect(){};
+
     public void fallToTheSea(){};
-    public void attack(){};
-    public void getAttack(){};
+
+    public void doAttack(Player p){};
+
+    public void beAttack(){};
+
     public void answerCorrect(){};
 }

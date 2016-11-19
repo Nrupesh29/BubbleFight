@@ -7,11 +7,27 @@
  */
 public class RebirthState implements State
 {
+    private Player player;
     public RebirthState(Player player){
+        this.player = player;
+        if(player.isAlive()){
+            player.setState(player.getUnBeatableState());
+        }else{
+            player.setState(player.getLoseState());
+        }
     };
-     public void answerIncorrect(){};
+
+    public void answerIncorrect(){};
+
     public void fallToTheSea(){};
-    public void attack(){};
-    public void getAttack(){};
+
+    public void doAttack(Player p){
+
+    };
+
+    public void beAttack(){
+
+    };
+
     public void answerCorrect(){};
 }

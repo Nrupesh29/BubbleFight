@@ -15,7 +15,13 @@ public class Player
     State winState;
 
     State state = protectedState;
-    
+    int lifeCount;
+    int protectionCount;
+    int answerCorrectCount;
+    int answerIncorrectCount;
+
+    Player enemy;
+
     public Player(){
         protectedState = new ProtectedState(this);
         unProtectedState = new UnProtectedState(this);
@@ -23,6 +29,15 @@ public class Player
         rebirthState = new RebirthState(this);
         loseState = new LoseState(this);
         winState = new WinState(this);
+
+        lifeCount = 2;
+        protectionCount = 2;
+        answerCorrectCount = 0;
+        answerIncorrectCount = 0;
+    }
+
+    public void setEnemy(Player p){
+        enemy = p;
     }
 
     public void setState(State s){
@@ -55,5 +70,47 @@ public class Player
 
     public State getWinState() {
         return winState;
+    }
+
+    public int countLife(){
+        return lifeCount;    
+    }
+
+    public void loseLife(){
+        lifeCount--;
+    }
+
+    public boolean isAlive(){
+        return lifeCount > 0;
+    }
+
+    public boolean isProtected(){
+        return protectionCount > 0;
+    }
+
+    public void loseOneProtection(){
+        protectionCount--;
+    }
+
+    public void beAttack(){
+        state.beAttack();
+    }
+
+    public void addCorrectAnswer(){
+        answerCorrectCount++;
+        enemy.loseOneProtection();
+    }
+
+    public void addIncorrectAnswer(){
+        answerIncorrectCount++;
+    }
+
+    public void answerQuestion(){
+        //TODO check answer
+        if(true){
+            state.answerCorrect();
+        }else{
+            state.answerIncorrect();
+        }
     }
 }

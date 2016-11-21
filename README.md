@@ -1,6 +1,6 @@
 # BubbleFight
 
-[![Stories in Ready](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=ready&title=Ready)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![Stories in In Development](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![Stories in In Testing](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=test&title=In%20Testing)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![Stories in In Review](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=review&title=In%20Review)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Nrupesh29/CMPE-202-Team-Project/blob/master/LICENSE.md) [![GitHub issues](https://img.shields.io/badge/issues-6%20open-green.svg)](https://github.com/Nrupesh29/CMPE-202-Team-Project/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/badge/issues-37%20closed-red.svg)](https://github.com/Nrupesh29/CMPE-202-Team-Project/issues?q=is%3Aissue+is%3Aclosed)
+[![Stories in Ready](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=ready&title=Ready)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![Stories in In Development](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![Stories in In Testing](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=test&title=In%20Testing)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![Stories in In Review](https://badge.waffle.io/Nrupesh29/CMPE-202-Team-Project.svg?label=review&title=In%20Review)](http://waffle.io/Nrupesh29/CMPE-202-Team-Project) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/Nrupesh29/CMPE-202-Team-Project/blob/master/LICENSE.md) [![GitHub issues](https://img.shields.io/badge/issues-4%20open-green.svg)](https://github.com/Nrupesh29/CMPE-202-Team-Project/issues?q=is%3Aopen+is%3Aissue) [![GitHub closed issues](https://img.shields.io/badge/issues-39%20closed-red.svg)](https://github.com/Nrupesh29/CMPE-202-Team-Project/issues?q=is%3Aissue+is%3Aclosed)
 
 CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles. We are presenting a game **_BubbleFight_** which will introduce players to computational thinking through Binary Numbers. It is a multiplayer game where players will be given a binary equation and they need to solve the equation and find the decimal equivalent for the answer. Players will play as birds in the game who need to burst the correct answer bubble. Game has a set of rules which add to the competitive nature of game.
 
@@ -11,6 +11,27 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 [Sequence Diagram] (Diagrams/Sequence Diagram)
 
 ## Installation
+### AWS Elastic Beanstalk Installation
+1. Sign in to [AWS Console] (https://aws.amazon.com/)
+2. Select Elastic Beanstalk.
+3. Click Create new application.
+4. Enter application name and description.
+5. Click create new environment.
+6. Select Web server environment in Environment tier.
+7. Choose PHP in Platform.
+8. Select upload your code in Application Code option.
+9. Download the Elastic Beanstalk folder from the repository and upload it.
+10. Click Create Environment.
+
+### MySQL Database Connection with EBS
+1. Open the [Elastic Beanstalk Management Console](https://console.aws.amazon.com/elasticbeanstalk).
+2. Choose your environment name to open the environment Dashboard.
+3. Choose Configuration.
+4. In the Data Tier section, choose Create a new RDS database.
+5. Choose the DB engine as `mysql` and Engine version as `5.6.27`.
+6. Choose an Instance class. Choose db.t2.micro to stay within the Free Tier limit.
+7. Type in a Master username and Master password.
+8. Choose Apply.
 
 ## Contributing
 
@@ -29,6 +50,12 @@ Thank you for your suggestions!
 
 Graphics - [Freepik] (http://www.freepik.com/) <br/>
 Learning Activity Concept - [CS Unplugged] (http://csunplugged.org/)
+
+## Developement Lifecycle Charts
+### KanBan Flow Diagram (Phase 1)
+<img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/KanBan%20Flow%20Diagram.png">
+### Scrum Burndown Chart (Phase 2)
+<img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/Scrum%20Burndown%20Chart.png">
 
 ## License
 

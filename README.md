@@ -11,6 +11,17 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 [Sequence Diagram] (Diagrams/Sequence Diagram)
 
 ## Installation
+### AWS Elastic Beanstalk Installation
+1. Sign in to [AWS Console] (https://aws.amazon.com/)
+2. Select Elastic Beanstalk.
+3. Click Create new application.
+4. Enter application name and description.
+5. Click create new environment.
+6. Select Web server environment in Environment tier.
+7. Choose PHP in Platform.
+8. Select upload your code in Application Code option.
+9. Download the Elastic Beanstalk folder from the repository and upload it.
+10. Click Create Environment.
 
 ## Contributing
 

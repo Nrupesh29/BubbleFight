@@ -51,6 +51,12 @@ Thank you for your suggestions!
 Graphics - [Freepik] (http://www.freepik.com/) <br/>
 Learning Activity Concept - [CS Unplugged] (http://csunplugged.org/)
 
+## Developement Lifecycle Charts
+### KanBan Flow Diagram (Phase 1)
+<img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/KanBan%20Flow%20Diagram.png">
+### Scrum Burndown Chart (Phase 2)
+<img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/Scrum%20Burndown%20Chart.png">
+
 ## License
 
 BubbleFight is released under the [MIT License](https://github.com/Nrupesh29/CMPE-202-Team-Project/blob/master/LICENSE.md).

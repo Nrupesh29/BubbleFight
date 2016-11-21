@@ -8,11 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Sea extends Actor
 {
-    public Sea(){
-        GreenfootImage image = getImage();
-        //image.scale(image.getWidth() - 50, image.getHeight() - 10);
-        setImage(image);
-    }
     /**
      * Act - do whatever the Sea wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

@@ -17,6 +17,6 @@ public class RedBird extends Player
         super(true, controllable,c);
 
     }
-
+   
     
 }

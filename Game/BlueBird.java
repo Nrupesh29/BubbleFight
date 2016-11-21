@@ -18,5 +18,7 @@ public class BlueBird extends Player
         super(false, controllable,c);
 
     }
+    
+  
 
 }

@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BlueBird extends Bird
+public class BlueBird extends Player
 {
     private double fallSpeed = 0;
     private double acceleration = 0.2;

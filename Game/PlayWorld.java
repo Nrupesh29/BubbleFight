@@ -33,7 +33,7 @@ public class PlayWorld extends World
         redBird.setEnemy(blueBird); 
 
         addObject( new Question(), 580, 45 ) ;
-        addObject( new Sea(), 550, 800 ) ;
+        addObject( new Sea(), 570, 800 ) ;
         addObject( new LeftStone(), 50, 800 ) ;
         addObject( new RightStone(), 1100, 800 ) ;
         addObject( blueBird, 50, 500 ) ;

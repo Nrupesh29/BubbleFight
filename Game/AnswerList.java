@@ -1,12 +1,11 @@
 public class AnswerList{
 
-String[] ans = {"1010","1011", "1011","1011", "1111", "1111"};
+    String[] ans = {"1010","1011", "1011","1011", "1111", "1111"};
 
-int b;
-String[] strategy
+    int b;
 
-public void AnswerList(){
-int c = Math.random();
-} 
+    public void AnswerList(){
+//        int c = Math.random();
+    } 
 
 }

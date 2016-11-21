@@ -23,6 +23,16 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 9. Download the Elastic Beanstalk folder from the repository and upload it.
 10. Click Create Environment.
 
+### MySQL Database Connection with EBS
+1. Open the [Elastic Beanstalk Management Console](https://console.aws.amazon.com/elasticbeanstalk).
+2. Choose your environment name to open the environment Dashboard.
+3. Choose Configuration.
+4. In the Data Tier section, choose Create a new RDS database.
+5. Choose the DB engine as `mysql` and Engine version as `5.6.27`.
+6. Choose an Instance class. Choose db.t2.micro to stay within the Free Tier limit.
+7. Type in a Master username and Master password.
+8. Choose Apply.
+
 ## Contributing
 
 1. Search previous suggestions before making a new one, as your's may be a duplicate.

@@ -11,8 +11,10 @@ public class Sea extends Actor
     public Sea()  
     {  
         GreenfootImage image = getImage();  
-        image.scale(image.getWidth() - 130, image.getHeight() - 60);  
+
+        image.scale(900,80);  
         setImage(image);  
+
     }  
 
     /**

@@ -17,10 +17,11 @@ public class PlayWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1150, 600, 1);
-        //GreenfootImage background = new GreenfootImage("playBackground.png");
-        //setBackground(background);
-        //AnswerManager answerManager = new AnswerManager();
-        //addObject(answerManager, 0, 0);
+        // GreenfootImage background = new GreenfootImage("playBackground.png");
+        // setBackground(background);
+        // AnswerManager answerManager = new AnswerManager();
+        // addObject(answerManager, 0, 0);
+
         Message life1 = new Message();
         life1.setMessage(this, "x2", 50, 50);
         Message life2 = new Message();
@@ -42,5 +43,18 @@ public class PlayWorld extends World
         addObject( new Life(), 1100, 50 ) ;
         addObject( new Energy100(), 1105, 20 ) ;
         addObject( new Energy100(), 45, 20 ) ;
+
+        GameSystem gamesystem = new GameSystem();
+        addObject(gamesystem,855,42);
+        prepare();
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+
     }
 }

@@ -16,10 +16,10 @@ public class Question extends Actor
      */
     public void act() 
     {
-        Message message = new Message();
-        message.setMessage(getWorld(), "1001 + 1101 + 1010", 630, getY());
+        // Message message = new Message();
+        // message.setMessage(getWorld(), "1001 + 1101 + 1010", 630, getY());
         
-        TimerMessage m = new TimerMessage();
-        m.setMessage(getWorld(), "02:00", 380, getY());
+        // TimerMessage m = new TimerMessage();
+        // m.setMessage(getWorld(), "02:00", 380, getY());
     }    
 }

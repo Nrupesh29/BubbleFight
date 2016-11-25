@@ -6,6 +6,4 @@ comment1.target=TimerMessage()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ TimerMessage\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=labelText
 comment2.target=TimerMessage(java.lang.String)
-comment3.params=world\ labelText\ xPos\ yPos
-comment3.target=void\ setMessage(greenfoot.World,\ java.lang.String,\ int,\ int)
-numComments=4
+numComments=3

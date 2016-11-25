@@ -10,7 +10,7 @@ import java.util.Random;
 public class GameSystem extends Actor
 {
     public int pause = 50;
-    private int speed = 5;
+    private int speed = 4;
     private int seaY = 800;
     private int seaMinX = 200;
     private int seaMaxX = 900;
@@ -32,7 +32,7 @@ public class GameSystem extends Actor
             Random r = new Random();
             int result = r.nextInt(seaMaxX-seaMinX) + seaMinX;
 
-            Label label = new Label();
+            Answer label = new Answer("0");
             Bubble b = new Bubble(label, speed);
             getWorld().addObject(b,result,seaY);
             getWorld().addObject(label,result,seaY);

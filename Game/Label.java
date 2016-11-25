@@ -24,17 +24,12 @@ public class Label extends Actor
         //setLocation(0,0);
 
     }    
-
-    public void updateLocation(int x, int y){
+  public void updateLocation(int x, int y){
         setLocation(x,y);
-
-        // if (y <= 0)
-        // {           
-        // getWorld().removeObject(this);
-        // }
     }
 
     public void destroy(){
         getWorld().removeObject(this);
     }
+   
 }

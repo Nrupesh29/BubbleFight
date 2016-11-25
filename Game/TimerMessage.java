@@ -21,12 +21,9 @@ public class TimerMessage extends Message
     
     public TimerMessage(String labelText)  
     {
-        GreenfootImage label = new GreenfootImage(labelText,25,Color.white,null);  
-        setImage(label);          
+            
+        super(labelText);
     }
     
-    public void setMessage(World world, String labelText, int xPos, int yPos) {
-        Actor message = new TimerMessage(labelText);
-        world.addObject(message, xPos, yPos);
-    }    
+    
 }

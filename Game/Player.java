@@ -109,6 +109,13 @@ public class Player extends Actor
             System.out.println("fall to the sea");
             fallToTheSea();
         }
+        
+        //touch bubble
+        Bubble bubble = (Bubble) getOneIntersectingObject(Bubble.class);
+        if(bubble != null){
+            System.out.println("tough bubble");
+            answerQuestion(bubble);
+        }
 
     }    
 
@@ -209,12 +216,13 @@ public class Player extends Actor
         answerIncorrectCount++;
     }
 
-    public void answerQuestion(){
+    public void answerQuestion(Bubble b){
+        b.destroy();
         //TODO check answer
         if(true){
-            state.answerCorrect();
+            //state.answerCorrect();
         }else{
-            state.answerIncorrect();
+           // state.answerIncorrect();
         }
     }
 

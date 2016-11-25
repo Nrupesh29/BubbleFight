@@ -15,8 +15,14 @@ public class GameSystem extends Actor
     private int seaMinX = 200;
     private int seaMaxX = 900;
 
-    public GameSystem(){
+    QAManager pqManager;
 
+    public GameSystem(QAManager qa){
+        pqManager = qa;
+    }
+
+    public void startGame(){
+        pqManager.generateQuestion();
     }
 
     public void act() 

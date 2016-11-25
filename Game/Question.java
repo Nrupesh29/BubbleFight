@@ -8,12 +8,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Question extends Message
 {
-    /**
-     * Act - do whatever the Question wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private Answer answer;
+    public Question(String question, Answer a)  
+    {
+        super(question);
+        answer = a;
+    }
+
     public void act() 
     {
         // Add your action code here.
     }    
+    
+    public void updateLocation(int x, int y){
+        setLocation(x,y);
+    }
 }

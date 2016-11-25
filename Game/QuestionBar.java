@@ -8,18 +8,26 @@ import java.util.TimerTask;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class QuestionBar extends Actor
+public class QuestionBar extends Actor implements IObserver
 {
-    /**
-     * Act - do whatever the Question wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    QAManager pqManager;
+
     public void act() 
     {
         // Message message = new Message();
         // message.setMessage(getWorld(), "1001 + 1101 + 1010", 630, getY());
-        
+
+    }    
+
+    public QuestionBar(QAManager qa){
+        pqManager = qa;
+        // .updateLocation();
+        //getWorld().addObject(pqManager.getQuestion(),630,45);
         // TimerMessage m = new TimerMessage();
         // m.setMessage(getWorld(), "02:00", 380, getY());
-    }    
+    }
+
+    public void updateQuestion(){
+        getWorld().addObject(pqManager.getQuestion(),630,45);
+    };
 }

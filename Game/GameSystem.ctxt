@@ -1,8 +1,10 @@
 #BlueJ class context
 comment0.target=GameSystem
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameSystem\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=
-comment1.target=GameSystem()
+comment1.params=qa
+comment1.target=GameSystem(QAManager)
 comment2.params=
-comment2.target=void\ act()
-numComments=3
+comment2.target=void\ startGame()
+comment3.params=
+comment3.target=void\ act()
+numComments=4

@@ -19,8 +19,10 @@ public class PlayWorld extends World
         super(1150, 600, 1);
         // GreenfootImage background = new GreenfootImage("playBackground.png");
         // setBackground(background);
-        // AnswerManager answerManager = new AnswerManager();
-        // addObject(answerManager, 0, 0);
+        QAManager qaManager = new QAManager();
+        QuestionBar questionBar = new QuestionBar(qaManager);
+
+        qaManager.attach(questionBar);
 
         Message life1 = new Message();
         life1.setMessage(this, "x2", 50, 50);
@@ -33,7 +35,7 @@ public class PlayWorld extends World
         blueBird.setEnemy(redBird);
         redBird.setEnemy(blueBird); 
 
-        addObject( new QuestionBar(), 580, 45 ) ;
+        addObject( questionBar, 580, 45 ) ;
         addObject( new Sea(), 570, 800 ) ;
         addObject( new LeftStone(), 50, 800 ) ;
         addObject( new RightStone(), 1100, 800 ) ;
@@ -44,9 +46,9 @@ public class PlayWorld extends World
         addObject( new Energy100(), 1105, 20 ) ;
         addObject( new Energy100(), 45, 20 ) ;
 
-        GameSystem gamesystem = new GameSystem();
+        GameSystem gamesystem = new GameSystem(qaManager);
         addObject(gamesystem,855,42);
-        prepare();
+        gamesystem.startGame();
     }
 
     /**

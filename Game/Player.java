@@ -8,12 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor 
 {
-    State protectedState;
-    State unProtectedState;
+
     State unBeatableState;
     State rebirthState;
     State loseState;
     State winState;
+    State energyState;
+    State normalState;
 
     State state;
     int lifeCount;
@@ -43,19 +44,27 @@ public class Player extends Actor
     private Energy energyBar;
     private int energyCount;
 
+    private int width;
+    private int height;
+
     private GameSystem gameSystem;
 
     public Player(World w,GameSystem gs, boolean isLeft, boolean controllable, int c){
 
+        width = getImage().getWidth();
+        height = getImage().getHeight();
+
         world=w;
         gameSystem = gs;
-        protectedState = new ProtectedState(this);
-        unProtectedState = new UnProtectedState(this);
+
         unBeatableState = new UnBeatableState(this);
         rebirthState = new RebirthState(this);
         loseState = new LoseState(this);
         winState = new WinState(this);
-        state = protectedState;
+        energyState = new EnergyState(this);
+        normalState = new NormalState(this);
+
+        setState(unBeatableState);
 
         lifeCount = 2;
         energyCount = 0;
@@ -75,6 +84,7 @@ public class Player extends Actor
             playerLocations = playerLocations2;
 
         }
+
         setUpPlayer();
 
     }
@@ -136,6 +146,13 @@ public class Player extends Actor
             answerQuestion(bubble);
         }
 
+        //touch enemy
+        Player e = (Player) getOneObjectAtOffset(width/2 * (isLeft?-1:1),-height/3,Player.class);
+        if(e != null && hasEnergy()){
+            System.out.println("try attack enemy");
+            doAttack();
+        }
+
     }    
 
     public void setUpPlayer(){
@@ -190,13 +207,17 @@ public class Player extends Actor
         enemy = p;
     }
 
+    public Player getEnemy(){
+        return enemy;
+    }
+
     public void setState(State s){
         state = s;
         System.out.println("state: " +s);     
         if(state instanceof RebirthState){
             System.out.println("rebirth");
 
-        }
+        }                    
         state.initialize();
 
     }
@@ -205,12 +226,12 @@ public class Player extends Actor
         return state;
     }
 
-    public State getProtectedState() {
-        return protectedState;
+    public State getNormalState() {
+        return normalState;
     }
 
-    public State getUnProtectedState() {
-        return unProtectedState;
+    public State getEnergyState() {
+        return energyState;
     }
 
     public State getUnBeatableState() {
@@ -242,16 +263,16 @@ public class Player extends Actor
         return lifeCount > 0;
     }
 
-    public boolean isProtected(){
-        return protectionCount > 0;
+    public boolean hasEnergy(){
+        return energyCount >= 2;
     }
 
     public void loseOneProtection(){
         protectionCount--;
     }
 
-    public void beAttack(){
-        state.beAttack();
+    public void doAttack(){
+        state.doAttack();
     }
 
     public void addCorrectAnswer(){
@@ -265,16 +286,16 @@ public class Player extends Actor
 
     public void answerQuestion(Bubble b){
         b.destroy();
-        //TODO check answer
+
         if(gameSystem.checkQuestion(b.getAnswer())){
             System.out.println("correct");
-            //state.answerCorrect();
             energyCount++;
             updateEnergyBar();
             gameSystem.generateQuestion();
+            state.answerCorrect();
         }else{
             System.out.println("incorrect");
-            // state.answerIncorrect();
+            state.answerIncorrect();
         }
     }
 

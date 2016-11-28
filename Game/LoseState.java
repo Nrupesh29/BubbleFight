@@ -14,7 +14,7 @@ public class LoseState implements State
 
     public void fallToTheSea(){};
 
-    public void doAttack(Player p){
+    public void doAttack(){
     };
 
     public void beAttack(){

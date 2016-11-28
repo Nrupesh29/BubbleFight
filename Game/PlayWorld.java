@@ -17,9 +17,7 @@ public class PlayWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1150, 600, 1);
-        // GreenfootImage background = new GreenfootImage("playBackground.png");
-        // setBackground(background);
-
+     
         QAManager qaManager = new QAManager();
         QuestionBar questionBar = new QuestionBar(qaManager);
 
@@ -28,10 +26,6 @@ public class PlayWorld extends World
         GameSystem gamesystem = new GameSystem(qaManager);
         addObject(gamesystem,855,42);
 
-        // Message life1 = new Message();
-        // life1.setMessage(this, "x2", 50, 50);
-        // Message life2 = new Message();
-        // life2.setMessage(this, "x2", 1130, 50);
 
         // birds        
         Player blueBird = new BlueBird(this,gamesystem, true, 2);
@@ -45,10 +39,6 @@ public class PlayWorld extends World
         addObject( new RightStone(), 1100, 800 ) ;
         addObject( blueBird, 50, 500 ) ;
         addObject( redBird, 1100, 500 ) ;
-        // addObject( new Life(this,50,50), 18, 50 ) ;
-        // addObject( new Life(this,1130,50), 1100, 50 ) ;
-        // addObject( new Energy100(), 1105, 20 ) ;
-        // addObject( new Energy100(), 45, 20 ) ;
 
         gamesystem.startGame();
     }

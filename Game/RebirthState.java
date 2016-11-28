@@ -13,6 +13,7 @@ public class RebirthState implements State
     };
 
     public void initialize(){
+        player.setToOriginLocation();
         if(player.isAlive()){
             player.setState(player.getUnBeatableState());            
         }else{
@@ -24,7 +25,7 @@ public class RebirthState implements State
 
     public void fallToTheSea(){};
 
-    public void doAttack(Player p){
+    public void doAttack(){
 
     };
 

@@ -1,40 +1,43 @@
 
 /**
- * Write a description of class ProtectedState here.
+ * Write a description of class RebirthState here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class ProtectedState implements State
+public class NormalState implements State
 {
     private Player player;
-    public ProtectedState(Player player){
+    public NormalState(Player player){
         this.player = player;
     };
-    
-    public void initialize(){};
+
+    public void initialize(){
+        if(player.hasEnergy()){
+            player.setState(player.getEnergyState());
+        }
+    };
 
     public void answerIncorrect(){
-        player.addIncorrectAnswer();
         player.setState(player.getRebirthState());
     };
 
     public void fallToTheSea(){
-        //remove 1 life
+        player.loseLife();
+        player.setState(player.getRebirthState());
+    };
+
+    public void doAttack(){
+
+    };
+
+    public void beAttack(){
         player.loseLife();
         player.setState(player.getRebirthState());
 
     };
 
-    public void doAttack(Player p){
-        p.beAttack();
-    };
-
-    public void beAttack(){
-        //System.out.println("User is protected");
-    };
-
     public void answerCorrect(){
-        player.addCorrectAnswer();
+        initialize();
     };
 }

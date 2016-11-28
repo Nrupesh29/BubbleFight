@@ -10,7 +10,7 @@ import java.util.Random;
 public class GameSystem extends Actor
 {
     public int pause = 50;
-    private int speed = 4;
+    private int speed = 3;
     private int seaY = 800;
     private int seaMinX = 200;
     private int seaMaxX = 900;

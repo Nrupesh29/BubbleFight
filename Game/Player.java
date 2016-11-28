@@ -15,13 +15,14 @@ public class Player extends Actor
     State loseState;
     State winState;
 
-    State state = protectedState;
+    State state;
     int lifeCount;
     int protectionCount;
     int answerCorrectCount;
     int answerIncorrectCount;
 
     Player enemy;
+    World world;
 
     public String name;
 
@@ -33,18 +34,31 @@ public class Player extends Actor
     private final String[] controller1 = {"up","down","left","right"};
     private final String[] controller2 = {"w","s","a","d"};
     private String[] controller = null;
+    private final int[] playerLocations1 = {1130,50, 1100, 50, 1105, 20};
+    private final int[] playerLocations2 = {50,50,18, 50,45, 20};
+    private int[] playerLocations;    
     private int originX = 0;
     private int originY = 0;
+    private Life life;
+    private Energy energyBar;
+    private int energyCount;
 
-    public Player(boolean isLeft, boolean controllable, int c){
+    private GameSystem gameSystem;
+
+    public Player(World w,GameSystem gs, boolean isLeft, boolean controllable, int c){
+
+        world=w;
+        gameSystem = gs;
         protectedState = new ProtectedState(this);
         unProtectedState = new UnProtectedState(this);
         unBeatableState = new UnBeatableState(this);
         rebirthState = new RebirthState(this);
         loseState = new LoseState(this);
         winState = new WinState(this);
+        state = protectedState;
 
         lifeCount = 2;
+        energyCount = 0;
         protectionCount = 2;
         answerCorrectCount = 0;
         answerIncorrectCount = 0;
@@ -54,9 +68,14 @@ public class Player extends Actor
 
         if(c == 1){            
             this.controller = controller1;
+            playerLocations = playerLocations1;
+
         }else{
-            this.controller = controller2;            
+            this.controller = controller2;     
+            playerLocations = playerLocations2;
+
         }
+        setUpPlayer();
 
     }
 
@@ -65,8 +84,8 @@ public class Player extends Actor
         //set origin
         if(originX == 0 && originY == 0){
             //System.out.println(this.getX());
-        originX = this.getX();
-        originY = this.getY();
+            originX = this.getX();
+            originY = this.getY();
         }
 
         // controller by key
@@ -109,7 +128,7 @@ public class Player extends Actor
             System.out.println("fall to the sea");
             fallToTheSea();
         }
-        
+
         //touch bubble
         Bubble bubble = (Bubble) getOneIntersectingObject(Bubble.class);
         if(bubble != null){
@@ -118,6 +137,26 @@ public class Player extends Actor
         }
 
     }    
+
+    public void setUpPlayer(){
+        life = new Life(world,playerLocations[0],playerLocations[1],lifeCount);
+        world.addObject( life, playerLocations[2],playerLocations[3] ) ;          
+        energyBar = new Energy0();
+        world.addObject( energyBar, playerLocations[4],playerLocations[5] ) ;        
+    }
+
+    public void updateEnergyBar(){
+        if(energyCount == 1){
+            world.removeObject( energyBar );
+            energyBar = new Energy50();
+            world.addObject( energyBar, playerLocations[4],playerLocations[5] ) ;        
+        }
+        if(energyCount > 1){
+            world.removeObject( energyBar );
+            energyBar = new Energy100();
+            world.addObject( energyBar, playerLocations[4],playerLocations[5] ) ;        
+        }
+    }
 
     public void flipImage(){
         GreenfootImage img = getImage();
@@ -153,6 +192,13 @@ public class Player extends Actor
 
     public void setState(State s){
         state = s;
+        System.out.println("state: " +s);     
+        if(state instanceof RebirthState){
+            System.out.println("rebirth");
+
+        }
+        state.initialize();
+
     }
 
     public State getState() {
@@ -189,6 +235,7 @@ public class Player extends Actor
 
     public void loseLife(){
         lifeCount--;
+        life.loseLife();
     }
 
     public boolean isAlive(){
@@ -219,10 +266,15 @@ public class Player extends Actor
     public void answerQuestion(Bubble b){
         b.destroy();
         //TODO check answer
-        if(true){
+        if(gameSystem.checkQuestion(b.getAnswer())){
+            System.out.println("correct");
             //state.answerCorrect();
+            energyCount++;
+            updateEnergyBar();
+            gameSystem.generateQuestion();
         }else{
-           // state.answerIncorrect();
+            System.out.println("incorrect");
+            // state.answerIncorrect();
         }
     }
 
@@ -233,6 +285,6 @@ public class Player extends Actor
     }
 
     public void setToOriginLocation(){
-         setLocation(originX,originY);
+        setLocation(originX,originY);
     }
 }

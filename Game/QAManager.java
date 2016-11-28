@@ -11,19 +11,45 @@ public class QAManager extends Actor implements IObject
 {
     private Question question;
     private ArrayList<IObserver> observers = new ArrayList<>();
-    public QAManager(){
+    private int delay = 0;
+    Random random;
 
+    public QAManager(){
+        random = new Random();
     }
-    
+
     public void generateQuestion(){
-        Random r = new Random();
-        int a = r.nextInt(50-1) + 1;
-        int b = r.nextInt(50-1) + 1;
+
+        int a = random.nextInt(50-1) + 1;
+        int b = random.nextInt(50-1) + 1;
         System.out.println(Integer.toBinaryString(a));
         System.out.println(Integer.toBinaryString(b));
         Answer answer = new Answer((a+b)+"");
+        if(question != null){
+            question.destroy();
+        }
         question = new Question(Integer.toBinaryString(a) + " + " + Integer.toBinaryString(b),answer);
         notifyUpdateQuestion();
+    }
+
+    public Answer generateAnswer(){
+        //add delay for incorrect answer
+        if(delay == 0){
+            delay = random.nextInt(6-2) + 2;
+        }
+
+        delay--;
+
+        if(delay == 0){
+            return new Answer(getQuestion().getAnswer().getMessage());
+        }
+
+        return new Answer(random.nextInt(99)+"");
+
+    }
+    
+    public boolean checkQuestion(Answer a){
+        return a.getMessage() == question.getAnswer().getMessage();
     }
 
     public Question getQuestion(){
@@ -32,17 +58,17 @@ public class QAManager extends Actor implements IObject
 
     public void attach(IObserver o){
         observers.add(o);
-    };
+    }
 
     public void detach(IObserver o){
         observers.remove(o);
-    };
+    }
 
     public void notifyUpdateQuestion(){
         for(IObserver obj : observers){
             obj.updateQuestion();
         }
-    };
+    }
 
     public void act() 
     {

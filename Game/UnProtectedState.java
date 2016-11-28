@@ -11,7 +11,7 @@ public class UnProtectedState implements State
     public UnProtectedState(Player player){
         this.player = player;
     };
-
+    public void initialize(){};
     public void answerIncorrect(){
         player.addIncorrectAnswer();
         player.setState(player.getRebirthState());

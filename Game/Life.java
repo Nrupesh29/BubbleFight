@@ -8,10 +8,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Life extends Actor
 {
-    /**
-     * Act - do whatever the Life wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    Message life;
+    int lifeCount;
+    int x;
+    int y;
+    World world;
+    public Life(World w,int xc, int yc,int l){
+        lifeCount = l;
+        x=xc;
+        y=yc;
+        world = w;
+        life = new Message("x"+lifeCount);
+        world.addObject(life,x, y);
+
+    }
+
+    public void loseLife(){
+        if(lifeCount > 0){
+            lifeCount--;
+            life.destroy();
+            life = new Message("x"+lifeCount);
+            world.addObject(life,x, y);
+        }
+    }
+
     public void act() 
     {
         // Add your action code here.

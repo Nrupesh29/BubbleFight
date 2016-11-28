@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Answer extends Message
 {
-   
 
     public Answer(String labelText)  
     { 
@@ -21,12 +20,7 @@ public class Answer extends Message
     {
         // Add your action code here.
     }   
+    
 
-    public void updateLocation(int x, int y){
-        setLocation(x,y);
-    }
-
-    public void destroy(){
-        getWorld().removeObject(this);
-    }
+    
 }

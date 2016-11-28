@@ -9,7 +9,7 @@ public class LoseState implements State
 {
     public LoseState(Player player){
     };
-
+    public void initialize(){};
     public void answerIncorrect(){};
 
     public void fallToTheSea(){};

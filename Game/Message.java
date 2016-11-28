@@ -9,7 +9,7 @@ import java.awt.Color;
  */
 public class Message extends Actor
 {
-    private String message;
+    protected String message;
     public Message()
     {
 
@@ -21,13 +21,24 @@ public class Message extends Actor
         GreenfootImage label = new GreenfootImage(labelText,25,Color.black,null);  
         setImage(label);          
     }
+    
+    public void updateLocation(int x, int y){
+        setLocation(x,y);
+    }
 
     public void setMessage(World world, String labelText, int xPos, int yPos) {
         Actor message = new Message(labelText);
         world.addObject(message, xPos, yPos);
-    }    
-
+    }   
+    
+   
     public String getMessage(){
         return message;        
     }
+    
+    public void destroy(){
+        if(getWorld() != null){
+            getWorld().removeObject(this);
+        }
+   }
 }

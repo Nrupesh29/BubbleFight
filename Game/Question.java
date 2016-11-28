@@ -19,8 +19,9 @@ public class Question extends Message
     {
         // Add your action code here.
     }    
-    
-    public void updateLocation(int x, int y){
-        setLocation(x,y);
+
+
+    public Answer getAnswer(){
+        return answer;
     }
 }

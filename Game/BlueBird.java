@@ -14,8 +14,8 @@ public class BlueBird extends Player
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
 
-    public BlueBird( boolean controllable, int c){
-        super(false, controllable,c);
+    public BlueBird(World w,GameSystem gameSystem, boolean controllable, int c){
+        super(w,gameSystem,false, controllable,c);
 
     }
     

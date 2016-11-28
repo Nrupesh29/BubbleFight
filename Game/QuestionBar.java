@@ -28,6 +28,6 @@ public class QuestionBar extends Actor implements IObserver
     }
 
     public void updateQuestion(){
-        getWorld().addObject(pqManager.getQuestion(),630,45);
+        getWorld().addObject(pqManager.getQuestion(),630,40);
     };
 }

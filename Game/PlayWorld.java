@@ -19,19 +19,23 @@ public class PlayWorld extends World
         super(1150, 600, 1);
         // GreenfootImage background = new GreenfootImage("playBackground.png");
         // setBackground(background);
+
         QAManager qaManager = new QAManager();
         QuestionBar questionBar = new QuestionBar(qaManager);
 
         qaManager.attach(questionBar);
 
-        Message life1 = new Message();
-        life1.setMessage(this, "x2", 50, 50);
-        Message life2 = new Message();
-        life2.setMessage(this, "x2", 1130, 50);
+        GameSystem gamesystem = new GameSystem(qaManager);
+        addObject(gamesystem,855,42);
+
+        // Message life1 = new Message();
+        // life1.setMessage(this, "x2", 50, 50);
+        // Message life2 = new Message();
+        // life2.setMessage(this, "x2", 1130, 50);
 
         // birds        
-        Player blueBird = new BlueBird( true, 2);
-        Player redBird = new RedBird( true, 1);
+        Player blueBird = new BlueBird(this,gamesystem, true, 2);
+        Player redBird = new RedBird(this,gamesystem, true, 1);
         blueBird.setEnemy(redBird);
         redBird.setEnemy(blueBird); 
 
@@ -41,13 +45,11 @@ public class PlayWorld extends World
         addObject( new RightStone(), 1100, 800 ) ;
         addObject( blueBird, 50, 500 ) ;
         addObject( redBird, 1100, 500 ) ;
-        addObject( new Life(), 18, 50 ) ;
-        addObject( new Life(), 1100, 50 ) ;
-        addObject( new Energy100(), 1105, 20 ) ;
-        addObject( new Energy100(), 45, 20 ) ;
+        // addObject( new Life(this,50,50), 18, 50 ) ;
+        // addObject( new Life(this,1130,50), 1100, 50 ) ;
+        // addObject( new Energy100(), 1105, 20 ) ;
+        // addObject( new Energy100(), 45, 20 ) ;
 
-        GameSystem gamesystem = new GameSystem(qaManager);
-        addObject(gamesystem,855,42);
         gamesystem.startGame();
     }
 

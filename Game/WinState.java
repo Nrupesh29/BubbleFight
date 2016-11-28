@@ -11,7 +11,7 @@ public class WinState implements State
     public WinState(Player player){
         this.player = player;
     };
-
+    public void initialize(){};
     public void answerIncorrect(){};
 
     public void fallToTheSea(){};

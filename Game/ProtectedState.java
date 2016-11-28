@@ -11,6 +11,8 @@ public class ProtectedState implements State
     public ProtectedState(Player player){
         this.player = player;
     };
+    
+    public void initialize(){};
 
     public void answerIncorrect(){
         player.addIncorrectAnswer();

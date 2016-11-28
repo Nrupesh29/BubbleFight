@@ -13,10 +13,9 @@ public class RedBird extends Player
      * Act - do whatever the RedBird wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public RedBird( boolean controllable, int c){
-        super(true, controllable,c);
+    public RedBird(World w,GameSystem gameSystem,  boolean controllable, int c){
+        super(w,gameSystem,true, controllable,c);
 
     }
-   
-    
+
 }

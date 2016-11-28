@@ -21,6 +21,7 @@ public class Message extends Actor
         GreenfootImage label = new GreenfootImage(labelText,25,Color.black,null);  
         setImage(label);          
     }
+
     
     public void updateLocation(int x, int y){
         setLocation(x,y);

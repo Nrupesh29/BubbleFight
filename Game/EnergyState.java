@@ -1,4 +1,4 @@
-
+import java.awt.Color;
 /**
  * Write a description of class RebirthState here.
  * 
@@ -18,11 +18,13 @@ public class EnergyState implements State
 
     public void answerIncorrect(){
         player.setState(player.getRebirthState());
+        player.addNotification("Incorrect answer.\nRelocated.",Color.blue);
     };
 
     public void fallToTheSea(){
         player.loseLife();
         player.setState(player.getRebirthState());
+        player.addNotification("Fall to the sea.\nLose 1 life.",Color.red);
     };
 
     public void doAttack(){
@@ -32,8 +34,10 @@ public class EnergyState implements State
     public void beAttack(){
         player.loseLife();
         player.setState(player.getRebirthState());
-
+        player.addNotification("Is attacked.\nLose 1 life.",Color.red);
     };
 
-    public void answerCorrect(){};
+    public void answerCorrect(){
+        player.addNotification("Correct answer.\nGet 1 point.",Color.orange);
+    };
 }

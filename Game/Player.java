@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.awt.Color;
 /**
  * Write a description of class Bird here.
  * 
@@ -35,14 +35,15 @@ public class Player extends Actor
     private final String[] controller1 = {"up","down","left","right"};
     private final String[] controller2 = {"w","s","a","d"};
     private String[] controller = null;
-    private final int[] playerLocations1 = {1130,50, 1100, 50, 1105, 20};
-    private final int[] playerLocations2 = {50,50,18, 50,45, 20};
+    private final int[] playerLocations1 = {1130,50, 1100, 50, 1105, 20, 950, 100};
+    private final int[] playerLocations2 = {50,50,18, 50,45, 20,180, 100};
     private int[] playerLocations;    
     private int originX = 0;
     private int originY = 0;
     private Life life;
     private Energy energyBar;
     private int energyCount;
+    private Message notification;
 
     private int width;
     private int height;
@@ -93,7 +94,6 @@ public class Player extends Actor
     {
         //set origin
         if(originX == 0 && originY == 0){
-            //System.out.println(this.getX());
             originX = this.getX();
             originY = this.getY();
         }
@@ -107,8 +107,6 @@ public class Player extends Actor
             }else{
                 checkFall();
             }
-            // if(Greenfoot.isKeyDown("down"))
-            // setLocation(getX(), getY() + speed);
 
             if(Greenfoot.isKeyDown(controller[2])){
                 setLocation(getX() - speed, getY());
@@ -162,12 +160,18 @@ public class Player extends Actor
         world.addObject( energyBar, playerLocations[4],playerLocations[5] ) ;        
     }
 
+    public void addNotification(String s, Color color){
+        notification = new Notification(s,color);
+        world.addObject(notification,playerLocations[6],playerLocations[7]);
+    }
+
     public void updateEnergyBar(){
         if(energyCount == 1){
             world.removeObject( energyBar );
             energyBar = new Energy50();
             world.addObject( energyBar, playerLocations[4],playerLocations[5] ) ;        
         }
+        
         if(energyCount > 1){
             world.removeObject( energyBar );
             energyBar = new Energy100();

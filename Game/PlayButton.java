@@ -14,7 +14,7 @@ public class PlayButton extends Button
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public PlayButton(){
-         Greenfoot.setWorld(new PlayWorld());
+       
     }
     public void act() 
     {

@@ -17,7 +17,7 @@ public class PlayWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1150, 600, 1);
-     
+        
         QAManager qaManager = new QAManager();
         QuestionBar questionBar = new QuestionBar(qaManager);
 
@@ -25,7 +25,6 @@ public class PlayWorld extends World
 
         GameSystem gamesystem = new GameSystem(qaManager);
         addObject(gamesystem,855,42);
-
 
         // birds        
         Player blueBird = new BlueBird(this,gamesystem, true, 2);
@@ -43,5 +42,4 @@ public class PlayWorld extends World
         gamesystem.startGame();
     }
 
-   
 }

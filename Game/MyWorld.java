@@ -21,6 +21,9 @@ public class MyWorld extends World
         //setBackground(background);
         addObject( new PlayButton(), 420, 400 ) ;
         addObject( new HelpButton(), 580, 400 ) ;
-        addObject( new ExitButton(), 740, 400 ) ; 
+        addObject( new ExitButton(), 740, 400 ) ;
+        
+        //test
+          Greenfoot.setWorld(new PlayWorld());
     }
 }

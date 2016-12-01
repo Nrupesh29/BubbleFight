@@ -21,5 +21,17 @@
 | GET     | `{base_url}/player/{id}` | | List player with specified **`id`** |
 | GET     | `{base_url}/player/search/{term}` | | List player with name containing specified **`term`** |
 | POST     | `{base_url}/player`| `name` | Add a new player |
-| DELETE     | `{base_url}/player/{id}` | | Delete tournament with specified **`id`** |
+| DELETE     | `{base_url}/player/{id}` | | Delete player with specified **`id`** |
 | PUT     | `{base_url}/player/{id}`| `name` | Update player with specified **`id`** |
+
+
+### Level API Calls
+
+| Request | Endpoint     | Parameters |Description                 |
+|---------|--------------|------------- | -----------------------------|
+| GET     | `{base_url}/levels` | | List all levels |
+| GET     | `{base_url}/level/{id}` | | List level with specified **`id`** |
+| GET     | `{base_url}/level/search/{term}` | | List level with name containing specified **`term`** |
+| POST     | `{base_url}/level`| `name` | Add a new level |
+| DELETE     | `{base_url}/level/{id}` | | Delete level with specified **`id`** |
+| PUT     | `{base_url}/level/{id}`| `name` | Update level with specified **`id`** |

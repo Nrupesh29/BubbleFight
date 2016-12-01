@@ -1,0 +1,190 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', 'Noto', sans-serif;
+  background-color: #eee;
+  padding-bottom: 50px; }
+
+.fixed-side {
+  bottom: 0 !important; }
+
+.main app-header #toggle {
+  color: black; }
+.main app-header[shadow] #toggle {
+  color: white; }
+.main app-header app-toolbar h1 {
+  color: black; }
+.main app-header app-toolbar paper-button {
+  font-size: 14px;
+  padding-right: 15px; }
+  .main app-header app-toolbar paper-button paper-icon-button {
+    width: 25px;
+    height: 25px;
+    padding: 5px; }
+.main app-drawer-layout {
+  position: relative; }
+.main .app-drawer-layout {
+  z-index: 1; }
+.main app-drawer {
+  position: static;
+  height: 100%;
+  top: 0;
+  bottom: auto; }
+  .main app-drawer .app-drawer {
+    min-height: calc(100vh - 242px);
+    padding: 0 !important; }
+.main .item-list paper-card {
+  margin: 20px 0;
+  height: 300px;
+  width: 100%; }
+  .main .item-list paper-card .card-content {
+    overflow: hidden; }
+  .main .item-list paper-card .header {
+    height: 200px; }
+  .main .item-list paper-card .title h4 {
+    width: calc(100% - 40px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; }
+  .main .item-list paper-card .price {
+    position: absolute;
+    top: 30px;
+    right: 20px; }
+  .main .item-list paper-card.small iron-image {
+    padding: 0 20px; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #f5f5f5;
+  padding: 10px; }
+
+.iron-selected {
+  color: green; }
+
+#loginModal, #createUserModal, #signUpModal {
+  width: 400px;
+  left: calc(50% - 200px); }
+  #loginModal .close, #createUserModal .close, #signUpModal .close {
+    position: absolute;
+    right: 0;
+    top: 0; }
+
+.users-list paper-card {
+  margin-bottom: 20px;
+  background: #00bcd4;
+  width: 100%; }
+  .users-list paper-card ul {
+    height: 160px;
+    overflow-y: auto; }
+
+paper-card {
+  overflow: hidden; }
+  paper-card .tool-bar {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+    paper-card .tool-bar paper-dropdown-menu {
+      margin-top: -10px; }
+
+paper-button.blue {
+  background: #106cc8;
+  color: white; }
+paper-button.green {
+  background: yellowgreen;
+  color: black; }
+paper-button paper-spinner {
+  margin-right: 10px; }
+
+/*product-wrapper*/
+.product-wrapper img {
+  height: 300px; }
+
+.tournament-wrapper .status {
+  color: green; }
+
+.tournament-group {
+  width: 700px;
+  margin: auto; }
+  .tournament-group ul {
+    list-style: none;
+    padding-left: 20px; }
+    .tournament-group ul .item {
+      position: relative; }
+      .tournament-group ul .item .image {
+        position: absolute;
+        top: -50px; }
+        .tournament-group ul .item .image > img {
+          display: inline-block;
+          height: 40px; }
+          .tournament-group ul .item .image > img:nth-child(1) {
+            position: absolute;
+            left: 10px;
+            top: -25px; }
+          .tournament-group ul .item .image > img:nth-child(2) {
+            position: absolute;
+            left: 40px; }
+          .tournament-group ul .item .image > img:nth-child(3) {
+            position: absolute;
+            top: -25px;
+            left: 84px; }
+      .tournament-group ul .item .text {
+        position: absolute;
+        font-size: 20px;
+        width: 150px;
+        left: 0;
+        bottom: -29px;
+        text-align: center; }
+      .tournament-group ul .item div:not(.bar):not(.image):not(.text) {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 2px 0;
+        background: #2185c5;
+        color: white;
+        border-radius: 5px;
+        width: 150px;
+        text-align: center;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap; }
+      .tournament-group ul .item:before {
+        content: "";
+        width: 50px;
+        border-top: 3px solid #2185c5;
+        position: absolute;
+        left: 150px;
+        top: 15px; }
+      .tournament-group ul .item.lv-2 {
+        margin-left: 250px; }
+        .tournament-group ul .item.lv-2 .text {
+          bottom: -70px; }
+        .tournament-group ul .item.lv-2:after {
+          content: "";
+          width: 50px;
+          border-top: 3px solid #2185c5;
+          position: absolute;
+          left: -50px;
+          top: 15px; }
+        .tournament-group ul .item.lv-2 .bar {
+          position: absolute;
+          border-left: 3px solid #2185c5;
+          height: 207%;
+          top: -62%;
+          left: -50px; }
+      .tournament-group ul .item.lv-3 {
+        margin-left: 500px; }
+        .tournament-group ul .item.lv-3:before {
+          right: auto;
+          left: -50px; }
+        .tournament-group ul .item.lv-3 .bar {
+          position: absolute;
+          border-left: 3px solid #2185c5;
+          height: 406%;
+          top: -162%;
+          left: -50px; }
+
+.cl-green {
+  color: green; }
+
+/*# sourceMappingURL=style.css.map */

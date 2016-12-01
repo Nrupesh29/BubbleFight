@@ -65,6 +65,11 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
     * **RDS_PASSWORD** – The Master Password that you entered when you added the database to your environment.
 27. Choose Apply.
 
+### Creating Database Tables
+1. Download MySQL Workbench and connect to DB Instance using Endpoint.
+2. Go to [MySQL Database] (Cloud Backend/MySQL Database) folder in repository and download the `tables.sql` file.
+3. Execute the `tables.sql` script after selecting the database.
+
 ## Contributing
 
 1. Search previous suggestions before making a new one, as your's may be a duplicate.

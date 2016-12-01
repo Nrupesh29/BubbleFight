@@ -1,6 +1,6 @@
 # Game API Calls
 
-[//]: # (Base Url : http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/)
+Base Url : http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/
 
 ### Tournament API Calls
 
@@ -47,3 +47,10 @@
 | POST     | `{base_url}/match`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` | Add a new match |
 | DELETE     | `{base_url}/match/{id}` | | Delete match with specified **`id`** |
 | PUT     | `{base_url}/match/{id}`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` | Update match with specified **`id`** |
+
+
+
+## Contributor
+
+| [![Nrupesh Patel](https://avatars.githubusercontent.com/nrupesh29?s=100)<br /><sub>Nrupesh Patel<br />CMPE 202 - 03</sub>](https://github.com/Nrupesh29)<br /> |
+| :---: |

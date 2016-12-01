@@ -20,7 +20,7 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 6. Select Web server environment in Environment tier.
 7. Choose PHP in Platform.
 8. Select upload your code in Application Code option.
-9. Download the Elastic Beanstalk folder from the repository and upload it.
+9. Download the [Backend API] (Backend API) folder from the repository and upload it.
 10. Click Create Environment.
 
 ### MySQL Database Connection with EBS

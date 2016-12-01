@@ -198,7 +198,7 @@ paper-button {
         bottom: -29px;
         text-align: center;
       }
-      div:not(.bar):not(.image):not(.text) {
+      .name {
         display: inline-block;
         padding: 5px 10px;
         margin: 2px 0;
@@ -206,10 +206,15 @@ paper-button {
         color: white;
         border-radius: 5px;
         width: 150px;
+        height: 30px;
         text-align: center;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
+      }
+      input.name{
+        margin-bottom: 8px;
+        border: 2px solid black;
       }
       &:before {
         content: "";

@@ -136,7 +136,7 @@ paper-button paper-spinner {
         left: 0;
         bottom: -29px;
         text-align: center; }
-      .tournament-group ul .item div:not(.bar):not(.image):not(.text) {
+      .tournament-group ul .item .name {
         display: inline-block;
         padding: 5px 10px;
         margin: 2px 0;
@@ -144,10 +144,14 @@ paper-button paper-spinner {
         color: white;
         border-radius: 5px;
         width: 150px;
+        height: 30px;
         text-align: center;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap; }
+      .tournament-group ul .item input.name {
+        margin-bottom: 8px;
+        border: 2px solid black; }
       .tournament-group ul .item:before {
         content: "";
         width: 50px;

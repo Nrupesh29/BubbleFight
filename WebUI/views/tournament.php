@@ -12,7 +12,9 @@
                     </paper-button>
                 </div>
                 <div class="card-content collapse" id="addTournamentCollapse">
-                    New Tournament
+                    <?php
+                    include "views/tournament.add.php";
+                    ?>
                 </div>
             </paper-card>
         </div>
@@ -28,24 +30,24 @@
                     <div class="tournament-group">
                         <ul>
                             <li class="item">
-                                <div>Name 1</div>
+                                <div class="name">Name 1</div>
                                 <div class="text">
                                     VS
                                 </div>
                             </li>
                             <li class="item lv-2">
                                 <div class="bar"></div>
-                                <div>Name 1</div>
+                                <div  class="name">Winner 1</div>
                                 <div class="text">
                                     VS
                                 </div>
                             </li>
                             <li class="item">
-                                <div>Name 1</div>
+                                <div  class="name">Name 1</div>
                             </li>
                             <li class="item lv-3">
                                 <div class="bar"></div>
-                                <div>Name 1</div>
+                                <div class="name">Final Winner</div>
                                 <div class="image">
                                     <img src="assets/images/blue-bird.png" alt="">
                                     <img src="assets/images/crown.png" alt="">
@@ -53,17 +55,17 @@
                                 </div>
                             </li>
                             <li class="item">
-                                <div>Name 1</div>
+                                <div class="name">Name 1</div>
                                 <div class="text">
                                     2 - 0
                                 </div>
                             </li>
                             <li class="item lv-2">
                                 <div class="bar"></div>
-                                <div>Name 1</div>
+                                <div class="name">Winner 2</div>
                             </li>
                             <li class="item">
-                                <div>Name 1</div>
+                                <div class="name">Name 1</div>
                             </li>
                         </ul>
                     </div>

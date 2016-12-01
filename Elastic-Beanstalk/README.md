@@ -12,3 +12,14 @@
 | POST     | `{base_url}/tournament`| `name` <br /> `maxplayers` | Add a new tournament |
 | DELETE     | `{base_url}/tournament/{id}` | | Delete tournament with specified **`id`** |
 | PUT     | `{base_url}/tournament/{id}`| `name` <br /> `maxplayers` | Update tournament with specified **`id`** |
+
+### Player API Calls
+
+| Request | Endpoint     | Parameters |Description                 |
+|---------|--------------|------------- | -----------------------------|
+| GET     | `{base_url}/players` | | List all players |
+| GET     | `{base_url}/player/{id}` | | List player with specified **`id`** |
+| GET     | `{base_url}/player/search/{term}` | | List player with name containing specified **`term`** |
+| POST     | `{base_url}/player`| `name` | Add a new player |
+| DELETE     | `{base_url}/player/{id}` | | Delete tournament with specified **`id`** |
+| PUT     | `{base_url}/player/{id}`| `name` | Update player with specified **`id`** |

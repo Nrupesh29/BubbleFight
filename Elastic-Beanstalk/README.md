@@ -13,6 +13,7 @@
 | DELETE     | `{base_url}/tournament/{id}` | | Delete tournament with specified **`id`** |
 | PUT     | `{base_url}/tournament/{id}`| `name` <br /> `maxplayers` | Update tournament with specified **`id`** |
 
+
 ### Player API Calls
 
 | Request | Endpoint     | Parameters |Description                 |
@@ -35,3 +36,14 @@
 | POST     | `{base_url}/level`| `name` | Add a new level |
 | DELETE     | `{base_url}/level/{id}` | | Delete level with specified **`id`** |
 | PUT     | `{base_url}/level/{id}`| `name` | Update level with specified **`id`** |
+
+
+### Match API Calls
+
+| Request | Endpoint     | Parameters |Description                 |
+|---------|--------------|------------- | -----------------------------|
+| GET     | `{base_url}/matches` | | List all matches |
+| GET     | `{base_url}/match/{id}` | | List match with specified **`id`** |
+| POST     | `{base_url}/match`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` | Add a new match |
+| DELETE     | `{base_url}/match/{id}` | | Delete match with specified **`id`** |
+| PUT     | `{base_url}/match/{id}`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` | Update match with specified **`id`** |

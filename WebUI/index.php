@@ -117,10 +117,6 @@
 </head>
 <body class="fullbleed main" unresolved>
 
-<?php
-include 'service/mysql.php';
-
-?>
 
 <?php
 $page = "";
@@ -213,5 +209,6 @@ if (isset($_GET["page"])) {
     </div>
 </footer>
 
+<script src="service/curl.js"></script>
 </body>
 </html>

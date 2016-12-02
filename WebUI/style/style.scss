@@ -163,6 +163,11 @@ paper-button {
 .tournament-group {
   width: 700px;
   margin: auto;
+  input{
+    &::-webkit-input-placeholder{
+      color: yellow;
+    }
+  }
   ul {
     list-style: none;
     padding-left: 20px;

@@ -1,7 +1,5 @@
 # Game API Calls
 
-Base Url : http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/
-
 ### Tournament API Calls
 
 | Request | Endpoint     | Parameters |Description                 |

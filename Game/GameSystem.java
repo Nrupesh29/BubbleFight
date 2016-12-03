@@ -1,5 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Random;
+import org.restlet.*;
+import org.restlet.resource.ClientResource;
+import org.restlet.ext.json.JsonRepresentation;
+import org.json.*;
 
 /**
  * Write a description of class GameSystem here.
@@ -20,12 +24,24 @@ public class GameSystem extends Actor
     private long start = 0;
     private long current = 0;
 
+    private final String API_URL = "http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/";
+
     TimerMessage timerMessage;
 
     QAManager pqManager;
 
-    public GameSystem(QAManager qa){
+    public GameSystem(QAManager qa) {
         pqManager = qa;
+        try {
+            getAllPlayers();
+
+        } catch (Exception e){
+
+            // Deal with e as you please.
+            //e may be any type of exception at all.
+
+        }
+
     }
 
     public void startGame(){
@@ -33,6 +49,7 @@ public class GameSystem extends Actor
         createTimerMessage(second);
         start = System.currentTimeMillis();
         generateQuestion();
+
     }
 
     public void generateQuestion(){
@@ -80,4 +97,13 @@ public class GameSystem extends Actor
 
         }
     }    
+
+    public void getAllPlayers() throws Exception{
+        String url = API_URL + "players";
+        ClientResource helloClientresource = new ClientResource(url); 
+
+        JsonRepresentation rep = new JsonRepresentation(helloClientresource.get());
+        JSONObject  json = rep.getJsonObject();
+        System.out.println(json.toString());
+    }
 }

@@ -225,13 +225,14 @@ $app->get('/match/[{id}]', function ($request, $response, $args) {
 // Add a new match
 $app->post('/match', function ($request, $response) {
     $input = $request->getParsedBody();
-    $sql = "INSERT INTO matches (player_one_id, player_two_id, tournament_id, level_id, winner_id) VALUES (:playerOneId, :playerTwoId, :tournamentId, :levelId, :winnerId)";
+    $sql = "INSERT INTO matches (player_one_id, player_two_id, tournament_id, level_id, winner_id, matchdate) VALUES (:playerOneId, :playerTwoId, :tournamentId, :levelId, :winnerId), :matchDate";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("playerOneId", $input['playerOneId']);
     $sth->bindParam("playerTwoId", $input['playerTwoId']);
     $sth->bindParam("tournamentId", $input['tournamentId']);
     $sth->bindParam("levelId", $input['levelId']);
     $sth->bindParam("winnerId", $input['winnerId']);
+    $sth->bindParam("matchDate", $input['matchDate']);
     $sth->execute();
     $input['id'] = $this->db->lastInsertId();
     return $this->response->withJson($input);
@@ -251,7 +252,7 @@ $app->delete('/match/[{id}]', function ($request, $response, $args) {
 // Update match with given id
 $app->put('/match/[{id}]', function ($request, $response, $args) {
     $input = $request->getParsedBody();
-    $sql = "UPDATE matches SET player_one_id=:playerOneId, player_two_id=:playerTwoId, tournament_id=:tournamentId, level_id=:levelId, winner_id=:winnerId WHERE id=:id";
+    $sql = "UPDATE matches SET player_one_id=:playerOneId, player_two_id=:playerTwoId, tournament_id=:tournamentId, level_id=:levelId, winner_id=:winnerId, matchdate =:matchDate WHERE id=:id";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("id", $args['id']);
     $sth->bindParam("playerOneId", $input['playerOneId']);
@@ -259,6 +260,7 @@ $app->put('/match/[{id}]', function ($request, $response, $args) {
     $sth->bindParam("tournamentId", $input['tournamentId']);
     $sth->bindParam("levelId", $input['levelId']);
     $sth->bindParam("winnerId", $input['winnerId']);
+    $sth->bindParam("matchDate", $input['matchDate']);
     $sth->execute();
     $input['id'] = $args['id'];
     return $this->response->withJson($input);

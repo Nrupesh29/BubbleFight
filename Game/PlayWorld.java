@@ -52,14 +52,18 @@ public class PlayWorld extends World
         addObject( new RightStone(), 1100, 800 ) ;
         addObject( blueBird, 50, 500 ) ;
         addObject( redBird, 1100, 500 ) ;
-
+        //
+        player1 = new Message("Player 1");
+        player2 = new Message("Player 2");
+        addObject( player1, 50, 80) ;
+        addObject( player2, 1100, 80 ) ;
+        gameSystem.startGame();
     }
 
     public void startGame(){
         gameSystem.startGame();
         System.out.println(world.selectTW.tournament.getCurrent().player1.toString());
-        player1 = new Message("Player 1");
-        player2 = new Message("Player 1");
+
     }
 
 }

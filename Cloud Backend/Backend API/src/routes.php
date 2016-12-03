@@ -222,10 +222,19 @@ $app->get('/match/[{id}]', function ($request, $response, $args) {
     return $this->response->withJson($matches);
 });
 
+// retrieve all matchs with Tournament id
+$app->get('/match-tournament/[{id}]', function ($request, $response, $args) {
+    $sth = $this->db->prepare("SELECT * FROM matches WHERE tournament_id=:id");
+    $sth->bindParam("id", $args['id']);
+    $sth->execute();
+    $matches = $sth->fetchAll();
+    return $this->response->withJson($matches);
+});
+
 // Add a new match
 $app->post('/match', function ($request, $response) {
     $input = $request->getParsedBody();
-    $sql = "INSERT INTO matches (player_one_id, player_two_id, tournament_id, level_id, winner_id, matchdate) VALUES (:playerOneId, :playerTwoId, :tournamentId, :levelId, :winnerId), :matchDate";
+    $sql = "INSERT INTO matches (player_one_id, player_two_id, tournament_id, level_id, winner_id, matchdate, score) VALUES (:playerOneId, :playerTwoId, :tournamentId, :levelId, :winnerId, :matchDate, :matchScore)";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("playerOneId", $input['playerOneId']);
     $sth->bindParam("playerTwoId", $input['playerTwoId']);
@@ -233,6 +242,7 @@ $app->post('/match', function ($request, $response) {
     $sth->bindParam("levelId", $input['levelId']);
     $sth->bindParam("winnerId", $input['winnerId']);
     $sth->bindParam("matchDate", $input['matchDate']);
+    $sth->bindParam("matchScore", $input['matchScore']);
     $sth->execute();
     $input['id'] = $this->db->lastInsertId();
     return $this->response->withJson($input);
@@ -252,7 +262,7 @@ $app->delete('/match/[{id}]', function ($request, $response, $args) {
 // Update match with given id
 $app->put('/match/[{id}]', function ($request, $response, $args) {
     $input = $request->getParsedBody();
-    $sql = "UPDATE matches SET player_one_id=:playerOneId, player_two_id=:playerTwoId, tournament_id=:tournamentId, level_id=:levelId, winner_id=:winnerId, matchdate =:matchDate WHERE id=:id";
+    $sql = "UPDATE matches SET player_one_id=:playerOneId, player_two_id=:playerTwoId, tournament_id=:tournamentId, level_id=:levelId, winner_id=:winnerId, matchdate=:matchDate, score=:matchScore WHERE id=:id";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("id", $args['id']);
     $sth->bindParam("playerOneId", $input['playerOneId']);
@@ -261,6 +271,7 @@ $app->put('/match/[{id}]', function ($request, $response, $args) {
     $sth->bindParam("levelId", $input['levelId']);
     $sth->bindParam("winnerId", $input['winnerId']);
     $sth->bindParam("matchDate", $input['matchDate']);
+    $sth->bindParam("matchScore", $input['matchScore']);
     $sth->execute();
     $input['id'] = $args['id'];
     return $this->response->withJson($input);

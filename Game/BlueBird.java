@@ -18,7 +18,8 @@ public class BlueBird extends Player
         super(w,gameSystem,false, controllable,c);
 
     }
-    
-  
+
+    public BlueBird(){
+        super();}
 
 }

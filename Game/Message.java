@@ -22,7 +22,20 @@ public class Message extends Actor
         setImage(label);          
     }
 
+    public Message(String labelText, Color color)  
+    {
+        message = labelText;
+        GreenfootImage label = new GreenfootImage(labelText,25,color,null);  
+        setImage(label);     
+    }
     
+     public Message(String labelText, Color color, int size)  
+    {
+        message = labelText;
+        GreenfootImage label = new GreenfootImage(labelText,size,color,null);  
+        setImage(label);     
+    }
+
     public void updateLocation(int x, int y){
         setLocation(x,y);
     }
@@ -31,15 +44,14 @@ public class Message extends Actor
         Actor message = new Message(labelText);
         world.addObject(message, xPos, yPos);
     }   
-    
-   
+
     public String getMessage(){
         return message;        
     }
-    
+
     public void destroy(){
         if(getWorld() != null){
             getWorld().removeObject(this);
         }
-   }
+    }
 }

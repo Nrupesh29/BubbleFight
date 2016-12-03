@@ -10,9 +10,7 @@ public class Notification extends Message
 {
     public Notification(String labelText, Color color)  
     {
-        message = labelText;
-        GreenfootImage label = new GreenfootImage(labelText,25,color,null);  
-        setImage(label);     
+        super(labelText,color);
     }
 
     public void act() 

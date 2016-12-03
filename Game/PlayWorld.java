@@ -13,10 +13,17 @@ public class PlayWorld extends World
      * Constructor for objects of class PlayWorld.
      * 
      */
+    private MyWorld world;
     public PlayWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1150, 600, 1);
+        
+        
+    }
+    
+     public void setWorld(MyWorld w){
+        world = w;
         
         QAManager qaManager = new QAManager();
         QuestionBar questionBar = new QuestionBar(qaManager);
@@ -40,6 +47,7 @@ public class PlayWorld extends World
         addObject( redBird, 1100, 500 ) ;
 
         gamesystem.startGame();
+        
     }
 
 }

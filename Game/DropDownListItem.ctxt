@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DropDownListItem
+comment0.text=\r\n\ A\ drop-down\ list\ item.\r\n\ \r\n\ @author\ imacat\ <imacat@mail.imacat.idv.tw>\r\n\ @version\ 2014/02/12\r\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\r\n\ Things\ to\ do\ for\ each\ turn.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ checkSelected()
+comment2.text=\r\n\ Checks\ if\ this\ item\ is\ selected.\r\n\ \r\n
+numComments=3

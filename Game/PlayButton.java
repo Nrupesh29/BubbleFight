@@ -9,13 +9,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PlayButton extends Button
 {
     private boolean hovering;
-    /**
-     * Act - do whatever the PlayButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public PlayButton(){
-       
+    private World world;
+    private boolean flip;
+
+    public PlayButton(World w){
+        world = w;
     }
+
+    public PlayButton(World w, boolean f    ){
+        world = w;
+        flip = f;
+        if(flip){
+            flipImage();
+        }
+    }
+
     public void act() 
     {
         if (!hovering && Greenfoot.mouseMoved(this))
@@ -23,15 +31,27 @@ public class PlayButton extends Button
             //set red text image
             hovering = true;
             setImage(new GreenfootImage("playHoverButton.png"));
+            if(flip){
+                flipImage();
+            }
         }
         if (hovering && Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this))
         {
             // set blue text image
             hovering = false;
             setImage(new GreenfootImage("playButton.png"));
+             if(flip){
+                flipImage();
+            }
         }
         if (Greenfoot.mouseClicked(this)) {
-            Greenfoot.setWorld(new PlayWorld());
+            Greenfoot.setWorld(world);
         }
     }    
+
+    public void flipImage(){
+        GreenfootImage img = getImage();
+        img.mirrorHorizontally();
+        setImage(img);
+    }
 }

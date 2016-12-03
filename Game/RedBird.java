@@ -18,4 +18,6 @@ public class RedBird extends Player
 
     }
 
+    public RedBird(){
+        super();}
 }

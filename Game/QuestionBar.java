@@ -21,10 +21,6 @@ public class QuestionBar extends Actor implements IObserver
 
     public QuestionBar(QAManager qa){
         pqManager = qa;
-        // .updateLocation();
-        //getWorld().addObject(pqManager.getQuestion(),630,45);
-        // TimerMessage m = new TimerMessage();
-        // m.setMessage(getWorld(), "02:00", 380, getY());
     }
 
     public void updateQuestion(){

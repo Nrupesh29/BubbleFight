@@ -1,0 +1,4130 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6fcb8ef6, pid=8524, tid=0x00001ea4
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_92-b14) (build 1.8.0_92-b14)
+# Java VM: Java HotSpot(TM) Client VM (25.92-b14 mixed mode windows-x86 )
+# Problematic frame:
+# C  [t2k.dll+0x8ef6]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x15f0a800):  JavaThread "SimulationThread" [_thread_in_native, id=7844, stack(0x1c4a0000,0x1c4f0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0024e7aa
+
+Registers:
+EAX=0x0024e79e, EBX=0x1e6c7560, ECX=0x1c4a7c40, EDX=0x1c4a7c40
+ESP=0x1c4a7c14, EBP=0x1c4a7c64, ESI=0x1e6b8354, EDI=0x1c4a7c40
+EIP=0x6fcb8ef6, EFLAGS=0x00010212
+
+Top of Stack: (sp=0x1c4a7c14)
+0x1c4a7c14:   6fcb8f15 1c4a7c40 0024e79e 1e6b82b8
+0x1c4a7c24:   1e5b09f8 6fcb7593 1c4a7c40 1e6b8354
+0x1c4a7c34:   1e6b82b8 1e5b09f8 1e6c7560 0024e79e
+0x1c4a7c44:   0024e79e 50ff8001 50ff8001 50ff8001
+0x1c4a7c54:   1e6cb528 50ff8001 50ff8001 50ff8001
+0x1c4a7c64:   1c4a7cc0 6fcb776b 1c4a7c7c 1e6b82b8
+0x1c4a7c74:   1e6c7560 1c4a7c94 00000001 00270000
+0x1c4a7c84:   00010000 00010000 00480000 00480000 
+
+Instructions: (pc=0x6fcb8ef6)
+0x6fcb8ed6:   48 10 89 48 18 89 48 1c 89 48 20 c3 8b 54 24 04
+0x6fcb8ee6:   52 e8 d5 ff ff ff 8b 44 24 0c 89 02 89 42 04 59
+0x6fcb8ef6:   8b 48 0c 89 4a 18 8b 40 14 89 42 1c c3 56 8b 74
+0x6fcb8f06:   24 0c 57 ff 36 8b 7c 24 10 57 e8 cd ff ff ff 89 
+
+
+Register to memory mapping:
+
+EAX=0x0024e79e is an unknown value
+EBX=0x1e6c7560 is an unknown value
+ECX=0x1c4a7c40 is pointing into the stack for thread: 0x15f0a800
+EDX=0x1c4a7c40 is pointing into the stack for thread: 0x15f0a800
+ESP=0x1c4a7c14 is pointing into the stack for thread: 0x15f0a800
+EBP=0x1c4a7c64 is pointing into the stack for thread: 0x15f0a800
+ESI=0x1e6b8354 is an unknown value
+EDI=0x1c4a7c40 is pointing into the stack for thread: 0x15f0a800
+
+
+Stack: [0x1c4a0000,0x1c4f0000],  sp=0x1c4a7c14,  free space=31k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [t2k.dll+0x8ef6]
+C  [t2k.dll+0x776b]
+C  [t2k.dll+0x780f]
+C  [t2k.dll+0x1515a]
+C  [t2k.dll+0x1549f]
+j  sun.font.T2KFontScaler.getGlyphImageNative(Lsun/font/Font2D;JJI)J+0
+j  sun.font.T2KFontScaler.getGlyphImage(JI)J+26
+J 617 C1 sun.font.FileFontStrike.getGlyphImagePtr(I)J (126 bytes) @ 0x02b4a894 [0x02b4a370+0x524]
+J 629 C1 sun.font.FileFontStrike.getGlyphMetrics(IZ)Ljava/awt/geom/Point2D$Float; (277 bytes) @ 0x02b4e65c [0x02b4e5b0+0xac]
+J 628 C1 sun.font.FileFontStrike.getGlyphMetrics(I)Ljava/awt/geom/Point2D$Float; (7 bytes) @ 0x02b4e2b8 [0x02b4e280+0x38]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x159775]
+V  [jvm.dll+0x21f4ae]
+V  [jvm.dll+0x15980e]
+V  [jvm.dll+0xdb6cb]
+V  [jvm.dll+0xdd0bc]
+C  [fontmanager.dll+0x696e]
+C  0x1c4a8680
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.font.T2KFontScaler.getGlyphImageNative(Lsun/font/Font2D;JJI)J+0
+j  sun.font.T2KFontScaler.getGlyphImage(JI)J+26
+J 617 C1 sun.font.FileFontStrike.getGlyphImagePtr(I)J (126 bytes) @ 0x02b4a894 [0x02b4a370+0x524]
+J 629 C1 sun.font.FileFontStrike.getGlyphMetrics(IZ)Ljava/awt/geom/Point2D$Float; (277 bytes) @ 0x02b4e65c [0x02b4e5b0+0xac]
+J 628 C1 sun.font.FileFontStrike.getGlyphMetrics(I)Ljava/awt/geom/Point2D$Float; (7 bytes) @ 0x02b4e2b8 [0x02b4e280+0x38]
+v  ~StubRoutines::call_stub
+J 1109  sun.font.SunLayoutEngine.nativeLayout(Lsun/font/Font2D;Lsun/font/FontStrike;[FII[CIIIIIIILjava/awt/geom/Point2D$Float;Lsun/font/GlyphLayout$GVData;JJ)V (0 bytes) @ 0x02bd107a [0x02bd0f60+0x11a]
+J 1100 C1 sun.font.SunLayoutEngine.layout(Lsun/font/FontStrikeDesc;[FIILsun/font/TextRecord;ILjava/awt/geom/Point2D$Float;Lsun/font/GlyphLayout$GVData;)V (102 bytes) @ 0x02bee938 [0x02bee710+0x228]
+J 1093 C1 sun.font.GlyphLayout$EngineRecord.layout()V (101 bytes) @ 0x02bed9a0 [0x02bed8d0+0xd0]
+J 797 C1 sun.font.GlyphLayout.layout(Ljava/awt/Font;Ljava/awt/font/FontRenderContext;[CIIILsun/font/StandardGlyphVector;)Lsun/font/StandardGlyphVector; (668 bytes) @ 0x02b85e14 [0x02b85620+0x7f4]
+J 1078 C1 sun.font.ExtendedTextSourceLabel.createGV()Lsun/font/StandardGlyphVector; (79 bytes) @ 0x02be8c84 [0x02be8ba0+0xe4]
+J 1076 C1 sun.font.ExtendedTextSourceLabel.getAdvance()F (24 bytes) @ 0x02be85a0 [0x02be8560+0x40]
+J 878 C1 java.awt.font.TextLine.init()V (1056 bytes) @ 0x02ba57e8 [0x02ba4fd0+0x818]
+J 1070 C1 java.awt.font.TextLine.<init>(Ljava/awt/font/FontRenderContext;[Lsun/font/TextLineComponent;[F[CII[I[BZ)V (83 bytes) @ 0x02be7460 [0x02be7360+0x100]
+J 658 C1 java.awt.font.TextLine.fastCreateTextLine(Ljava/awt/font/FontRenderContext;[CLjava/awt/Font;Lsun/font/CoreMetrics;Ljava/util/Map;)Ljava/awt/font/TextLine; (341 bytes) @ 0x02b5990c [0x02b59160+0x7ac]
+J 1050 C1 java.awt.font.TextLayout.fastInit([CLjava/awt/Font;Ljava/util/Map;Ljava/awt/font/FontRenderContext;)V (90 bytes) @ 0x02bdf824 [0x02bdf720+0x104]
+J 1048 C1 java.awt.font.TextLayout.<init>(Ljava/lang/String;Ljava/awt/Font;Ljava/awt/font/FontRenderContext;)V (180 bytes) @ 0x02bdee44 [0x02bdec40+0x204]
+J 877 C1 greenfoot.util.GraphicsUtilities.getMultiLineStringDimensions([Ljava/lang/String;ID)Lgreenfoot/util/GraphicsUtilities$MultiLineStringDimensions; (294 bytes) @ 0x02ba3068 [0x02ba2590+0xad8]
+J 1023 C1 greenfoot.GreenfootImage.<init>(Ljava/lang/String;ILjava/awt/Color;Ljava/awt/Color;Ljava/awt/Color;)V (131 bytes) @ 0x02bd30c0 [0x02bd2fd0+0xf0]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c146b8 [0x02c145a0+0x118]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+J 1241 C1 ModeWorld.<init>()V (171 bytes) @ 0x02c14908 [0x02c145a0+0x368]
+J 1240 C1 MyWorld.<init>()V (80 bytes) @ 0x02c13e1c [0x02c13d50+0xcc]
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+j  ModeWorld.<init>()V+64
+j  MyWorld.<init>()V+20
+v  ~StubRoutines::call_stub
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance0(Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Ljava/lang/Object;+0
+j  sun.reflect.NativeConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+85
+j  sun.reflect.DelegatingConstructorAccessorImpl.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+5
+j  java.lang.reflect.Constructor.newInstance([Ljava/lang/Object;)Ljava/lang/Object;+79
+j  greenfoot.core.Simulation.newInstance(Ljava/lang/reflect/Constructor;)Ljava/lang/Object;+5
+j  greenfoot.platforms.ide.WorldHandlerDelegateIDE$3.run()V+19
+j  greenfoot.core.Simulation.runQueuedTasks()V+68
+j  greenfoot.core.Simulation.maybePause()V+8
+j  greenfoot.core.Simulation.runContent()V+8
+j  greenfoot.core.Simulation.run()V+1
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x1e79a800 JavaThread "D3D Screen Updater" daemon [_thread_blocked, id=6028, stack(0x1f680000,0x1f6d0000)]
+  0x15f0dc00 JavaThread "QuantumRenderer-0" daemon [_thread_blocked, id=5712, stack(0x1f5f0000,0x1f640000)]
+  0x15f0c800 JavaThread "TimerQueue" daemon [_thread_blocked, id=11884, stack(0x1f260000,0x1f2b0000)]
+  0x15f0bc00 JavaThread "main" [_thread_blocked, id=4360, stack(0x1c5c0000,0x1c610000)]
+=>0x15f0a800 JavaThread "SimulationThread" [_thread_in_native, id=7844, stack(0x1c4a0000,0x1c4f0000)]
+  0x15f0d000 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=11632, stack(0x1c410000,0x1c460000)]
+  0x15f0c400 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=2064, stack(0x1c280000,0x1c2d0000)]
+  0x15f0b000 JavaThread "RMI TCP Connection(1)-127.0.0.1" daemon [_thread_in_native, id=11876, stack(0x17a40000,0x17a90000)]
+  0x15f0a400 JavaThread "RMI Reaper" [_thread_blocked, id=7360, stack(0x179b0000,0x17a00000)]
+  0x15f0b400 JavaThread "RMI TCP Accept-0" daemon [_thread_in_native, id=11788, stack(0x17920000,0x17970000)]
+  0x15ee1000 JavaThread "GC Daemon" daemon [_thread_blocked, id=4084, stack(0x166d0000,0x16720000)]
+  0x15edfc00 JavaThread "RMI RenewClean-[127.0.0.1:63110]" daemon [_thread_blocked, id=12964, stack(0x16640000,0x16690000)]
+  0x15edf400 JavaThread "RMI Scheduler(0)" daemon [_thread_blocked, id=1616, stack(0x165b0000,0x16600000)]
+  0x0241d400 JavaThread "DestroyJavaVM" [_thread_blocked, id=12452, stack(0x02370000,0x023c0000)]
+  0x15189400 JavaThread "BlueJ worker thread" [_thread_blocked, id=5172, stack(0x15c30000,0x15c80000)]
+  0x15177000 JavaThread "AWT-Windows" daemon [_thread_in_native, id=11408, stack(0x15a40000,0x15a90000)]
+  0x15174000 JavaThread "AWT-Shutdown" [_thread_blocked, id=4288, stack(0x159b0000,0x15a00000)]
+  0x15170800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=7728, stack(0x15920000,0x15970000)]
+  0x15007800 JavaThread "Service Thread" daemon [_thread_blocked, id=12844, stack(0x15710000,0x15760000)]
+  0x14fe9000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=3236, stack(0x15680000,0x156d0000)]
+  0x14fe2800 JavaThread "JDWP Command Reader" daemon [_thread_in_native, id=6184, stack(0x155f0000,0x15640000)]
+  0x14fdd800 JavaThread "JDWP Event Helper Thread" daemon [_thread_blocked, id=11500, stack(0x15560000,0x155b0000)]
+  0x14fdac00 JavaThread "JDWP Transport Listener: dt_shmem" daemon [_thread_blocked, id=6148, stack(0x154d0000,0x15520000)]
+  0x14fccc00 JavaThread "Attach Listener" daemon [_thread_blocked, id=4188, stack(0x15440000,0x15490000)]
+  0x14fcb000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6300, stack(0x153b0000,0x15400000)]
+  0x14fba800 JavaThread "Finalizer" daemon [_thread_blocked, id=10844, stack(0x15230000,0x15280000)]
+  0x14fa4c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=6088, stack(0x151a0000,0x151f0000)]
+
+Other Threads:
+  0x029bcc00 VMThread [stack: 0x14f50000,0x14fa0000] [id=11280]
+  0x1501c800 WatcherThread [stack: 0x157a0000,0x157f0000] [id=2012]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 78656K, used 22775K [0x04a00000, 0x09f50000, 0x09f50000)
+  eden space 69952K,  20% used [0x04a00000, 0x057bdeb8, 0x08e50000)
+  from space 8704K, 100% used [0x08e50000, 0x096d0000, 0x096d0000)
+  to   space 8704K,   0% used [0x096d0000, 0x096d0000, 0x09f50000)
+ tenured generation   total 174784K, used 152838K [0x09f50000, 0x14a00000, 0x14a00000)
+   the space 174784K,  87% used [0x09f50000, 0x13491ad8, 0x13491c00, 0x14a00000)
+ Metaspace       used 11458K, capacity 11727K, committed 11776K, reserved 12672K
+
+Card table byte_map: [0x14a00000,0x14a90000] byte_map_base: 0x149db000
+
+Polling page: 0x00d80000
+
+CodeCache: size=32768Kb used=2409Kb max_used=2409Kb free=30358Kb
+ bounds [0x029c0000, 0x02c20000, 0x049c0000]
+ total_blobs=1513 nmethods=1244 adapters=207
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 3.308 Thread 0x14fe9000 1248  s          com.sun.java.swing.plaf.windows.XPStyle::getXP (99 bytes)
+Event: 3.308 Thread 0x14fe9000 nmethod 1248 0x02c19348 code [0x02c194e0, 0x02c19ac0]
+Event: 3.308 Thread 0x14fe9000 1249             sun.awt.windows.ThemeReader::isXPStyleEnabled (4 bytes)
+Event: 3.308 Thread 0x14fe9000 nmethod 1249 0x02c19ec8 code [0x02c19fc0, 0x02c1a040]
+Event: 3.337 Thread 0x14fe9000 1250             java.awt.GraphicsEnvironment::isHeadless (4 bytes)
+Event: 3.337 Thread 0x14fe9000 nmethod 1250 0x02c1a088 code [0x02c1a190, 0x02c1a23c]
+Event: 3.337 Thread 0x14fe9000 1251             java.awt.GraphicsEnvironment::getHeadlessProperty (22 bytes)
+Event: 3.337 Thread 0x14fe9000 nmethod 1251 0x02c1a308 code [0x02c1a410, 0x02c1a4bc]
+Event: 3.377 Thread 0x14fe9000 1252             java.security.AccessControlContext::calculateFields (89 bytes)
+Event: 3.378 Thread 0x14fe9000 nmethod 1252 0x02c1a548 code [0x02c1a660, 0x02c1a7c8]
+
+GC Heap History (10 events):
+Event: 2.708 GC heap before
+{Heap before GC invocations=31 (full 8):
+ def new generation   total 44864K, used 44864K [0x04a00000, 0x07aa0000, 0x09f50000)
+  eden space 39936K, 100% used [0x04a00000, 0x07100000, 0x07100000)
+  from space 4928K, 100% used [0x075d0000, 0x07aa0000, 0x07aa0000)
+  to   space 4928K,   0% used [0x07100000, 0x07100000, 0x075d0000)
+ tenured generation   total 99500K, used 70106K [0x09f50000, 0x1007b000, 0x14a00000)
+   the space 99500K,  70% used [0x09f50000, 0x0e3c6a38, 0x0e3c6c00, 0x1007b000)
+ Metaspace       used 11443K, capacity 11727K, committed 11776K, reserved 12672K
+Event: 2.718 GC heap after
+Heap after GC invocations=32 (full 8):
+ def new generation   total 44864K, used 4928K [0x04a00000, 0x07aa0000, 0x09f50000)
+  eden space 39936K,   0% used [0x04a00000, 0x04a00000, 0x07100000)
+  from space 4928K, 100% used [0x07100000, 0x075d0000, 0x075d0000)
+  to   space 4928K,   0% used [0x075d0000, 0x075d0000, 0x07aa0000)
+ tenured generation   total 99500K, used 83832K [0x09f50000, 0x1007b000, 0x14a00000)
+   the space 99500K,  84% used [0x09f50000, 0x0f12e098, 0x0f12e200, 0x1007b000)
+ Metaspace       used 11443K, capacity 11727K, committed 11776K, reserved 12672K
+}
+Event: 2.823 GC heap before
+{Heap before GC invocations=32 (full 8):
+ def new generation   total 44864K, used 44864K [0x04a00000, 0x07aa0000, 0x09f50000)
+  eden space 39936K, 100% used [0x04a00000, 0x07100000, 0x07100000)
+  from space 4928K, 100% used [0x07100000, 0x075d0000, 0x075d0000)
+  to   space 4928K,   0% used [0x075d0000, 0x075d0000, 0x07aa0000)
+ tenured generation   total 99500K, used 83832K [0x09f50000, 0x1007b000, 0x14a00000)
+   the space 99500K,  84% used [0x09f50000, 0x0f12e098, 0x0f12e200, 0x1007b000)
+ Metaspace       used 11443K, capacity 11727K, committed 11776K, reserved 12672K
+Event: 2.832 GC heap after
+Heap after GC invocations=33 (full 8):
+ def new generation   total 44864K, used 4928K [0x04a00000, 0x07aa0000, 0x09f50000)
+  eden space 39936K,   0% used [0x04a00000, 0x04a00000, 0x07100000)
+  from space 4928K, 100% used [0x075d0000, 0x07aa0000, 0x07aa0000)
+  to   space 4928K,   0% used [0x07100000, 0x07100000, 0x075d0000)
+ tenured generation   total 99500K, used 97487K [0x09f50000, 0x1007b000, 0x14a00000)
+   the space 99500K,  97% used [0x09f50000, 0x0fe83dd0, 0x0fe83e00, 0x1007b000)
+ Metaspace       used 11443K, capacity 11727K, committed 11776K, reserved 12672K
+}
+Event: 2.943 GC heap before
+{Heap before GC invocations=33 (full 8):
+ def new generation   total 44864K, used 44864K [0x04a00000, 0x07aa0000, 0x09f50000)
+  eden space 39936K, 100% used [0x04a00000, 0x07100000, 0x07100000)
+  from space 4928K, 100% used [0x075d0000, 0x07aa0000, 0x07aa0000)
+  to   space 4928K,   0% used [0x07100000, 0x07100000, 0x075d0000)
+ tenured generation   total 99500K, used 97487K [0x09f50000, 0x1007b000, 0x14a00000)
+   the space 99500K,  97% used [0x09f50000, 0x0fe83dd0, 0x0fe83e00, 0x1007b000)
+ Metaspace       used 11458K, capacity 11727K, committed 11776K, reserved 12672K
+Event: 2.971 GC heap after
+Heap after GC invocations=34 (full 9):
+ def new generation   total 78656K, used 4835K [0x04a00000, 0x09f50000, 0x09f50000)
+  eden space 69952K,   6% used [0x04a00000, 0x04eb8e08, 0x08e50000)
+  from space 8704K,   0% used [0x08e50000, 0x08e50000, 0x096d0000)
+  to   space 8704K,   0% used [0x096d0000, 0x096d0000, 0x09f50000)
+ tenured generation   total 174784K, used 111005K [0x09f50000, 0x14a00000, 0x14a00000)
+   the space 174784K,  63% used [0x09f50000, 0x10bb75e0, 0x10bb7600, 0x14a00000)
+ Metaspace       used 11458K, capacity 11727K, committed 11776K, reserved 12672K
+}
+Event: 3.158 GC heap before
+{Heap before GC invocations=34 (full 9):
+ def new generation   total 78656K, used 69952K [0x04a00000, 0x09f50000, 0x09f50000)
+  eden space 69952K, 100% used [0x04a00000, 0x08e50000, 0x08e50000)
+  from space 8704K,   0% used [0x08e50000, 0x08e50000, 0x096d0000)
+  to   space 8704K,   0% used [0x096d0000, 0x096d0000, 0x09f50000)
+ tenured generation   total 174784K, used 111005K [0x09f50000, 0x14a00000, 0x14a00000)
+   the space 174784K,  63% used [0x09f50000, 0x10bb75e0, 0x10bb7600, 0x14a00000)
+ Metaspace       used 11458K, capacity 11727K, committed 11776K, reserved 12672K
+Event: 3.174 GC heap after
+Heap after GC invocations=35 (full 9):
+ def new generation   total 78656K, used 8704K [0x04a00000, 0x09f50000, 0x09f50000)
+  eden space 69952K,   0% used [0x04a00000, 0x04a00000, 0x08e50000)
+  from space 8704K, 100% used [0x096d0000, 0x09f50000, 0x09f50000)
+  to   space 8704K,   0% used [0x08e50000, 0x08e50000, 0x096d0000)
+ tenured generation   total 174784K, used 129013K [0x09f50000, 0x14a00000, 0x14a00000)
+   the space 174784K,  73% used [0x09f50000, 0x11d4d5f8, 0x11d4d600, 0x14a00000)
+ Metaspace       used 11458K, capacity 11727K, committed 11776K, reserved 12672K
+}
+Event: 3.359 GC heap before
+{Heap before GC invocations=35 (full 9):
+ def new generation   total 78656K, used 78656K [0x04a00000, 0x09f50000, 0x09f50000)
+  eden space 69952K, 100% used [0x04a00000, 0x08e50000, 0x08e50000)
+  from space 8704K, 100% used [0x096d0000, 0x09f50000, 0x09f50000)
+  to   space 8704K,   0% used [0x08e50000, 0x08e50000, 0x096d0000)
+ tenured generation   total 174784K, used 129013K [0x09f50000, 0x14a00000, 0x14a00000)
+   the space 174784K,  73% used [0x09f50000, 0x11d4d5f8, 0x11d4d600, 0x14a00000)
+ Metaspace       used 11458K, capacity 11727K, committed 11776K, reserved 12672K
+Event: 3.375 GC heap after
+Heap after GC invocations=36 (full 9):
+ def new generation   total 78656K, used 8704K [0x04a00000, 0x09f50000, 0x09f50000)
+  eden space 69952K,   0% used [0x04a00000, 0x04a00000, 0x08e50000)
+  from space 8704K, 100% used [0x08e50000, 0x096d0000, 0x096d0000)
+  to   space 8704K,   0% used [0x096d0000, 0x096d0000, 0x09f50000)
+ tenured generation   total 174784K, used 152838K [0x09f50000, 0x14a00000, 0x14a00000)
+   the space 174784K,  87% used [0x09f50000, 0x13491ad8, 0x13491c00, 0x14a00000)
+ Metaspace       used 11458K, capacity 11727K, committed 11776K, reserved 12672K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.696 Thread 0x15efe400 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x04d2adf0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 0.696 Thread 0x15efe400 Exception <a 'java/lang/ClassNotFoundException': sun/net/www/protocol/c/Handler> (0x04d311a0) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\classfile\systemDictionary.cpp, line 210]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x05720488) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x057240a8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x05727cc8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x0572b8e8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x0572f508) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x05733128) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x05736d58) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+Event: 3.411 Thread 0x15f0a800 Exception <a 'java/lang/StackOverflowError'> (0x0573a978) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u92\6642\hotspot\src\share\vm\runtime\javaCalls.cpp, line 386]
+
+Events (10 events):
+Event: 3.359 Executing VM operation: GenCollectForAllocation
+Event: 3.375 Executing VM operation: GenCollectForAllocation done
+Event: 3.411 loading class sun/font/FontScalerException
+Event: 3.411 loading class sun/font/FontScalerException done
+Event: 3.412 Thread 0x15f0a800 DEOPT PACKING pc=0x02b4a894 sp=0x1c4a7e80
+Event: 3.412 Thread 0x15f0a800 DEOPT UNPACKING pc=0x029fc5db sp=0x1c4a7d74 mode 1
+Event: 3.412 Thread 0x15f0a800 DEOPT PACKING pc=0x02b4e65c sp=0x1c4a7f50
+Event: 3.412 Thread 0x15f0a800 DEOPT UNPACKING pc=0x029fc5db sp=0x1c4a7e5c mode 1
+Event: 3.412 Thread 0x15f0a800 DEOPT PACKING pc=0x02b4e2b8 sp=0x1c4a8010
+Event: 3.412 Thread 0x15f0a800 DEOPT UNPACKING pc=0x029fc5db sp=0x1c4a7eb0 mode 1
+
+
+Dynamic libraries:
+0x003e0000 - 0x00413000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\java.exe
+0x773d0000 - 0x77552000 	C:\Windows\SYSTEM32\ntdll.dll
+0x75d80000 - 0x75e60000 	C:\Windows\System32\KERNEL32.DLL
+0x76660000 - 0x76801000 	C:\Windows\System32\KERNELBASE.dll
+0x728e0000 - 0x72972000 	C:\Windows\system32\apphelp.dll
+0x74260000 - 0x742d7000 	C:\Windows\System32\ADVAPI32.dll
+0x76980000 - 0x76a3e000 	C:\Windows\System32\msvcrt.dll
+0x742e0000 - 0x74321000 	C:\Windows\System32\sechost.dll
+0x76ad0000 - 0x76b91000 	C:\Windows\System32\RPCRT4.dll
+0x73e90000 - 0x73eae000 	C:\Windows\System32\SspiCli.dll
+0x73e80000 - 0x73e8a000 	C:\Windows\System32\CRYPTBASE.dll
+0x75cd0000 - 0x75d2a000 	C:\Windows\System32\bcryptPrimitives.dll
+0x76810000 - 0x7696f000 	C:\Windows\System32\USER32.dll
+0x74240000 - 0x74255000 	C:\Windows\System32\win32u.dll
+0x76ba0000 - 0x76bcb000 	C:\Windows\System32\GDI32.dll
+0x73eb0000 - 0x7400b000 	C:\Windows\System32\gdi32full.dll
+0x6b220000 - 0x6b42a000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.14393.447_none_89c64d28dafea4b9\COMCTL32.dll
+0x76210000 - 0x76421000 	C:\Windows\System32\combase.dll
+0x75bf0000 - 0x75cd0000 	C:\Windows\System32\ucrtbase.dll
+0x75710000 - 0x75735000 	C:\Windows\System32\IMM32.DLL
+0x788f0000 - 0x789af000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\msvcr100.dll
+0x024f0000 - 0x028bb000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\client\jvm.dll
+0x77320000 - 0x77326000 	C:\Windows\System32\PSAPI.DLL
+0x73bc0000 - 0x73bc8000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x71f80000 - 0x71fa4000 	C:\Windows\SYSTEM32\WINMM.dll
+0x73ad0000 - 0x73ad8000 	C:\Windows\SYSTEM32\VERSION.dll
+0x77240000 - 0x772a3000 	C:\Windows\System32\WS2_32.dll
+0x00aa0000 - 0x00ac3000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x75740000 - 0x75776000 	C:\Windows\System32\cfgmgr32.dll
+0x704a0000 - 0x704ac000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\verify.dll
+0x6cfe0000 - 0x6d001000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\java.dll
+0x6d680000 - 0x6d6a9000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\jdwp.dll
+0x6fdb0000 - 0x6fdb7000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\npt.dll
+0x6ffb0000 - 0x6ffc3000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\zip.dll
+0x74330000 - 0x75709000 	C:\Windows\System32\SHELL32.dll
+0x76bd0000 - 0x7713e000 	C:\Windows\System32\windows.storage.dll
+0x75d30000 - 0x75d75000 	C:\Windows\System32\powrprof.dll
+0x74010000 - 0x74056000 	C:\Windows\System32\shlwapi.dll
+0x74230000 - 0x7423d000 	C:\Windows\System32\kernel.appcore.dll
+0x771a0000 - 0x77228000 	C:\Windows\System32\shcore.dll
+0x76970000 - 0x7697f000 	C:\Windows\System32\profapi.dll
+0x6d880000 - 0x6d889000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\dt_shmem.dll
+0x6cd50000 - 0x6ce95000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\awt.dll
+0x77330000 - 0x773c4000 	C:\Windows\System32\OLEAUT32.dll
+0x76080000 - 0x760fb000 	C:\Windows\System32\msvcp_win.dll
+0x6c270000 - 0x6c2e5000 	C:\Windows\system32\uxtheme.dll
+0x76520000 - 0x76655000 	C:\Windows\System32\MSCTF.dll
+0x720f0000 - 0x7210f000 	C:\Windows\system32\dwmapi.dll
+0x76120000 - 0x7620a000 	C:\Windows\System32\ole32.dll
+0x73390000 - 0x733a3000 	C:\Windows\SYSTEM32\CRYPTSP.dll
+0x73320000 - 0x7334f000 	C:\Windows\system32\rsaenh.dll
+0x73350000 - 0x7336b000 	C:\Windows\SYSTEM32\bcrypt.dll
+0x72a40000 - 0x72a5a000 	C:\Windows\SYSTEM32\USERENV.dll
+0x6f080000 - 0x6f096000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\net.dll
+0x72050000 - 0x7209e000 	C:\Windows\system32\mswsock.dll
+0x73aa0000 - 0x73acf000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x75be0000 - 0x75be7000 	C:\Windows\System32\NSI.dll
+0x6fc70000 - 0x6fc83000 	C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x6f280000 - 0x6f294000 	C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x6f6e0000 - 0x6f6ef000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\nio.dll
+0x67170000 - 0x672cf000 	C:\Windows\system32\d3d9.dll
+0x63fb0000 - 0x64d81000 	C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_848dea456d3c865e\nvd3dum.dll
+0x6ae60000 - 0x6afc4000 	C:\Windows\system32\nvspcap.dll
+0x75780000 - 0x75b8b000 	C:\Windows\System32\SETUPAPI.dll
+0x73550000 - 0x7355f000 	C:\Windows\SYSTEM32\WTSAPI32.dll
+0x737d0000 - 0x73870000 	C:\Windows\SYSTEM32\WINHTTP.dll
+0x6b530000 - 0x6b8b6000 	C:\Windows\system32\nvapi.dll
+0x71e60000 - 0x71ee4000 	C:\Windows\SYSTEM32\dxgi.dll
+0x66e30000 - 0x66ef7000 	C:\Program Files (x86)\NVIDIA Corporation\3D Vision\nvSCPAPI.dll
+0x6d620000 - 0x6d659000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\fontmanager.dll
+0x6fcb0000 - 0x6fce2000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\t2k.dll
+0x76a40000 - 0x76ac4000 	C:\Windows\System32\clbcatq.dll
+0x66fb0000 - 0x6711e000 	C:\Windows\SYSTEM32\WindowsCodecs.dll
+0x5a120000 - 0x5a164000 	C:\Windows\system32\dataexchange.dll
+0x5fca0000 - 0x5fecf000 	C:\Windows\system32\d3d11.dll
+0x5a000000 - 0x5a113000 	C:\Windows\system32\dcomp.dll
+0x59f00000 - 0x59ff1000 	C:\Windows\system32\twinapi.appcore.dll
+0x6d310000 - 0x6d334000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\dcpr.dll
+0x6f590000 - 0x6f59a000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\management.dll
+0x6f260000 - 0x6f272000 	C:\Windows\system32\napinsp.dll
+0x6f240000 - 0x6f256000 	C:\Windows\system32\pnrpnsp.dll
+0x6f220000 - 0x6f234000 	C:\Windows\system32\NLAapi.dll
+0x73750000 - 0x737cc000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x6f210000 - 0x6f21c000 	C:\Windows\System32\winrnr.dll
+0x6cfb0000 - 0x6cfb8000 	C:\Windows\System32\rasadhlp.dll
+0x6c9b0000 - 0x6c9f9000 	C:\Windows\System32\fwpuclnt.dll
+0x1f440000 - 0x1f52e000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\msvcr120.dll
+0x1f530000 - 0x1f5a1000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\msvcp120.dll
+0x6f350000 - 0x6f36e000 	C:\Program Files (x86)\Greenfoot\jdk\jre\bin\prism_d3d.dll
+0x73600000 - 0x73745000 	C:\Windows\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dawt.useSystemAAFontSettings=on -XX:MaxGCPauseMillis=50 -agentlib:jdwp=transport=dt_shmem,address=javadebug -Dfile.encoding=UTF-8 
+java_command: bluej.runtime.ExecServer UTF-8
+java_class_path (initial): C:\Program Files (x86)\Greenfoot\lib\extensions\greenfoot.jar;C:\Program Files (x86)\Greenfoot\lib\bluejcore.jar;C:\Program Files (x86)\Greenfoot\lib\bluejeditor.jar;C:\Program Files (x86)\Greenfoot\lib\bluejext.jar;C:\Program Files (x86)\Greenfoot\lib\AppleJavaExtensions.jar;C:\Program Files (x86)\Greenfoot\lib\junit-4.11.jar;C:\Program Files (x86)\Greenfoot\lib\hamcrest-core-1.3.jar;C:\Program Files (x86)\Greenfoot\lib\bluej.jar;C:\Program Files (x86)\Greenfoot\lib\diffutils-1.2.1.jar;C:\Program Files (x86)\Greenfoot\lib\commons-httpclient-3.1.jar;C:\Program Files (x86)\Greenfoot\lib\commons-logging-api-1.1.2.jar;C:\Program Files (x86)\Greenfoot\lib\commons-codec-1.3.jar;C:\Program Files (x86)\Greenfoot\lib\jl1.0.1.jar;C:\Program Files (x86)\Greenfoot\lib\opencsv-2.3.jar;C:\Program Files (x86)\Greenfoot\lib\xom-1.2.9.jar;C:\Program Files (x86)\Greenfoot\lib\guava-17.0.jar;C:\Program Files (x86)\Greenfoot\lib\javassist-3.18.0.jar;C:\Program Files (x86)\Greenfoot\lib\commons-vfs2-2.0.jar;C:\Program Files (x86)\Greenfoot\lib\httpclient-4.1.1.jar;C:\Program Files (x86)\Greenfoot\lib\httpcore-4.1.jar;C:\Program Files (x86)\Greenfoot\lib\httpmime-4.1.1.jar;C:\MAMP\htdocs\CMPE-202-Team-Project\Game\library\java-json.jar;C:\MAMP\htdocs\CMPE-202-Team-Project\Game\library\org.restlet.ext.json.jar;C:\MAMP\htdocs\CMPE-202-Team-Project\Game\library\org.restlet.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_101
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Utilities 1.6\;C:\Users\mrnam\AppData\Local\Microsoft\WindowsApps;C:\Users\mrnam\AppData\Roaming\npm
+USERNAME=mrnam
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 14393 (10.0.14393.0)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16735952k(8987692k free), swap 19226320k(8205356k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.92-b14) for windows-x86 JRE (1.8.0_92-b14), built on Mar 31 2016 21:09:21 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Dec 02 22:02:52 2016
+elapsed time: 3 seconds (0d 0h 0m 3s)
+

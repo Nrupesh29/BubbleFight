@@ -49,7 +49,8 @@ public class Player extends Actor
     private int height;
 
     private GameSystem gameSystem;
-
+    public Player(){
+    }
     public Player(World w,GameSystem gs, boolean isLeft, boolean controllable, int c){
 
         width = getImage().getWidth();

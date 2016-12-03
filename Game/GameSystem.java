@@ -3,6 +3,7 @@ import java.util.Random;
 import org.restlet.*;
 import org.restlet.resource.ClientResource;
 import org.restlet.ext.json.JsonRepresentation;
+import org.restlet.representation.Representation;
 import org.json.*;
 
 /**
@@ -36,7 +37,7 @@ public class GameSystem extends Actor
             getAllPlayers();
 
         } catch (Exception e){
- System.out.println(e);
+            System.out.println(e);
             // Deal with e as you please.
             //e may be any type of exception at all.
 
@@ -100,12 +101,10 @@ public class GameSystem extends Actor
 
     public void getAllPlayers() throws Exception{
         String url = API_URL + "players";
-        System.out.println(url);
         ClientResource helloClientresource = new ClientResource(url); 
-
-        JsonRepresentation rep = new JsonRepresentation(helloClientresource.get());
+        JsonRepresentation rep = new JsonRepresentation("{array:"+helloClientresource.get().getText()+"}");
         JSONObject  json = rep.getJsonObject();
         System.out.println(json.toString());
-                
+
     }
 }

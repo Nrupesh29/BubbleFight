@@ -1,3 +1,4 @@
+
 --
 -- Table structure for table `level`
 --
@@ -8,7 +9,7 @@ CREATE TABLE `level` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(1024) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 
 --
@@ -24,8 +25,10 @@ CREATE TABLE `matches` (
   `tournament_id` int(11) DEFAULT NULL,
   `level_id` int(11) DEFAULT NULL,
   `winner_id` int(11) DEFAULT NULL,
+  `matchdate` datetime DEFAULT NULL,
+  `score` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 
 --
@@ -36,9 +39,10 @@ DROP TABLE IF EXISTS `player`;
 
 CREATE TABLE `player` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(1024) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `name` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 
 --
@@ -49,7 +53,8 @@ DROP TABLE IF EXISTS `tournament`;
 
 CREATE TABLE `tournament` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(1024) DEFAULT NULL,
+  `name` varchar(500) DEFAULT NULL,
   `maxplayers` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;

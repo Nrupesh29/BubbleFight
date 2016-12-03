@@ -42,9 +42,10 @@
 |---------|--------------|------------- | -----------------------------|
 | GET     | `{base_url}/matches` | | List all matches |
 | GET     | `{base_url}/match/{id}` | | List match with specified **`id`** |
-| POST     | `{base_url}/match`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` | Add a new match |
+| GET     | `{base_url}/match-tournament/{id}` | | List all matches with specified tournament **`id`** |
+| POST     | `{base_url}/match`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` <br /> `matchDate` <br /> `matchScore` | Add a new match |
 | DELETE     | `{base_url}/match/{id}` | | Delete match with specified **`id`** |
-| PUT     | `{base_url}/match/{id}`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` | Update match with specified **`id`** |
+| PUT     | `{base_url}/match/{id}`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` <br /> `matchDate` <br /> `matchScore` | Update match with specified **`id`** |
 
 
 

@@ -40,12 +40,17 @@ public class PlayButton extends Button
             // set blue text image
             hovering = false;
             setImage(new GreenfootImage("playButton.png"));
-             if(flip){
+            if(flip){
                 flipImage();
             }
         }
         if (Greenfoot.mouseClicked(this)) {
             Greenfoot.setWorld(world);
+
+            if (world instanceof PlayWorld) {
+                PlayWorld pw = (PlayWorld) world;
+                pw.startGame();
+            }
         }
     }    
 

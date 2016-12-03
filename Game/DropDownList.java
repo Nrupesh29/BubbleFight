@@ -22,16 +22,20 @@ public class DropDownList extends Actor {
 
     /** Whether this drop-down list is expanded. */
     private boolean isExpanded = false;
-
+    private SelectTournamentWorld world;
+    private JSONArray itemArray;
+    private String name;
     /**
      * Creates a new drop-down list.
      * 
      * @param items the text of the list items
      * @param defaultValue the default item
      */
-    public DropDownList(JSONArray items, int defaultValue)throws Exception {
+    public DropDownList(JSONArray items, int defaultValue,SelectTournamentWorld w, String n)throws Exception {
         List<GreenfootImage> images = new ArrayList<GreenfootImage>();
-
+        world = w;
+        itemArray = items;
+        name = n;
         // Creates the text images and finds their max height and max width.
         int maxWidth = 0;
         int maxHieght = 0;
@@ -113,6 +117,25 @@ public class DropDownList extends Actor {
     public void setSelected(int value) {
         selected = value;
         setImage(listItems.get(value).getImage());
+        try {
+            //System.out.println(itemArray.getJSONObject(value).get("name").toString());
+
+            if(name == "tournament"){
+                world.loadMatches(itemArray.getJSONObject(value));
+            }
+
+            if(name == "match"){
+                Match m = world.tournament.findMatch(itemArray.getJSONObject(value));
+                world.tournament.setCurrent(m);
+               // System.out.println(world.tournament.getCurrent().player1.toString());
+            }
+        } catch (Exception e){
+            System.out.println(e);
+            // Deal with e as you please.
+            //e may be any type of exception at all.
+
+        }
+
     }
 
     /**

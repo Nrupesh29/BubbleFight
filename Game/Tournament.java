@@ -14,7 +14,7 @@ public class Tournament
      * Constructor for objects of class Tournament
      */
     private JSONObject json;
-    private ArrayList<Match> list;
+    public ArrayList<Match> list;
     public Tournament(JSONObject j)
     {
         json = j;
@@ -24,16 +24,36 @@ public class Tournament
     public void addMatch(JSONObject m, JSONObject p1, JSONObject p2){
         list.add(new Match(m,p1,p2));
     }
+    
+    public Match findMatch(JSONObject j){
+        Match m = null;
+        for(int i = 0; i < list.size();i++){
+            if(list.get(i).match == j){
+                m = list.get(i);
+                break;
+            }
+        }
+        return m;
+    }
 
-    public class Match{
-        public JSONObject match;
-        public JSONObject player1;
-        public JSONObject player2;
-        public Match(JSONObject m, JSONObject p1, JSONObject p2){
-            match =m;
-            player1 = p1;
-            player2 = p2;
+    public void setCurrent(Match m){
+        for(int i = 0; i < list.size();i++){
+            if(list.get(i) == m){
+                list.get(i).setCurrent(true);
+            }else{
+                list.get(i).setCurrent(false);                
+            }
         }
     }
+    
+    public Match getCurrent(){
+        for(int i = 0; i < list.size();i++){
+            if(list.get(i).current){
+                return list.get(i);
+            }
+        }
+        return null;
+    }
+   
 
 }

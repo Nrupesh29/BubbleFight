@@ -21,7 +21,8 @@ public class SelectTournamentWorld extends World
      */
     private MyWorld world;
     private final String API_URL = "http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/";
-    private Tournament tournament;
+    public Tournament tournament;
+    private DropDownList listMatches;
     public SelectTournamentWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -39,12 +40,6 @@ public class SelectTournamentWorld extends World
         addObject(bluebird,250,250);
         RedBird redbird = new RedBird();
         addObject(redbird,900,250);
-
-        // DropDownList list1 = new DropDownList(cities, 2);
-        // addObject(list1, 250, 320);
-
-        // DropDownList list2 = new DropDownList(cities, 2);
-        // addObject(list2, 900, 320);
 
         addObject( new Message("VS", Color.green,100), 575, 250 ) ;
         try {
@@ -70,7 +65,7 @@ public class SelectTournamentWorld extends World
 
         if(list.length() > 0){
             tournament = new Tournament(list.getJSONObject(0));
-            DropDownList listD = new DropDownList(list, 0);
+            DropDownList listD = new DropDownList(list, 0, this,"tournament");
             addObject(listD, 575, 100);
             addObject( new Message("Select Tournament", Color.blue,50), 575, 50 ) ;
             loadMatches(list.getJSONObject(0));
@@ -79,7 +74,15 @@ public class SelectTournamentWorld extends World
         }
     }
 
+    public void removeMatchesD(){
+        if(listMatches != null){
+            listMatches.collapseList();
+            removeObject(listMatches);
+        }
+    }
+
     public void loadMatches(JSONObject obj)throws Exception{
+        removeMatchesD();
         String url = API_URL + "match-tournament/"+obj.get("id");
         ClientResource helloClientresource = new ClientResource(url); 
         JsonRepresentation rep = new JsonRepresentation("{array:"+helloClientresource.get().getText()+"}");
@@ -103,9 +106,12 @@ public class SelectTournamentWorld extends World
         }
         // System.out.println(list.toString());
 
-        if(list.length() > 0){
-            DropDownList listD = new DropDownList(list, 0);
-            addObject(listD, 575, 320);
+        if(list.length() > 0){ 
+            listMatches = new DropDownList(list, 0, this,"match");            
+            addObject(listMatches, 575, 320);
+            Match m = tournament.findMatch(list.getJSONObject(0));
+            tournament.setCurrent(m);
+            System.out.println(tournament.getCurrent().player1.toString());
         }else{
             System.out.println("no matches");
         }

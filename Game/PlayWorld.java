@@ -14,28 +14,35 @@ public class PlayWorld extends World
      * 
      */
     private MyWorld world;
+    private Tournament tournament = null;
+    private GameSystem gameSystem;
+    private Message player1;
+    private Message player2;
     public PlayWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1150, 600, 1);
-        
-        
+
     }
-    
-     public void setWorld(MyWorld w){
+
+    public void setTournament(Tournament t){
+        tournament = t;
+    }
+
+    public void setWorld(MyWorld w){
         world = w;
-        
+
         QAManager qaManager = new QAManager();
         QuestionBar questionBar = new QuestionBar(qaManager);
 
         qaManager.attach(questionBar);
 
-        GameSystem gamesystem = new GameSystem(qaManager);
-        addObject(gamesystem,855,42);
+        gameSystem = new GameSystem(qaManager);
+        addObject(gameSystem,855,42);
 
         // birds        
-        Player blueBird = new BlueBird(this,gamesystem, true, 2);
-        Player redBird = new RedBird(this,gamesystem, true, 1);
+        Player blueBird = new BlueBird(this,gameSystem, true, 2);
+        Player redBird = new RedBird(this,gameSystem, true, 1);
         blueBird.setEnemy(redBird);
         redBird.setEnemy(blueBird); 
 
@@ -46,8 +53,13 @@ public class PlayWorld extends World
         addObject( blueBird, 50, 500 ) ;
         addObject( redBird, 1100, 500 ) ;
 
-        gamesystem.startGame();
-        
+    }
+
+    public void startGame(){
+        gameSystem.startGame();
+        System.out.println(world.selectTW.tournament.getCurrent().player1.toString());
+        player1 = new Message("Player 1");
+        player2 = new Message("Player 1");
     }
 
 }

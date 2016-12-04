@@ -47,7 +47,9 @@
 | DELETE     | `{base_url}/match/{id}` | | Delete match with specified **`id`** |
 | PUT     | `{base_url}/match/{id}`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` <br /> `matchDate` <br /> `matchScore` | Update match with specified **`id`** |
 
+## DEFAULTS
 
+PlayerId "1" & "2" is reserved for 2 players play in the normal game
 
 ## Contributor
 

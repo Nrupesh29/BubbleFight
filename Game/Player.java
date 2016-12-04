@@ -28,7 +28,7 @@ public class Player extends Actor
     public String name;
 
     private double fallSpeed = 0;
-    private double acceleration = 0.2;
+    private double acceleration = 0.1;
     private boolean isLeft = true;
     private boolean controllable = false;
 

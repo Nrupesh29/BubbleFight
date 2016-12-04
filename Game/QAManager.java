@@ -20,8 +20,8 @@ public class QAManager extends Actor implements IObject
 
     public void generateQuestion(){
 
-        int a = random.nextInt(50-1) + 1;
-        int b = random.nextInt(50-1) + 1;
+        int a = random.nextInt(10-1) + 1;
+        int b = random.nextInt(10-1) + 1;
         System.out.println(Integer.toBinaryString(a));
         System.out.println(Integer.toBinaryString(b));
         Answer answer = new Answer((a+b)+"");
@@ -35,7 +35,7 @@ public class QAManager extends Actor implements IObject
     public Answer generateAnswer(){
         //add delay for incorrect answer
         if(delay == 0){
-            delay = random.nextInt(6-2) + 2;
+            delay = random.nextInt(7-2) + 2;
         }
 
         delay--;

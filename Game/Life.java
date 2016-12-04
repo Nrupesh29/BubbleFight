@@ -32,8 +32,9 @@ public class Life extends Actor
         }
     }
 
-    public void act() 
+    public void destroy() 
     {
-        // Add your action code here.
+        life.destroy();
+        world.removeObject(this);
     }    
 }

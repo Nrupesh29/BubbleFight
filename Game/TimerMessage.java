@@ -11,14 +11,23 @@ public class TimerMessage extends Message
 {
 
     private int second = 0;
+    private static TimerMessage instance = null;
 
-    public TimerMessage(String labelText)  
-    {
-        super(labelText);
+    protected TimerMessage(int s)  
+    {            
+        setTime(s);
     }
 
-    public TimerMessage(int s)  
-    {            
+    public static TimerMessage getInstance(int s) {
+        if(instance == null) {
+            instance = new TimerMessage(s);
+        }else{
+            instance.setTime(s);
+        }
+        return instance;
+    }
+
+    private void setTime(int s){
         second = s;
         message = timeConversion(second);
         GreenfootImage label = new GreenfootImage(message,25,Color.black,null);  
@@ -39,7 +48,7 @@ public class TimerMessage extends Message
 
     public void setMessage(int s, int xPos, int yPos) {
 
-        TimerMessage tm = new TimerMessage(s);
+        TimerMessage tm = TimerMessage.getInstance(s);
         if(getWorld() != null)
             getWorld().addObject(tm, xPos, yPos);
     }

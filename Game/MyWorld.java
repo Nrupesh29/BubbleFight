@@ -17,6 +17,7 @@ public class MyWorld extends World
     public ModeWorld modeW;
     public PlayWorld playW;
     public SelectTournamentWorld selectTW;
+    public GameOverWorld gameOverW;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -26,14 +27,19 @@ public class MyWorld extends World
         modeW = new ModeWorld();
         playW = new PlayWorld();
         selectTW = new SelectTournamentWorld();
+        gameOverW = new GameOverWorld();
 
         introW.setWorld(this);
         modeW.setWorld(this);
         playW.setWorld(this);
         selectTW.setWorld(this);
+        gameOverW.setWorld(this);
 
-        // Greenfoot.setWorld(introW);
+        // int[] array = {2,1};
+        // gameOverW.setResult(null,false,array);
+
         Greenfoot.setWorld(introW);
+        // Greenfoot.setWorld(gameOverW);
     }
 
 }

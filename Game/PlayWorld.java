@@ -18,6 +18,8 @@ public class PlayWorld extends World
     private GameSystem gameSystem;
     private Message player1;
     private Message player2;
+    private Player blueBird;
+    private Player redBird;
     public PlayWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -37,30 +39,45 @@ public class PlayWorld extends World
 
         qaManager.attach(questionBar);
 
-        gameSystem = new GameSystem(qaManager);
-        addObject(gameSystem,855,42);
-
-        // birds        
-        Player blueBird = new BlueBird(this,gameSystem, true, 2);
-        Player redBird = new RedBird(this,gameSystem, true, 1);
-        blueBird.setEnemy(redBird);
-        redBird.setEnemy(blueBird); 
+        gameSystem = new GameSystem(qaManager,this);
+        addObject(gameSystem,855,42);      
 
         addObject( questionBar, 580, 45 ) ;
         addObject( new Sea(), 570, 800 ) ;
         addObject( new LeftStone(), 50, 570 ) ;
         addObject( new RightStone(), 1100, 570 ) ;
-        addObject( blueBird, 50, 505 ) ;
-        addObject( redBird, 1100, 505 ) ;
+
         //
-       
+        //for test
         gameSystem.startGame();
     }
 
     public void startGame(){
         gameSystem.startGame();
+        for(Bubble b : getObjects(Bubble.class)){
+            b.destroy();
+        };
+
+        // birds    
+        removeObject(blueBird);
+        removeObject(redBird);
+        if(blueBird != null)
+            blueBird.destroy();
+        if(redBird != null)
+            redBird.destroy();
+
+        blueBird = new BlueBird(this,gameSystem, true, 2);
+        redBird = new RedBird(this,gameSystem, true, 1);
+        blueBird.setEnemy(redBird);
+        redBird.setEnemy(blueBird); 
+
+        addObject( blueBird, 50, 505 ) ;
+        addObject( redBird, 1100, 505 ) ;
+
+        //
         removeObject(player1);
         removeObject(player2);
+
         if(tournament ==null){
             player1 = new Message("Player 1");
             player2 = new Message("Player 2");
@@ -81,4 +98,29 @@ public class PlayWorld extends World
         addObject( player2, 1150 - player1.getImageLabel().getWidth()/2 - 10, 80 ) ;
     }
 
+    public void gameOver(){
+        if(blueBird.getState() instanceof WinState){
+            world.gameOverW.setResult(tournament,true,null);
+        }else{
+            world.gameOverW.setResult(tournament,false,null);
+        }
+
+        Greenfoot.setWorld( world.gameOverW);
+    }
+
+    public void timeOut(){
+        int[] array = {blueBird.getCorrectAnswerCount(),redBird.getCorrectAnswerCount()};
+        if(blueBird.getCorrectAnswerCount() > redBird.getCorrectAnswerCount()){
+            world.gameOverW.setResult(tournament,true,array);
+        }
+
+        if(blueBird.getCorrectAnswerCount() < redBird.getCorrectAnswerCount()){
+            world.gameOverW.setResult(tournament,true,array);
+        }
+
+        if(blueBird.getCorrectAnswerCount() == redBird.getCorrectAnswerCount()){
+            world.gameOverW.setResult(tournament,true,array);
+        }
+        Greenfoot.setWorld( world.gameOverW);
+    }
 }

@@ -6,5 +6,5 @@ comment1.target=Life(greenfoot.World,\ int,\ int,\ int)
 comment2.params=
 comment2.target=void\ loseLife()
 comment3.params=
-comment3.target=void\ act()
+comment3.target=void\ destroy()
 numComments=4

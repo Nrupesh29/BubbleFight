@@ -1,12 +1,14 @@
 #BlueJ class context
 comment0.target=TimerMessage
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ TimerMessage\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
-comment1.params=labelText
-comment1.target=TimerMessage(java.lang.String)
+comment1.params=s
+comment1.target=TimerMessage(int)
 comment2.params=s
-comment2.target=TimerMessage(int)
-comment3.params=totalSeconds
-comment3.target=java.lang.String\ timeConversion(int)
-comment4.params=s\ xPos\ yPos
-comment4.target=void\ setMessage(int,\ int,\ int)
-numComments=5
+comment2.target=TimerMessage\ getInstance(int)
+comment3.params=s
+comment3.target=void\ setTime(int)
+comment4.params=totalSeconds
+comment4.target=java.lang.String\ timeConversion(int)
+comment5.params=s\ xPos\ yPos
+comment5.target=void\ setMessage(int,\ int,\ int)
+numComments=6

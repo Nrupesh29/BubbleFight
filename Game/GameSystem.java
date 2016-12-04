@@ -1,10 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Random;
-import org.restlet.*;
-import org.restlet.resource.ClientResource;
-import org.restlet.ext.json.JsonRepresentation;
-import org.restlet.representation.Representation;
-import org.json.*;
 
 /**
  * Write a description of class GameSystem here.
@@ -20,7 +15,7 @@ public class GameSystem extends Actor
     private int seaMinX = 200;
     private int seaMaxX = 800;
 
-    private int timer = 60;
+    private int timer = 10;
     private int second = 0;
     private long start = 0;
     private long current = 0;
@@ -30,22 +25,14 @@ public class GameSystem extends Actor
     TimerMessage timerMessage;
 
     QAManager pqManager;
-
-    public GameSystem(QAManager qa) {
+    private PlayWorld world;
+    public GameSystem(QAManager qa,PlayWorld w) {
         pqManager = qa;
-        try {
-            getAllPlayers();
-
-        } catch (Exception e){
-            System.out.println(e);
-            // Deal with e as you please.
-            //e may be any type of exception at all.
-
-        }
-
+        world = w;
     }
 
     public void startGame(){
+        current = 0;
         second = timer;
         createTimerMessage(second);
         start = System.currentTimeMillis();
@@ -62,7 +49,7 @@ public class GameSystem extends Actor
     }
 
     public void createTimerMessage(int s){
-        timerMessage = new TimerMessage(s);
+        timerMessage = TimerMessage.getInstance(s);
         getWorld().addObject(timerMessage,375,45);
     }
 
@@ -97,14 +84,11 @@ public class GameSystem extends Actor
             createTimerMessage(second);
 
         }
+        
+        if(second == 0){
+            second = -1;
+            world.timeOut();
+        }
     }    
 
-    public void getAllPlayers() throws Exception{
-        String url = API_URL + "players";
-        ClientResource helloClientresource = new ClientResource(url); 
-        JsonRepresentation rep = new JsonRepresentation("{array:"+helloClientresource.get().getText()+"}");
-        JSONObject  json = rep.getJsonObject();
-        System.out.println(json.toString());
-
-    }
 }

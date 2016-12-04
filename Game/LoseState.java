@@ -7,9 +7,13 @@
  */
 public class LoseState implements State
 {
-    public LoseState(Player player){
+    private Player player;
+    public LoseState(Player p){
+        player = p;
     };
-    public void initialize(){};
+    public void initialize(){
+        player.gameOver();
+    };
     public void answerIncorrect(){};
 
     public void fallToTheSea(){};

@@ -23,7 +23,7 @@ public class Player extends Actor
     int answerIncorrectCount;
 
     Player enemy;
-    World world;
+    PlayWorld world;
 
     public String name;
 
@@ -51,7 +51,8 @@ public class Player extends Actor
     private GameSystem gameSystem;
     public Player(){
     }
-    public Player(World w,GameSystem gs, boolean isLeft, boolean controllable, int c){
+
+    public Player(PlayWorld w,GameSystem gs, boolean isLeft, boolean controllable, int c){
 
         width = getImage().getWidth();
         height = getImage().getHeight();
@@ -154,9 +155,10 @@ public class Player extends Actor
 
     }    
 
-    public void setUpPlayer(){
+    public void setUpPlayer(){        
         life = new Life(world,playerLocations[0],playerLocations[1],lifeCount);
         world.addObject( life, playerLocations[2],playerLocations[3] ) ;          
+
         energyBar = new Energy0();
         world.addObject( energyBar, playerLocations[4],playerLocations[5] ) ;        
     }
@@ -172,7 +174,7 @@ public class Player extends Actor
             energyBar = new Energy50();
             world.addObject( energyBar, playerLocations[4],playerLocations[5] ) ;        
         }
-        
+
         if(energyCount > 1){
             world.removeObject( energyBar );
             energyBar = new Energy100();
@@ -222,9 +224,9 @@ public class Player extends Actor
         if(state instanceof RebirthState){
             System.out.println("rebirth");
 
-        }                    
-        state.initialize();
+        }    
 
+        state.initialize();
     }
 
     public State getState() {
@@ -304,6 +306,10 @@ public class Player extends Actor
         }
     }
 
+    public int getCorrectAnswerCount(){
+        return energyCount;
+    }
+
     public void fallToTheSea(){
         setToOriginLocation();
         if(state != null)
@@ -312,5 +318,15 @@ public class Player extends Actor
 
     public void setToOriginLocation(){
         setLocation(originX,originY);
+    }
+
+    public void destroy(){
+        life.destroy();
+        world.removeObject(energyBar);
+    }
+
+    public void gameOver(){
+        enemy.setState(enemy.getWinState());
+        world.gameOver();
     }
 }

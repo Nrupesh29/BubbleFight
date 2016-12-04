@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sat Dec 03 16:02:16 PST 2016
+#Sat Dec 03 22:23:04 PST 2016
 class.Sea.image=sea.png
 target24.type=ClassTarget
 target16.name=Button
@@ -553,6 +553,7 @@ class.Message.superclass=greenfoot.Actor
 dependency6.to=Life
 dependency41.from=Player
 target24.typeParameters=
+class.GameOverWorld.superclass=greenfoot.World
 dependency93.from=IntroWorld
 target4.width=80
 target38.showInterface=false
@@ -588,6 +589,7 @@ target21.type=ClassTarget
 mainWindow.y=-9
 target13.name=Bubble
 mainWindow.x=-9
+class.GameOverWorld.image=playBackground.png
 target16.y=430
 target16.x=10
 dependency28.from=PlayWorld

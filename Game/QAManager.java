@@ -44,7 +44,7 @@ public class QAManager extends Actor implements IObject
             return new Answer(getQuestion().getAnswer().getMessage());
         }
 
-        return new Answer(random.nextInt(99)+"");
+        return new Answer(random.nextInt(50)+"");
 
     }
     

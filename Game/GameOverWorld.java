@@ -71,6 +71,7 @@ public class GameOverWorld extends World
         addObject( player2, 1150 - player1.getImage().getWidth()/2 - 210, 320) ;
 
         //
+        System.out.println(        points);
         if(points != null){
             p1Point = new Message(points[0]+" correct answers(s)", Color.black,30);
             p2Point = new Message(points[1]+" correct answers(s)", Color.black,30);

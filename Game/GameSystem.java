@@ -12,10 +12,10 @@ public class GameSystem extends Actor
     public int pause = 70;
     private int speed = 2;
     private int seaY = 800;
-    private int seaMinX = 200;
-    private int seaMaxX = 800;
+    private int seaMinX = 300;
+    private int seaMaxX = 850;
 
-    private int timer = 10;
+    private int timer = 60;
     private int second = 0;
     private long start = 0;
     private long current = 0;
@@ -64,7 +64,7 @@ public class GameSystem extends Actor
             // Add your action code here.
 
             Random r = new Random();
-            int result = r.nextInt(seaMaxX-seaMinX) + seaMinX;
+            int result = r.nextInt(seaMaxX - seaMinX) + seaMinX;
             Answer label = pqManager.generateAnswer();
             // System.out.println(label.getMessage());
             Bubble b = new Bubble(label, speed);

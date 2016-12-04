@@ -115,12 +115,9 @@ public class PlayWorld extends World
         }
 
         if(blueBird.getCorrectAnswerCount() < redBird.getCorrectAnswerCount()){
-            world.gameOverW.setResult(tournament,true,array);
+            world.gameOverW.setResult(tournament,false,array);
         }
 
-        if(blueBird.getCorrectAnswerCount() == redBird.getCorrectAnswerCount()){
-            world.gameOverW.setResult(tournament,true,array);
-        }
         Greenfoot.setWorld( world.gameOverW);
     }
 }

@@ -47,9 +47,26 @@ public class PlayButton extends Button
         if (Greenfoot.mouseClicked(this)) {
             Greenfoot.setWorld(world);
 
-            if (world instanceof PlayWorld) {
-                PlayWorld pw = (PlayWorld) world;
-                pw.startGame();
+            if(!flip){
+                if (world instanceof PlayWorld) {
+                    PlayWorld pw = (PlayWorld) world;
+                    pw.startGame();
+                }
+
+                if (world instanceof IntroWorld) {
+                    IntroWorld pw = (IntroWorld) world;
+                    pw.reset();
+                }
+                if (world instanceof SelectTournamentWorld) {
+                    SelectTournamentWorld pw = (SelectTournamentWorld) world;
+                    pw.addTournament();
+                }
+
+            }else{
+                if (world instanceof IntroWorld) {
+                    IntroWorld pw = (IntroWorld) world;
+                    pw.reset();
+                }
             }
         }
     }    

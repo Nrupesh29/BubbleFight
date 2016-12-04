@@ -28,4 +28,8 @@ public class IntroWorld extends World
         addObject( new HelpButton(), 580, 400 ) ;
         addObject( new ExitButton(), 740, 400 ) ;
     }
+    
+    public void reset(){
+        world.playW.setTournament(null);
+    }
 }

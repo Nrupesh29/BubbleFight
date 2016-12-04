@@ -126,4 +126,7 @@ public class SelectTournamentWorld extends World
         addObject( new PlayButton(world.playW), 575, 500 ) ;
     }
 
+    public void addTournament(){
+        world.playW.setTournament(tournament);
+    }
 }

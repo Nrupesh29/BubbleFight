@@ -33,7 +33,7 @@ public class MyWorld extends World
         selectTW.setWorld(this);
 
         // Greenfoot.setWorld(introW);
-        Greenfoot.setWorld(playW);
+        Greenfoot.setWorld(introW);
     }
 
 }

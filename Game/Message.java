@@ -10,6 +10,7 @@ import java.awt.Color;
 public class Message extends Actor
 {
     protected String message;
+    private GreenfootImage label;
     public Message()
     {
 
@@ -18,14 +19,14 @@ public class Message extends Actor
     public Message(String labelText)  
     {
         message = labelText;
-        GreenfootImage label = new GreenfootImage(labelText,25,Color.black,null);  
+        label = new GreenfootImage(labelText,25,Color.black,null);  
         setImage(label);          
     }
 
     public Message(String labelText, Color color)  
     {
         message = labelText;
-        GreenfootImage label = new GreenfootImage(labelText,25,color,null);  
+        label = new GreenfootImage(labelText,25,color,null);  
         setImage(label);     
     }
     
@@ -34,6 +35,10 @@ public class Message extends Actor
         message = labelText;
         GreenfootImage label = new GreenfootImage(labelText,size,color,null);  
         setImage(label);     
+    }
+    
+    public GreenfootImage getImageLabel(){
+        return label;
     }
 
     public void updateLocation(int x, int y){

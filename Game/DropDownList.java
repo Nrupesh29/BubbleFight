@@ -127,7 +127,7 @@ public class DropDownList extends Actor {
             if(name == "match"){
                 Match m = world.tournament.findMatch(itemArray.getJSONObject(value));
                 world.tournament.setCurrent(m);
-               // System.out.println(world.tournament.getCurrent().player1.toString());
+                // System.out.println(world.tournament.getCurrent().player1.toString());
             }
         } catch (Exception e){
             System.out.println(e);

@@ -14,11 +14,11 @@ import org.json.*;
  */
 public class GameSystem extends Actor
 {
-    public int pause = 50;
-    private int speed = 3;
+    public int pause = 70;
+    private int speed = 2;
     private int seaY = 800;
     private int seaMinX = 200;
-    private int seaMaxX = 900;
+    private int seaMaxX = 800;
 
     private int timer = 60;
     private int second = 0;
@@ -83,7 +83,7 @@ public class GameSystem extends Actor
             Bubble b = new Bubble(label, speed);
             getWorld().addObject(b,result,seaY);
             getWorld().addObject(label,result,seaY);
-            pause = 50;
+            pause = 70;
 
         }
 

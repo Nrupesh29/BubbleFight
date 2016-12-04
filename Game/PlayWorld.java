@@ -48,10 +48,10 @@ public class PlayWorld extends World
 
         addObject( questionBar, 580, 45 ) ;
         addObject( new Sea(), 570, 800 ) ;
-        addObject( new LeftStone(), 50, 800 ) ;
-        addObject( new RightStone(), 1100, 800 ) ;
-        addObject( blueBird, 50, 500 ) ;
-        addObject( redBird, 1100, 500 ) ;
+        addObject( new LeftStone(), 50, 570 ) ;
+        addObject( new RightStone(), 1100, 570 ) ;
+        addObject( blueBird, 50, 505 ) ;
+        addObject( redBird, 1100, 505 ) ;
         //
        
         gameSystem.startGame();

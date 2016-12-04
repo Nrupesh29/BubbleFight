@@ -18,6 +18,7 @@ public class MyWorld extends World
     public PlayWorld playW;
     public SelectTournamentWorld selectTW;
     public GameOverWorld gameOverW;
+    public final String API_URL = "http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/";
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -36,10 +37,10 @@ public class MyWorld extends World
         gameOverW.setWorld(this);
 
         int[] array = {0,0};
-        gameOverW.setResult(null,false,array);
+        gameOverW.setResult(null,true,null); 
 
-        Greenfoot.setWorld(introW);
-        //Greenfoot.setWorld(gameOverW);
+        Greenfoot.setWorld(selectTW);
+       // Greenfoot.setWorld(gameOverW);
     }
 
 }

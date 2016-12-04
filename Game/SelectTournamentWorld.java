@@ -20,7 +20,7 @@ public class SelectTournamentWorld extends World
      * 
      */
     private MyWorld world;
-    private final String API_URL = "http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/";
+
     public Tournament tournament;
     private DropDownList listMatches;
     public SelectTournamentWorld()
@@ -42,20 +42,12 @@ public class SelectTournamentWorld extends World
         addObject(redbird,900,250);
 
         addObject( new Message("VS", Color.green,100), 575, 250 ) ;
-        try {
-            loadTournaments();
-
-        } catch (Exception e){
-            System.out.println(e);
-            // Deal with e as you please.
-            //e may be any type of exception at all.
-
-        }
 
     }
 
     public void loadTournaments()throws Exception{
-        String url = API_URL + "tournaments";
+        String url = world.API_URL + "tournaments";
+        //System.out.println(world);
         ClientResource helloClientresource = new ClientResource(url); 
         JsonRepresentation rep = new JsonRepresentation("{array:"+helloClientresource.get().getText()+"}");
         JSONObject json = rep.getJsonObject();
@@ -83,36 +75,44 @@ public class SelectTournamentWorld extends World
 
     public void loadMatches(JSONObject obj)throws Exception{
         removeMatchesD();
-        String url = API_URL + "match-tournament/"+obj.get("id");
+        String url = world.API_URL + "match-tournament/"+obj.get("id");
         ClientResource helloClientresource = new ClientResource(url); 
         JsonRepresentation rep = new JsonRepresentation("{array:"+helloClientresource.get().getText()+"}");
         JSONObject json = rep.getJsonObject();
         System.out.println(json.toString());
         JSONArray list = json.getJSONArray("array");
+        JSONArray listFilter = new JSONArray();
         System.out.println(list.toString());
 
         for (int i = 0; i < list.length(); i++) {
             JSONObject j = list.getJSONObject(i);
-            ClientResource cl1 = new ClientResource(API_URL+"player/"+j.get("player_one_id")); 
+            ClientResource cl1 = new ClientResource(world.API_URL+"player/"+j.get("player_one_id")); 
             JsonRepresentation rep1 = new JsonRepresentation(cl1.get());
             JSONObject json1 = rep1.getJsonObject();
 
-            ClientResource cl2 = new ClientResource(API_URL+"player/"+j.get("player_two_id")); 
+            ClientResource cl2 = new ClientResource(world.API_URL+"player/"+j.get("player_two_id")); 
             JsonRepresentation rep2 = new JsonRepresentation(cl2.get());
             JSONObject json2 = rep2.getJsonObject();
 
             j.put("name",json1.get("name") + " vs "+ json2.get("name"));
             tournament.addMatch(j,json1,json2);
+            
+            if(j.get("winner_id") == null){
+                listFilter.put(j);
+            }
         }
         // System.out.println(list.toString());
 
-        if(list.length() > 0){ 
-            listMatches = new DropDownList(list, 0, this,"match");            
+        if(listFilter.length() > 0){      
+            listMatches = new DropDownList(listFilter, 0, this,"match");  
             addObject(listMatches, 575, 320);
-            Match m = tournament.findMatch(list.getJSONObject(0));
+            Match m = tournament.findMatch(listFilter.getJSONObject(0));
             tournament.setCurrent(m);
             System.out.println(tournament.getCurrent().player1.toString());
         }else{
+            listFilter.put(new JSONObject().put("name","no match"));
+            listMatches = new DropDownList(listFilter, 0, this,"match");  
+            addObject(listMatches, 575, 320);
             System.out.println("no matches");
         }
     }
@@ -124,6 +124,15 @@ public class SelectTournamentWorld extends World
         addObject( backB, 50, 50 ) ;
 
         addObject( new PlayButton(world.playW), 575, 500 ) ;
+        try {
+            loadTournaments();
+
+        } catch (Exception e){
+            System.out.println(e);
+            // Deal with e as you please.
+            //e may be any type of exception at all.
+
+        }
     }
 
     public void addTournament(){

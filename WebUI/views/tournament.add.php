@@ -1,3 +1,6 @@
+<?php
+header('Access-Control-Allow-Origin: *');
+?>
 <form id="createTournamentForm">
     <div class="row">
         <div class="col-xs-12 col-sm-3">
@@ -70,7 +73,7 @@
 </form>
 <script>
     function createTournament() {
-        if ($('#createTournamentForm')[0].checkValidity()) {
+        //if ($('#createTournamentForm')[0].checkValidity()) {
             var name = $("input[name=t-name]").val();
             var players = $("input[name=t-player]");
             for (var i = 0; i < players.length; i++) {
@@ -78,11 +81,11 @@
             }
             console.log(name);
             console.log(players);
-        }
-        else {
-            alert("please fill all required fields.")
-        }
-//        curlCreateTournament(name,players);
+//        }
+//        else {
+//            alert("please fill all required fields.")
+//        }
+        curlCreateTournament(name, players);
     }
     function resetCreateTournament() {
         $('#createTournamentForm')[0].reset();

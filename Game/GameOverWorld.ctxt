@@ -8,4 +8,6 @@ comment2.params=w
 comment2.target=void\ setWorld(MyWorld)
 comment3.params=t\ isOneWin\ points
 comment3.target=void\ setResult(Tournament,\ boolean,\ int[])
-numComments=4
+comment4.params=t\ winner
+comment4.target=void\ updateDatabase(Tournament,\ int)
+numComments=5

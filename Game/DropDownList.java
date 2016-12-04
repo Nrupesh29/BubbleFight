@@ -105,7 +105,14 @@ public class DropDownList extends Actor {
      * 
      */
     public void collapseList() {
-        getWorld().removeObjects(listItems);
+        //System.out.println(listItems);
+        if(listItems != null && listItems.size() > 0){
+            //getWorld().removeObjects(listItems);
+            //listItems = new ArrayList<DropDownListItem>();
+            for (int i = 0; i < listItems.size(); i++) {
+                getWorld().removeObject(listItems.get(i));
+            }
+        }
         isExpanded = false;
     }
 
@@ -121,16 +128,19 @@ public class DropDownList extends Actor {
             //System.out.println(itemArray.getJSONObject(value).get("name").toString());
 
             if(name == "tournament"){
-                world.loadMatches(itemArray.getJSONObject(value));
+                if(itemArray.length() > 0)
+                    world.loadMatches(itemArray.getJSONObject(value));
             }
 
             if(name == "match"){
-                Match m = world.tournament.findMatch(itemArray.getJSONObject(value));
-                world.tournament.setCurrent(m);
+                if(itemArray.length() > 0){
+                    Match m = world.tournament.findMatch(itemArray.getJSONObject(value));
+                    world.tournament.setCurrent(m);
+                }
                 // System.out.println(world.tournament.getCurrent().player1.toString());
             }
         } catch (Exception e){
-            System.out.println(e);
+            e.printStackTrace();
             // Deal with e as you please.
             //e may be any type of exception at all.
 

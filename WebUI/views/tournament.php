@@ -115,7 +115,11 @@
             curlLoadTournament().then(function (rs) {
                 console.log(rs);
                 window.setTimeout(function () {
-                    c
+                    data.tournaments = rs;
+                    var template = $('#template').html();
+                    Mustache.parse(template);   // optional, speeds up future uses
+                    var rendered = Mustache.render(template, data);
+                    $('#target').html(rendered);
                 }, 1000);
             });
         }, 1000);

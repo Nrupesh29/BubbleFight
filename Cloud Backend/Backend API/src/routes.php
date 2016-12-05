@@ -262,15 +262,10 @@ $app->delete('/match/[{id}]', function ($request, $response, $args) {
 // Update match with given id
 $app->put('/match/[{id}]', function ($request, $response, $args) {
     $input = $request->getParsedBody();
-    $sql = "UPDATE matches SET player_one_id=:playerOneId, player_two_id=:playerTwoId, tournament_id=:tournamentId, level_id=:levelId, winner_id=:winnerId, matchdate=:matchDate, score=:matchScore WHERE id=:id";
+    $sql = "UPDATE matches SET winner_id=:winnerId, score=:matchScore WHERE id=:id";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("id", $args['id']);
-    $sth->bindParam("playerOneId", $input['playerOneId']);
-    $sth->bindParam("playerTwoId", $input['playerTwoId']);
-    $sth->bindParam("tournamentId", $input['tournamentId']);
-    $sth->bindParam("levelId", $input['levelId']);
     $sth->bindParam("winnerId", $input['winnerId']);
-    $sth->bindParam("matchDate", $input['matchDate']);
     $sth->bindParam("matchScore", $input['matchScore']);
     $sth->execute();
     $input['id'] = $args['id'];

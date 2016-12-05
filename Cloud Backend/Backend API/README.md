@@ -45,11 +45,11 @@
 | GET     | `{base_url}/match-tournament/{id}` | | List all matches with specified tournament **`id`** |
 | POST     | `{base_url}/match`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` <br /> `matchDate` <br /> `matchScore` | Add a new match |
 | DELETE     | `{base_url}/match/{id}` | | Delete match with specified **`id`** |
-| PUT     | `{base_url}/match/{id}`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` <br /> `matchDate` <br /> `matchScore` | Update match with specified **`id`** |
+| PUT     | `{base_url}/match/{id}`| `winnerId` <br /> `matchScore` | Update match Winner and Score fields with specified **`id`** |
 
-## DEFAULTS
+## Defaults
 
-PlayerId "1" & "2" is reserved for 2 players play in the normal game
+PlayerId `1` & `2` is reserved for Normal game mode.
 
 ## Contributor
 

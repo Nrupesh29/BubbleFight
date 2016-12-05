@@ -9,7 +9,7 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 ## Project Deliverables
 [UI Wireframes] (Diagrams/UI Wireframes) <br/>
 [Sequence Diagram] (Diagrams/Sequence Diagram)<br/>
-[Activity Diagram] (Diagrams/Activity Diagrams)
+[Activity Diagram] (Diagrams/Activity Diagrams)<br/>
 [Web UI](http://myxaxi.net/tournament/)
 
 ## Installation

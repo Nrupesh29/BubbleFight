@@ -2,39 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c6c70f6-18c7-43ea-9e77-87a7c2e3c328" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Diagrams/Use Case Diagrams/final_usecasegame.asta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Game/ResourceHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Game/ResourceHandler.ctxt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Game/ResourceHandler.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebUI/service/loadM.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/GameOverWorld.class" afterPath="$PROJECT_DIR$/Game/GameOverWorld.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/BlueBird.ctxt" afterPath="$PROJECT_DIR$/Game/BlueBird.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/DropDownList.ctxt" afterPath="$PROJECT_DIR$/Game/DropDownList.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/DropDownListItem.ctxt" afterPath="$PROJECT_DIR$/Game/DropDownListItem.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/EnergyState.ctxt" afterPath="$PROJECT_DIR$/Game/EnergyState.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/ExitButton.ctxt" afterPath="$PROJECT_DIR$/Game/ExitButton.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/GameOverWorld.ctxt" afterPath="$PROJECT_DIR$/Game/GameOverWorld.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/MyWorld.class" afterPath="$PROJECT_DIR$/Game/MyWorld.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/SelectTournamentWorld.class" afterPath="$PROJECT_DIR$/Game/SelectTournamentWorld.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/GameOverWorld.java" afterPath="$PROJECT_DIR$/Game/GameOverWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/GameSystem.ctxt" afterPath="$PROJECT_DIR$/Game/GameSystem.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/IntroWorld.ctxt" afterPath="$PROJECT_DIR$/Game/IntroWorld.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/LoseState.ctxt" afterPath="$PROJECT_DIR$/Game/LoseState.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/ModeWorld.ctxt" afterPath="$PROJECT_DIR$/Game/ModeWorld.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/MyWorld.ctxt" afterPath="$PROJECT_DIR$/Game/MyWorld.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/NormalState.ctxt" afterPath="$PROJECT_DIR$/Game/NormalState.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/PlayButton.ctxt" afterPath="$PROJECT_DIR$/Game/PlayButton.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/PlayWorld.ctxt" afterPath="$PROJECT_DIR$/Game/PlayWorld.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/Player.ctxt" afterPath="$PROJECT_DIR$/Game/Player.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/RebirthState.ctxt" afterPath="$PROJECT_DIR$/Game/RebirthState.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/RedBird.ctxt" afterPath="$PROJECT_DIR$/Game/RedBird.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/SelectTournamentWorld.ctxt" afterPath="$PROJECT_DIR$/Game/SelectTournamentWorld.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/State.ctxt" afterPath="$PROJECT_DIR$/Game/State.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/UnBeatableState.ctxt" afterPath="$PROJECT_DIR$/Game/UnBeatableState.ctxt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/WinState.ctxt" afterPath="$PROJECT_DIR$/Game/WinState.ctxt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/MyWorld.java" afterPath="$PROJECT_DIR$/Game/MyWorld.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/SelectTournamentWorld.java" afterPath="$PROJECT_DIR$/Game/SelectTournamentWorld.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Game/project.greenfoot" afterPath="$PROJECT_DIR$/Game/project.greenfoot" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/.idea/workspace.xml" afterPath="$PROJECT_DIR$/WebUI/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/service/curl.js" afterPath="$PROJECT_DIR$/WebUI/service/curl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/views/home.php" afterPath="$PROJECT_DIR$/WebUI/views/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/views/tournament.add.php" afterPath="$PROJECT_DIR$/WebUI/views/tournament.add.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebUI/views/tournament.php" afterPath="$PROJECT_DIR$/WebUI/views/tournament.php" />
     </list>
     <ignored path="CMPE-202-Team-Project.iws" />
     <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +34,40 @@
   <component name="FavoritesManager">
     <favorites_list name="CMPE-202-Team-Project" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="LICENSE.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QAManager.ctxt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Game/QAManager.ctxt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QAManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Game/QAManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -60,10 +79,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1840" />
-    <option name="height" value="1098" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -90,9 +109,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -101,12 +117,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE-202-Team-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMPE-202-Team-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/WebUI" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
@@ -126,6 +155,7 @@
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -191,11 +221,34 @@
       <option name="trusted" value="true" />
       <method />
     </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <envs />
       <method />
     </configuration>
     <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="SCRATCH_FILE_ID" value="0" />
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -214,6 +267,7 @@
       <method />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
@@ -226,6 +280,7 @@
       <method />
     </configuration>
     <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="filePath" />
       <option name="vmParameters" />
       <option name="alternativeJrePath" />
@@ -254,7 +309,41 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -277,18 +366,6 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -303,22 +380,24 @@
       <workItem from="1480829271899" duration="63000" />
       <workItem from="1480889647862" duration="15000" />
       <workItem from="1480901184935" duration="20000" />
+      <workItem from="1480915202752" duration="66000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98000" />
+    <option name="totallyTimeSpent" value="164000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1840" height="1098" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25707814" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2596472" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917964" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -329,7 +408,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -348,5 +426,31 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/LICENSE.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/QAManager.ctxt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Game/QAManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

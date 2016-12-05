@@ -96,12 +96,14 @@ public class SelectTournamentWorld extends World
 
             j.put("name",json1.get("name") + " vs "+ json2.get("name"));
             tournament.addMatch(j,json1,json2);
-            
-            if(j.get("winner_id") == null){
+           
+            if(j.get("winner_id") instanceof String){
+
+            }else{
                 listFilter.put(j);
             }
         }
-        // System.out.println(list.toString());
+        System.out.println(listFilter.toString());
 
         if(listFilter.length() > 0){      
             listMatches = new DropDownList(listFilter, 0, this,"match");  

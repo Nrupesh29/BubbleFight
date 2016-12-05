@@ -1,13 +1,13 @@
 var URL = "http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/";
 var MofT = [];
 function curlCreateTournament(name, players) {
-    findT(name).then(function (rs) {
+    return findT(name).then(function (rs) {
         if (rs.length > 0) {
             for (var i = 0; i < rs.length; i++) {
                 // console.log(rs[i]);
                 if (rs[i].name == name) {
                     alert("tournament's name is existed");
-                    return;
+                    return false;
                 }
             }
         }
@@ -19,7 +19,7 @@ function curlCreateTournament(name, players) {
             getArray.push(createP(players[i]));
         }
 
-        $.when.apply($, getArray).done(function (rs1, rs2, rs3, rs4) {
+        return $.when.apply($, getArray).then(function (rs1, rs2, rs3, rs4) {
 
             return createT({name: name}).then(function (tournament) {
                 createM({
@@ -83,6 +83,14 @@ function curlLoadTournament(callback) {
                     }
                     if (rs2[j].level_id == "1") {
                         data.final = rs2[j];
+                        if (data.final && data.final.winner_id != null) {
+                            if (data.final.winner_id == data.final.player_one_id) {
+                                data.final.winner = data.final.player1;
+                            }
+                            if (data.final.winner_id == data.final.player_two_id) {
+                                data.final.winner = data.final.player2;
+                            }
+                        }
                     }
                 }
                 console.log(data);

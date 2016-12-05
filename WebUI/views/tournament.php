@@ -37,14 +37,19 @@
                             <li class="item">
                                 <div class="name">{{matches.semi.0.player1.name}}</div>
                                 <div class="text">
+                                    {{#matches.semi.0.winner_id}}
+                                    {{matches.semi.0.score}}
+                                    {{/matches.semi.0.winner_id}}
+                                    {{^matches.semi.0.winner_id}}
                                     VS
+                                    {{/matches.semi.0.winner_id}}
                                 </div>
                             </li>
                             <li class="item lv-2">
                                 <div class="bar"></div>
-                                <div  class="name">Winner 1</div>
+                                <div  class="name">{{matches.final.player1.name}}</div>
                                 <div class="text">
-                                    VS
+
                                 </div>
                             </li>
                             <li class="item">
@@ -62,12 +67,17 @@
                             <li class="item">
                                 <div class="name">{{matches.semi.1.player1.name}}</div>
                                 <div class="text">
-                                    2 - 0
+                                      {{#matches.semi.1.winner_id}}
+                                    {{matches.semi.1.score}}
+                                    {{/matches.semi.1.winner_id}}
+                                    {{^matches.semi.1.winner_id}}
+                                    VS
+                                    {{/matches.semi.1.winner_id}}
                                 </div>
                             </li>
                             <li class="item lv-2">
                                 <div class="bar"></div>
-                                <div class="name">Winner 2</div>
+                                <div class="name">{{matches.final.player2.name}}</div>
                             </li>
                             <li class="item">
                                 <div class="name">{{matches.semi.1.player2.name}}</div>

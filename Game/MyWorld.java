@@ -36,8 +36,8 @@ public class MyWorld extends World
         selectTW.setWorld(this);
         gameOverW.setWorld(this);
 
-        int[] array = {0,0};
-        gameOverW.setResult(null,true,null); 
+        //int[] array = {0,0};
+       // gameOverW.setResult(null,true,null); 
 
         Greenfoot.setWorld(selectTW);
        // Greenfoot.setWorld(gameOverW);

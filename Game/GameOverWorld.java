@@ -85,7 +85,7 @@ public class GameOverWorld extends World
         addObject( player2, 1150 - player1.getImage().getWidth()/2 - 210, 320) ;
 
         //
-        System.out.println(        points);
+        System.out.println( points);
         if(points != null){
             p1Point = new Message(points[0]+" correct answers(s)", Color.black,30);
             p2Point = new Message(points[1]+" correct answers(s)", Color.black,30);
@@ -135,7 +135,7 @@ public class GameOverWorld extends World
                 data.put("matchDate", dateFormat.format(date));
                 data.put("matchScore", winner==1?"1 - 0":"0 - 1");
 
-                String str = cr.sendPutRequest(world.API_URL+"match/1", data);
+                String str = cr.sendPostRequest(world.API_URL+"match", data);
 
                 System.out.println(str);
 

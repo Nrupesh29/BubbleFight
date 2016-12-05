@@ -85,7 +85,12 @@ header('Access-Control-Allow-Origin: *');
         else {
             alert("please fill all required fields.")
         }
-        curlCreateTournament(name, players);
+        curlCreateTournament(name, players).then(function(rs){
+            if(rs){
+                window.location.reload();
+            }
+
+        });
     }
     function resetCreateTournament() {
         $('#createTournamentForm')[0].reset();

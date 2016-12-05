@@ -20,9 +20,14 @@
         </div>
     </div>
     <br>
+
+    <div id="target">Loading...</div>
+    <script id="template" type="x-tmpl-mustache">
+    {{#tournaments}}
     <div class="row">
         <div class="col-xs-12">
-            <paper-card class="col-xs-12 tournament-wrapper" heading="Tournament Name" alt="Tournament Name">
+            <paper-card class="col-xs-12 tournament-wrapper" >
+            <h2>{{name}}</h4>
                 <div class="tool-bar">
                     <h4 class="status">Status</h4>
                 </div>
@@ -30,7 +35,7 @@
                     <div class="tournament-group">
                         <ul>
                             <li class="item">
-                                <div class="name">Name 1</div>
+                                <div class="name">{{matches.semi.0.player1.name}}</div>
                                 <div class="text">
                                     VS
                                 </div>
@@ -43,7 +48,7 @@
                                 </div>
                             </li>
                             <li class="item">
-                                <div  class="name">Name 1</div>
+                                <div  class="name">{{matches.semi.0.player2.name}}</div>
                             </li>
                             <li class="item lv-3">
                                 <div class="bar"></div>
@@ -55,7 +60,7 @@
                                 </div>
                             </li>
                             <li class="item">
-                                <div class="name">Name 1</div>
+                                <div class="name">{{matches.semi.1.player1.name}}</div>
                                 <div class="text">
                                     2 - 0
                                 </div>
@@ -65,7 +70,7 @@
                                 <div class="name">Winner 2</div>
                             </li>
                             <li class="item">
-                                <div class="name">Name 1</div>
+                                <div class="name">{{matches.semi.1.player2.name}}</div>
                             </li>
                         </ul>
                     </div>
@@ -73,4 +78,28 @@
             </paper-card>
         </div>
     </div>
+{{/tournaments}}
+
+
+
+    </script>
+    <script>
+        var data = {};
+
+
+        window.setTimeout(function () {
+            curlLoadTournament().then(function (rs) {
+                console.log(rs);
+                window.setTimeout(function () {
+                    data.tournaments = rs;
+                    var template = $('#template').html();
+                    Mustache.parse(template);   // optional, speeds up future uses
+                    var rendered = Mustache.render(template, data);
+                    $('#target').html(rendered);
+                }, 1000);
+            });
+        }, 1000);
+        //
+    </script>
+
 </div>

@@ -6,6 +6,9 @@
     <script src="plugins/mindfor.affix.js"></script>
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/mustache.js/mustache.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 

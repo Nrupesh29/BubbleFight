@@ -73,7 +73,7 @@ header('Access-Control-Allow-Origin: *');
 </form>
 <script>
     function createTournament() {
-        //if ($('#createTournamentForm')[0].checkValidity()) {
+        if ($('#createTournamentForm')[0].checkValidity()) {
             var name = $("input[name=t-name]").val();
             var players = $("input[name=t-player]");
             for (var i = 0; i < players.length; i++) {
@@ -81,10 +81,10 @@ header('Access-Control-Allow-Origin: *');
             }
             console.log(name);
             console.log(players);
-//        }
-//        else {
-//            alert("please fill all required fields.")
-//        }
+        }
+        else {
+            alert("please fill all required fields.")
+        }
         curlCreateTournament(name, players);
     }
     function resetCreateTournament() {

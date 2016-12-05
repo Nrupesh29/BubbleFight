@@ -101,12 +101,20 @@ paper-button paper-spinner {
 .product-wrapper img {
   height: 300px; }
 
-.tournament-wrapper .status {
-  color: green; }
+.tournament-wrapper {
+  padding: 20px;
+  padding-top: 0;
+  background: white;
+  margin: 10px 0;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
+  .tournament-wrapper .status {
+    color: green; }
 
 .tournament-group {
   width: 700px;
   margin: auto; }
+  .tournament-group input::-webkit-input-placeholder {
+    color: yellow; }
   .tournament-group ul {
     list-style: none;
     padding-left: 20px; }

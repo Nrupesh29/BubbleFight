@@ -1,9 +1,9 @@
-# Sequence Diagram
-Following image shows the Sequence Diagram for our game
+# Activity Diagram
+Following image shows the Activity Diagram for our game
 
-![SequenceDiagram](Sequence Diagram.png)
+![ActivityDiagram](CMPE 202 - Activity Diagram.png)
 
 ## Contributor
 
-| [![Aditi Shetty](https://avatars.githubusercontent.com/shettyaditi?s=100)<br /><sub>Aditi Shetty<br />CMPE 202 - 04</sub>](https://github.com/shettyaditi)<br /> |
+| [![Nam Phan](https://avatars.githubusercontent.com/mostman47?s=100)<br /><sub>Nam Phan<br />CMPE 202 - 03</sub>](https://github.com/mostman47)<br /> |
 | :---: |

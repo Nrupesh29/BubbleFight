@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=ResourceHandler
+comment1.params=requestURL\ postDataParams
+comment1.target=java.lang.String\ sendPostRequest(java.lang.String,\ java.util.HashMap)
+comment2.params=requestURL
+comment2.target=java.lang.String\ sendGetRequest(java.lang.String)
+comment3.params=requestURL\ putDataParams
+comment3.target=java.lang.String\ sendPutRequest(java.lang.String,\ java.util.HashMap)
+comment4.params=requestURL\ id
+comment4.target=java.lang.String\ sendGetRequestParam(java.lang.String,\ java.lang.String)
+comment5.params=params
+comment5.target=java.lang.String\ getPostDataString(java.util.HashMap)
+numComments=6

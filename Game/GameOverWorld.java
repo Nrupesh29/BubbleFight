@@ -12,6 +12,8 @@ import org.restlet.representation.Representation;
 import org.json.*;
 import org.restlet.data.MediaType;
 import org.restlet.data.Form;
+import java.util.HashMap;
+
 /**
  * Write a description of class GameOverWorld here.
  * 
@@ -110,37 +112,33 @@ public class GameOverWorld extends World
         addObject( p1Status, p1Status.getImage().getWidth()/2 + 200, 180) ;
         addObject( p2Status, 1150 - p2Status.getImage().getWidth()/2 - 200, 180) ;
 
-        //updateDatabase(tournament,winner);
+        updateDatabase(tournament,winner);
     }
 
     private void updateDatabase(Tournament t, int winner){
         if(winner == 0){
             return;
         }
+
         try{
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
             Date date = new Date();
+
             if(t == null){ 
-                ClientResource cl = new ClientResource(world.API_URL+"match"); 
-                System.out.println(world.API_URL+"match");
-                JSONObject jo = new JSONObject();
-                jo.put("playerOneId", "1");  
-                jo.put("playerTwoId", "2");
-                //jo.put("tournament_id", null);
-                //jo.put("level_id", null);
-                jo.put("winnerId", winner==1?"1":"2");
-                jo.put("matchDate", dateFormat.format(date));
-                jo.put("matchScore", winner==1?"1 - 0":"0 - 1");
-                // Form form = new Form();  
-                // form.add("playerOneId", "1");  
-                // form.add("playerTwoId", "2");
-                // // form.add("tournament_id", null);
-                // // form.add("level_id", null);
-                // form.add("winnerId", winner==1?"1":"2");
-                // form.add("matchDate", dateFormat.format(date));
-                // form.add("matchScore", winner==1?"1 - 0":"0 - 1");
-                System.out.println(jo.toString());
-                cl.post(new JsonRepresentation(jo), MediaType.APPLICATION_JSON).write(System.out);
+
+                ResourceHandler cr = new ResourceHandler();
+                HashMap<String, String> data = new HashMap<>();
+
+                data.put("playerOneId", "1");
+                data.put("playerTwoId", "2");
+                data.put("winnerId", winner==1?"1":"2");
+                data.put("matchDate", dateFormat.format(date));
+                data.put("matchScore", winner==1?"1 - 0":"0 - 1");
+
+                String str = cr.sendPutRequest(world.API_URL+"match/1", data);
+
+                System.out.println(str);
+
             }else{
             }
         } catch (Exception e) {

@@ -19,16 +19,25 @@
                         <th>Score</th>
                         <th>Date time</th>
                         </thead>
-                        <tr>
-                            <td>1</td>
-                            <td>3 - <b>2 (KO)</b></td>
-                            <td>10/11/2016 10:00:00</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><b>3</b> - 0</td>
-                            <td>10/11/2016 10:00:00</td>
-                        </tr>
+                        <?php 
+                            $ch = curl_init('http://sample-env.xtfzxnrydy.us-west-1.elasticbeanstalk.com/api/match-tournament/0');
+                            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                            // execute the api call
+                            $result = curl_exec($ch);
+                            // display the json response
+                            $result_array = json_decode($result, true);
+
+                            $arr = array_reverse(array_slice($result_array, -5));
+
+                            foreach ($arr as &$value) {
+                                echo'<tr>
+                                        <td>'.$value['id'].'</td>
+                                        <td>'.$value['score'].'</b></td>
+                                        <td>'.$value['matchdate'].'</td>
+                                    </tr>';
+                            }
+                              
+                        ?>
                     </table>
                 </div>
             </paper-card>

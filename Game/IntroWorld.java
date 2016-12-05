@@ -25,7 +25,7 @@ public class IntroWorld extends World
         world = w;
         
         addObject( new PlayButton(world.modeW), 420, 400 ) ; 
-        addObject( new HelpButton(), 580, 400 ) ;
+        //addObject( new HelpButton(), 580, 400 ) ;
         addObject( new ExitButton(), 740, 400 ) ;
     }
     

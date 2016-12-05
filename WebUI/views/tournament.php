@@ -49,7 +49,12 @@
                                 <div class="bar"></div>
                                 <div  class="name">{{matches.final.player1.name}}</div>
                                 <div class="text">
-
+                                    {{#matches.final.winner_id}}
+                                    {{matches.final.score}}
+                                    {{/matches.final.winner_id}}
+                                    {{^matches.final.winner_id}}
+                                    VS
+                                    {{/matches.final.winner_id}}
                                 </div>
                             </li>
                             <li class="item">
@@ -57,7 +62,14 @@
                             </li>
                             <li class="item lv-3">
                                 <div class="bar"></div>
-                                <div class="name">Final Winner</div>
+                                <div class="name">
+                                    {{#matches.final.winner_id}}
+                                    {{matches.final.name}}
+                                    {{/matches.final.winner_id}}
+                                    {{^matches.final.winner_id}}
+                                    FINAL WINNER
+                                    {{/matches.final.winner_id}}
+                                </div>
                                 <div class="image">
                                     <img src="assets/images/blue-bird.png" alt="">
                                     <img src="assets/images/crown.png" alt="">
@@ -92,6 +104,8 @@
 
 
 
+
+
     </script>
     <script>
         var data = {};
@@ -101,11 +115,7 @@
             curlLoadTournament().then(function (rs) {
                 console.log(rs);
                 window.setTimeout(function () {
-                    data.tournaments = rs;
-                    var template = $('#template').html();
-                    Mustache.parse(template);   // optional, speeds up future uses
-                    var rendered = Mustache.render(template, data);
-                    $('#target').html(rendered);
+                    c
                 }, 1000);
             });
         }, 1000);

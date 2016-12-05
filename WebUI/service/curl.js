@@ -42,14 +42,12 @@ function curlCreateTournament(name, players) {
 
 
 };
-function curlLoadTournament(callback) {
+function curlLoadTournament() {
     return loadT().then(function (rs) {
         var matches = [];
-        console.log(rs);
         rs = _.orderBy(rs, function (e) {
             return parseInt(e.id);
         }, ['desc']);
-        console.log(rs);
         rs = rs.slice(0, 5);
         var getArray = [];
 
@@ -67,10 +65,9 @@ function curlLoadTournament(callback) {
                     }));
                 }
 
-                $.when.apply($, pArray).then(function () {
+                return $.when.apply($, pArray).then(function () {
                     return MofT;
                 });
-                return MofT;
             }).then(function (rs2) {
                 var data = {
                     final: {},
@@ -105,11 +102,42 @@ function curlLoadTournament(callback) {
                     return e.tournament_id == rs[i].id;
                 });
             }
-            if (callback)
-                callback(rs);
             return rs;
         });
 
+    });
+};
+function curlNormal() {
+    return loadM().then(function (rs) {
+        rs = _.orderBy(rs, function (e) {
+            return parseInt(e.id);
+        }, ['desc']);
+        rs = _.filter(rs, function (e) {
+            return e.tournament_id == null;
+        });
+        rs = rs.slice(0, 5);
+        return rs;
+    });
+};
+
+function countNormal() {
+    return loadM().then(function (rs) {
+        rs = _.filter(rs, function (e) {
+            return e.tournament_id == null;
+        });
+        var p1 = 0;
+        var p2 = 0;
+        for (var i = 0; i < rs.length; i++) {
+            if (rs[i].winner_id != null) {
+                if (rs[i].winner_id == rs[i].player_one_id) {
+                    p1++;
+                }
+                if (rs[i].winner_id == rs[i].player_two_id) {
+                    p2++;
+                }
+            }
+        }
+        return {p1: p1, p2: p2};
     });
 };
 function createT(data) {
@@ -173,4 +201,8 @@ function loadT() {
         return JSON.parse(rs1);
     });
 }
-
+function loadM() {
+    return $.post("service/loadM.php").then(function (rs1) {
+        return JSON.parse(rs1);
+    });
+}

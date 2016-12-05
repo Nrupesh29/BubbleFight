@@ -10,6 +10,7 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 [UI Wireframes] (Diagrams/UI Wireframes) <br/>
 [Sequence Diagram] (Diagrams/Sequence Diagram)<br/>
 [Activity Diagram] (Diagrams/Activity Diagrams)
+[Web UI](http://myxaxi.net/tournament/)
 
 ## Installation
 ### AWS Elastic Beanstalk Installation

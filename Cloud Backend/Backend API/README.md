@@ -45,7 +45,7 @@
 | GET     | `{base_url}/match-tournament/{id}` | | List all matches with specified tournament **`id`** |
 | POST     | `{base_url}/match`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` <br /> `matchDate` <br /> `matchScore` | Add a new match |
 | DELETE     | `{base_url}/match/{id}` | | Delete match with specified **`id`** |
-| PUT     | `{base_url}/match/{id}`| `winnerId` <br /> `matchScore` | Update match Winner and Score fields with specified **`id`** |
+| PUT     | `{base_url}/match/{id}`| `playerOneId` <br /> `playerTwoId` <br /> `tournamentId` <br /> `levelId` <br /> `winnerId` <br /> `matchDate` <br /> `matchScore` | Update match details with specified **`id`** |
 
 ## Defaults
 

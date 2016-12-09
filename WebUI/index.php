@@ -11,6 +11,7 @@
     <script src="bower_components/lodash/dist/lodash.min.js"></script>
 
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/font-awesome-4.7.0/css/font-awesome.min.css">
 
     <link rel="import" href="bower_components/polymer/polymer.html">
 

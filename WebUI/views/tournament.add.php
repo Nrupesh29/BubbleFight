@@ -85,6 +85,7 @@ header('Access-Control-Allow-Origin: *');
         else {
             alert("please fill all required fields.")
         }
+
         curlCreateTournament(name, players).then(function(rs){
             if(rs){
                 window.location.reload();

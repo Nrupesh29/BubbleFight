@@ -113,8 +113,10 @@ paper-button paper-spinner {
 .tournament-group {
   width: 700px;
   margin: auto; }
-  .tournament-group input::-webkit-input-placeholder {
-    color: yellow; }
+  .tournament-group input {
+    text-transform: lowercase; }
+    .tournament-group input::-webkit-input-placeholder {
+      color: yellow; }
   .tournament-group ul {
     list-style: none;
     padding-left: 20px; }
@@ -137,6 +139,13 @@ paper-button paper-spinner {
             position: absolute;
             top: -25px;
             left: 84px; }
+      .tournament-group ul .item .next {
+        position: absolute;
+        font-size: 30px;
+        left: 157px;
+        top: -4px; }
+        .tournament-group ul .item .next a {
+          color: red; }
       .tournament-group ul .item .text {
         position: absolute;
         font-size: 20px;

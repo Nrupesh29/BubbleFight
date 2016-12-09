@@ -44,6 +44,7 @@
                                     VS
                                     {{/matches.semi.0.winner_id}}
                                 </div>
+                                <div class="next"><a href="javascript:void(0)" onclick="goNext({{id}},{{matches.semi.0.id}},{{matches.semi.0.player1.id}})"><i class="fa fa-caret-right"></i></a></div>
                             </li>
                             <li class="item lv-2">
                                 <div class="bar"></div>
@@ -56,15 +57,17 @@
                                     VS
                                     {{/matches.final.winner_id}}
                                 </div>
+                                <div class="next"><a href=""><i class="fa fa-caret-right"></i></a></div>
                             </li>
                             <li class="item">
                                 <div  class="name">{{matches.semi.0.player2.name}}</div>
+                                <div class="next"><a href=""><i class="fa fa-caret-right"></i></a></div>
                             </li>
                             <li class="item lv-3">
                                 <div class="bar"></div>
                                 <div class="name">
                                     {{#matches.final.winner_id}}
-                                    {{matches.final.name}}
+                                        {{matches.final.winner.name}}
                                     {{/matches.final.winner_id}}
                                     {{^matches.final.winner_id}}
                                     FINAL WINNER
@@ -86,13 +89,16 @@
                                     VS
                                     {{/matches.semi.1.winner_id}}
                                 </div>
+                                <div class="next"><a href=""><i class="fa fa-caret-right"></i></a></div>
                             </li>
                             <li class="item lv-2">
                                 <div class="bar"></div>
                                 <div class="name">{{matches.final.player2.name}}</div>
+                                <div class="next"><a href=""><i class="fa fa-caret-right"></i></a></div>
                             </li>
                             <li class="item">
                                 <div class="name">{{matches.semi.1.player2.name}}</div>
+                                <div class="next"><a href=""><i class="fa fa-caret-right"></i></a></div>
                             </li>
                         </ul>
                     </div>
@@ -101,6 +107,7 @@
         </div>
     </div>
 {{/tournaments}}
+
 
 
 
@@ -123,6 +130,32 @@
                 }, 1000);
             });
         }, 1000);
+
+        function goNext(t, m, p) {
+            console.log(p, m);
+//            curlUpdateScore
+            console.log(data);
+            data.tournaments.forEach(function (tour) {
+                console.log(tour);
+                var find = {};
+                if (tour.id == t) {
+                    if (tour.matches.semi[0].id == m) {
+                        find = tour.matches.semi[0];
+                    }
+                    if (tour.matches.semi[1].id == m) {
+                        find = tour.matches.semi[1];
+                    }
+                    if (tour.matches.final.id == m) {
+                        find = tour.matches.final;
+                    }
+                    curlUpdateScore({
+                        id: find.id,
+                        w: p,
+                        s: find.player_one_id == p ? "1 - 0" : "0 - 1"
+                    });
+                }
+            });
+        }
         //
     </script>
 

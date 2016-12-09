@@ -262,10 +262,15 @@ $app->delete('/match/[{id}]', function ($request, $response, $args) {
 // Update match with given id
 $app->put('/match/[{id}]', function ($request, $response, $args) {
     $input = $request->getParsedBody();
-    $sql = "UPDATE matches SET winner_id=:winnerId, score=:matchScore WHERE id=:id";
+    $sql = "UPDATE matches SET player_one_id = COALESCE(:playerOneId , player_one_id), player_two_id = COALESCE(:playerTwoId , player_two_id), tournament_id = COALESCE(:tournamentId , tournament_id), level_id = COALESCE(:levelId , level_id), winner_id = COALESCE(:winnerId , winner_id), matchdate = COALESCE(:matchDate , matchdate), score = COALESCE(:matchScore , score) WHERE id=:id";
     $sth = $this->db->prepare($sql);
     $sth->bindParam("id", $args['id']);
+    $sth->bindParam("playerOneId", $input['playerOneId']);
+    $sth->bindParam("playerTwoId", $input['playerTwoId']);
+    $sth->bindParam("tournamentId", $input['tournamentId']);
+    $sth->bindParam("levelId", $input['levelId']);
     $sth->bindParam("winnerId", $input['winnerId']);
+    $sth->bindParam("matchDate", $input['matchDate']);
     $sth->bindParam("matchScore", $input['matchScore']);
     $sth->execute();
     $input['id'] = $args['id'];

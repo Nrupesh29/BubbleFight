@@ -86,7 +86,7 @@ public class PlayWorld extends World
 
             try {
 
-                System.out.println(world.selectTW.tournament.getCurrent().player1.toString());
+                //System.out.println(world.selectTW.tournament.getCurrent().player1.toString());
                 player1 = new Message(world.selectTW.tournament.getCurrent().player1.get("name").toString());
                 player2 = new Message(world.selectTW.tournament.getCurrent().player2.get("name").toString());
 

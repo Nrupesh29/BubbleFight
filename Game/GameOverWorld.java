@@ -43,7 +43,7 @@ public class GameOverWorld extends World
         addObject(bluebird,240,250);
         RedBird redbird = new RedBird(); 
         addObject(redbird,900,250);
-        addObject( new Message("VS", Color.green,100), 575, 250 ) ;
+        addObject( new Message("V/S", Color.yellow,50), 575, 250 ) ;
 
     }
 
@@ -85,7 +85,7 @@ public class GameOverWorld extends World
         addObject( player2, 1150 - player1.getImage().getWidth()/2 - 210, 320) ;
 
         //
-        System.out.println( points);
+        //System.out.println( points);
         if(points != null){
             p1Point = new Message(points[0]+" correct answers(s)", Color.black,30);
             p2Point = new Message(points[1]+" correct answers(s)", Color.black,30);
@@ -99,12 +99,12 @@ public class GameOverWorld extends World
 
         }else{
             if(isOneWin){
-                p1Status = new Message("WIN", Color.yellow,50);
+                p1Status = new Message("WIN", Color.green,50);
                 p2Status = new Message("LOSE", Color.red,50);
                 winner = 1;
             }else{
                 p1Status = new Message("LOSE", Color.red,50);
-                p2Status = new Message("WIN", Color.yellow,50);
+                p2Status = new Message("WIN", Color.green,50);
                 winner = 2;
             }            
         }
@@ -135,11 +135,43 @@ public class GameOverWorld extends World
                 data.put("matchDate", dateFormat.format(date));
                 data.put("matchScore", winner==1?"1 - 0":"0 - 1");
 
-                String str = cr.sendPostRequest(world.API_URL+"match", data);
-
-                System.out.println(str);
+                cr.sendPostRequest(world.API_URL+"match", data);
 
             }else{
+                ResourceHandler cr = new ResourceHandler();
+                HashMap<String, String> data = new HashMap<>();
+
+                data.put("winnerId", winner==1?t.getCurrent().getP1Details().getString("id"):t.getCurrent().getP2Details().getString("id"));
+                data.put("matchScore", winner==1?"1 - 0":"0 - 1");
+
+                cr.sendPutRequest(world.API_URL+"match/"+ t.getCurrent().getMatchDetails().getString("id"), data);
+                
+                String JSON_STR = cr.sendGetRequest(world.API_URL+"match-final/" + t.getTournamentId());
+                
+                JSONObject jo = new JSONObject(JSON_STR);
+                if (t.getCurrent().getMatchDetails().getInt("id") - jo.getInt("id") > 1) {
+                    data = new HashMap<>();
+
+                    data.put("playerTwoId", winner==1?t.getCurrent().getP1Details().getString("id"):t.getCurrent().getP2Details().getString("id"));
+
+                    cr.sendPutRequest(world.API_URL+"match/"+ jo.getInt("id"), data);
+                } else {
+                    if(jo.getInt("player_one_id") == 0) {
+                    data = new HashMap<>();
+
+                    data.put("playerOneId", winner==1?t.getCurrent().getP1Details().getString("id"):t.getCurrent().getP2Details().getString("id"));
+
+                    cr.sendPutRequest(world.API_URL+"match/"+ jo.getInt("id"), data);
+                }
+                else {
+                    data = new HashMap<>();
+
+                    data.put("playerTwoId", winner==1?t.getCurrent().getP1Details().getString("id"):t.getCurrent().getP2Details().getString("id"));
+
+                    cr.sendPutRequest(world.API_URL+"match/"+ jo.getInt("id"), data);
+                }
+                }
+                
             }
         } catch (Exception e) {
             // TODO Auto-generated catch block

@@ -14,4 +14,16 @@ public class Match{
     public void setCurrent(boolean c){
         current = c;
     }
+    
+    public JSONObject getMatchDetails(){
+        return match;
+    }
+    
+    public JSONObject getP1Details(){
+        return player1;
+    }
+    
+    public JSONObject getP2Details(){
+        return player2;
+    }
 }

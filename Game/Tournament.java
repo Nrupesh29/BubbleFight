@@ -15,10 +15,20 @@ public class Tournament
      */
     private JSONObject json;
     public ArrayList<Match> list;
+    int id, index;
+    
     public Tournament(JSONObject j)
     {
         json = j;
         list = new ArrayList<Match>();
+    }
+    
+    public void setId (int id) {
+        this.id = id;
+    }
+    
+    public int getTournamentId() {
+        return this.id;
     }
 
     public void addMatch(JSONObject m, JSONObject p1, JSONObject p2){

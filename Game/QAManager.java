@@ -22,13 +22,12 @@ public class QAManager extends Actor implements IObject
 
         int a = random.nextInt(10-1) + 1;
         int b = random.nextInt(10-1) + 1;
-        System.out.println(Integer.toBinaryString(a));
-        System.out.println(Integer.toBinaryString(b));
+        
         Answer answer = new Answer((a+b)+"");
         if(question != null){
             question.destroy();
         }
-        question = new Question(Integer.toBinaryString(a) + " + " + Integer.toBinaryString(b),answer);
+        question = new Question("   " + String.format("%4s", Integer.toBinaryString(a)).replace(' ' , '0') + "\n+ " + String.format("%4s", Integer.toBinaryString(b)).replace(' ' , '0'),answer);
         notifyUpdateQuestion();
     }
 

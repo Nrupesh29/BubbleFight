@@ -25,19 +25,19 @@ public class ModeWorld extends World
 
     public void setWorld(MyWorld w){
         world = w;
-        System.out.println(world.modeW);
+        //System.out.println(world.modeW);
 
-        Message normalText = new Message("Normal", Color.blue,50);
-        Message tournamentText = new Message("Tournament", Color.blue,50);
+        //Message normalText = new Message("Normal", Color.blue,50);
+        //Message tournamentText = new Message("Tournament", Color.blue,50);
 
         PlayButton backB = new PlayButton(world.introW, true);
 
 
-        addObject( normalText, 350, 350 ) ;
-        addObject( tournamentText, 800, 350 ) ;
+        //addObject( normalText, 350, 350 ) ;
+        //addObject( tournamentText, 800, 350 ) ;
 
-        addObject( new PlayButton(world.playW), 350, 430 ) ;
-        addObject( new PlayButton(world.selectTW), 800, 430 ) ;
+        addObject( new NormalButton(world.playW), 350, 430 ) ;
+        addObject( new TournamentButton(world.selectTW), 800, 430 ) ;
         addObject( backB, 50, 50 ) ;
     }
 }

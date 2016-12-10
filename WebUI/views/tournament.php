@@ -113,6 +113,10 @@
 
 
 
+
+
+
+
     </script>
     <script>
         var data = {};
@@ -137,7 +141,7 @@
             console.log(data);
             data.tournaments.forEach(function (tour) {
                 console.log(tour);
-                var find = {};
+                var find = null;
                 if (tour.id == t) {
                     if (tour.matches.semi[0].id == m) {
                         find = tour.matches.semi[0];
@@ -148,11 +152,22 @@
                     if (tour.matches.final.id == m) {
                         find = tour.matches.final;
                     }
-                    curlUpdateScore({
-                        id: find.id,
-                        w: p,
-                        s: find.player_one_id == p ? "1 - 0" : "0 - 1"
-                    });
+
+                    if (find) {
+                        return curlUpdateScore({
+                            id: find.id,
+                            winnerId: p,
+                            score: find.player_one_id == p ? "3 - 0" : "0 - 1",
+                            playerOneId: find.player_one_id,
+                            playerTwoId: find.player_two_id,
+                            tournamentId: find.tournament_id,
+                            levelId: find.level_id,
+                            matchDate: find.matchdate
+                        }).then(function (rs) {
+                            console.log(rs);
+                        });
+                    }
+
                 }
             });
         }

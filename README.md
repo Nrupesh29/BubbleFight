@@ -9,8 +9,7 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 ## Project Deliverables
 [UI Wireframes] (Diagrams/UI Wireframes) <br/>
 [Sequence Diagram] (Diagrams/Sequence Diagram)<br/>
-[Activity Diagram] (Diagrams/Activity Diagrams)<br/>
-[Web UI](WebUI)
+[Activity Diagram] (Diagrams/Activity Diagrams)
 
 ## Installation
 ### AWS Elastic Beanstalk Installation
@@ -22,7 +21,7 @@ CS Unplugged is a collection of free learning activities that teach Computer Sci
 6. Select Web server environment in Environment tier.
 7. Choose PHP in Platform.
 8. Select upload your code in Application Code option.
-9. Download the [Backend API] (Backend API) folder from the repository and upload it.
+9. Download the [Backend API] (Cloud Backend/Backend API) folder from the repository and upload it.
 10. Click Create Environment.
 
 ### MySQL Database Connection with EBS

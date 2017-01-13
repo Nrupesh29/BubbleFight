@@ -4,7 +4,7 @@
 
 CS Unplugged is a collection of free learning activities that teach Computer Science through engaging games and puzzles. We are presenting a game **_BubbleFight_** which will introduce players to computational thinking through Binary Numbers. It is a multiplayer game where players will be given a binary equation and they need to solve the equation and find the decimal equivalent for the answer. Players will play as birds in the game who need to burst the correct answer bubble. Game has a set of rules which add to the competitive nature of game.
 
-<img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/GameBanner.png">
+<img src="http://nrupeshpatel.com/Files/CMPE202/GitHub/Images/GameBanner.png">
 
 ## Project Deliverables
 [UI Wireframes] (Diagrams/UI Wireframes) <br/>
@@ -91,9 +91,9 @@ Learning Activity Concept - [CS Unplugged] (http://csunplugged.org/)
 
 ## Developement Lifecycle Charts
 ### KanBan Flow Diagram (Phase 1)
-<img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/KanBan%20Flow%20Diagram.png">
+<img src="http://nrupeshpatel.com/Files/CMPE202/GitHub/Images/KanBan%20Flow%20Diagram.png">
 ### Scrum Burndown Chart (Phase 2)
-<img src="http://nrupeshpatel.com/CMPE202/GitHub/Images/Scrum%20Burndown%20Chart.png">
+<img src="http://nrupeshpatel.com/Files/CMPE202/GitHub/Images/Scrum%20Burndown%20Chart.png">
 
 ## License
 

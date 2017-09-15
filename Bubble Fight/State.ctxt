@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=State
+comment0.text=\n\ Write\ a\ description\ of\ interface\ State\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ initialize()
+comment1.text=\n\ An\ example\ of\ a\ method\ header\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ \ \ \ the\ result\ produced\ by\ sampleMethod\ \n
+comment2.params=
+comment2.target=void\ answerIncorrect()
+comment3.params=
+comment3.target=void\ fallToTheSea()
+comment4.params=
+comment4.target=void\ doAttack()
+comment5.params=
+comment5.target=void\ beAttack()
+comment6.params=
+comment6.target=void\ answerCorrect()
+numComments=7

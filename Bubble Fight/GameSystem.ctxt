@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=GameSystem
+comment0.text=\n\ Write\ a\ description\ of\ class\ GameSystem\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=qa\ w
+comment1.target=GameSystem(QAManager,\ PlayWorld)
+comment2.params=
+comment2.target=void\ startGame()
+comment3.params=
+comment3.target=void\ generateQuestion()
+comment4.params=a
+comment4.target=boolean\ checkQuestion(Answer)
+comment5.params=s
+comment5.target=void\ createTimerMessage(int)
+comment6.params=
+comment6.target=void\ act()
+numComments=7
